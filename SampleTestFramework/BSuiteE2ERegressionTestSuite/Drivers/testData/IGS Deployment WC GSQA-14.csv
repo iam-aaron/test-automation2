@@ -1,0 +1,6 @@
+Client_Ref,Priority,Site Code,Billable,Problem Category,Problem Code,PartCode,Equipment Status,Clientcomment,Serial Number,Position,Site Contact,Problem Description,Technician
+,Install,VG389,N,Unknown,Unknown,999,,,DEPLOYMENTS,NA,,2xIM 2xLA,
+,Install,VG8825,N,Unknown,Unknown,999,,,DEPLOYMENTS,NA,,2xLA,
+,Install,VG465,N,Unknown,Unknown,999,,,DEPLOYMENTS,NA,,4xLA,
+,Install,VG8222,N,Unknown,Unknown,999,,,DEPLOYMENTS,NA,,Re-install 35 EGMS,
+,Install,VG8222,N,Unknown,Unknown,999,,,DEPLOYMENTS,NA,,Re-install 35 EGMS,

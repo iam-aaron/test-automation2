@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <RunConfiguration>
+    <Profile>Default.srprofile</Profile>
+    <ResultsDirectory>TestResults</ResultsDirectory>
+    <ReportFile>BSuiteRegressionTestReportTemplate.html</ReportFile>
+    <TreatNoTestsAsError>true</TreatNoTestsAsError>
+    <GenerateSpecRunTrait>false</GenerateSpecRunTrait>
+    <GenerateFeatureTrait>false</GenerateFeatureTrait>
+  </RunConfiguration>
+</RunSettings>
