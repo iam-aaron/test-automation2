@@ -18,7 +18,7 @@
     {
       "TestEnvName": "UAT",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233"
+      "BSuiteURL": "https://3.104.140.233",
     },
     {
       "TestEnvName": "PRD",
