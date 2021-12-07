@@ -3,29 +3,21 @@
     {
       "TestEnvName": "TTN",
       "IsSelected": "Yes",
-      //"BSuiteURL": "https://ttn.tstingbsuite.net",
-      //"BSuiteURL": "https://10.174.49.213" //TTN
       "BSuiteURL": "3.104.140.233"
     },
     {
       "TestEnvName": "TST",
       "IsSelected": "No",
-      //"BSuiteURL": "https://tstingbsuite.net",
-      //"BSuiteURL": "https://10.174.49.213" //TTN
       "BSuiteURL": "3.104.140.233"
     },
     {
       "TestEnvName": "SIT",
       "IsSelected": "No",
-      //"BSuiteURL": "https://sit.tstingbsuite.net",
-      //"BSuiteURL": "https://10.174.49.213" //TTN
       "BSuiteURL": "3.104.140.233"
     },
     {
       "TestEnvName": "UAT",
       "IsSelected": "No",
-      //"BSuiteURL": "https://uat.tstingbsuite.net"
-      //"BSuiteURL": "https://10.174.49.213" //TTN
       "BSuiteURL": "3.104.140.233"
     },
     {
