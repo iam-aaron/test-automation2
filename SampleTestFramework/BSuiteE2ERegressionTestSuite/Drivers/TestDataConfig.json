@@ -3,22 +3,22 @@
     {
       "TestEnvName": "TTN",
       "IsSelected": "Yes",
-      "BSuiteURL": "3.104.140.233"
+      "BSuiteURL": "https://3.104.140.233"
     },
     {
       "TestEnvName": "TST",
       "IsSelected": "No",
-      "BSuiteURL": "3.104.140.233"
+      "BSuiteURL": "https://3.104.140.233"
     },
     {
       "TestEnvName": "SIT",
       "IsSelected": "No",
-      "BSuiteURL": "3.104.140.233"
+      "BSuiteURL": "https://3.104.140.233"
     },
     {
       "TestEnvName": "UAT",
       "IsSelected": "No",
-      "BSuiteURL": "3.104.140.233"
+      "BSuiteURL": "https://3.104.140.233"
     },
     {
       "TestEnvName": "PRD",
