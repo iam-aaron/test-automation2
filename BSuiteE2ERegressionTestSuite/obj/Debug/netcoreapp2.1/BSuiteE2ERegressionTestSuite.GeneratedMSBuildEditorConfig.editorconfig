@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = BSuiteE2ERegressionTestSuite
+build_property.ProjectDir = C:\Git\jacktest-gocd-test\SampleTestFramework\BSuiteE2ERegressionTestSuite\
