@@ -1,0 +1,297 @@
+﻿2021-12-07T15:05:22.6212426+08:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-12-07T15:05:22.6214185+08:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.9.7 in Framework netcore31 in x64 mode execution started
+2021-12-07T15:05:22.6214223+08:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-12-07T15:05:22.6231976+08:00;VSTestExecutionThread;Info;Current UserName: 'ContainerAdministrator', MachineName: 'A0E0F3DBAD1B'
+2021-12-07T15:05:22.7942676+08:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\BSuiteE2ERegressionTestSuite.dll
+2021-12-07T15:05:22.7945016+08:00;VSTestExecutionThread;Info;Output folder configured to "TestResults" in profile
+2021-12-07T15:05:22.7945593+08:00;VSTestExecutionThread;Info;Profile: RegressionTestSuite
+2021-12-07T15:05:22.8255029+08:00;VSTestExecutionThread;Info;Log file path: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\BSuite_RegressionTestSuite_2021-12-07T150522.log
+2021-12-07T15:05:22.8296245+08:00;Thread#11;Info;Checking activation
+2021-12-07T15:05:22.9642394+08:00;Thread#11;Info;Activated.
+2021-12-07T15:05:22.9644967+08:00;Thread#11;Info;Activation check completed
+2021-12-07T15:05:22.9645608+08:00;Thread#11;Info;Starting test run
+2021-12-07T15:05:23.0491563+08:00;Thread#11;Info;Discovering target: Default
+2021-12-07T15:05:23.0497960+08:00;Thread#11;Info;Discovering tests from assembly: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\BSuiteE2ERegressionTestSuite.dll
+2021-12-07T15:05:23.1352817+08:00;Thread#11;Info;Discovered tests from assembly: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\BSuiteE2ERegressionTestSuite.dll
+2021-12-07T15:05:23.1364702+08:00:Test Suite Dump
+2021-12-07T15:05:23.1378429+08:00:#0: BSuite/RegressionTestSuite - 
+2021-12-07T15:05:23.1378556+08:00:#1: Default - 
+2021-12-07T15:05:23.1378572+08:00:#2: BSuiteE2ERegressionTestSuite - 
+2021-12-07T15:05:23.1378586+08:00:#3: Login - 
+2021-12-07T15:05:23.1400214+08:00:#4: Login to BSuite Desktop Portal - TestAssembly:BSuiteE2ERegressionTestSuite/Feature:Login/Scenario:Login+to+BSuite+Desktop+Portal
+2021-12-07T15:05:23.1400694+08:00:End: Test Suite Dump
+2021-12-07T15:05:23.1557074+08:00:Thread#0:Scheduler: get next test for thread 0
+2021-12-07T15:05:23.1574072+08:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2021-12-07T15:05:23.1575086+08:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-12-07T15:05:23.1604354+08:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-12-07T15:05:23.1604701+08:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-12-07T15:05:23.1604744+08:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-12-07T15:05:23.1604769+08:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-12-07T15:05:23.1610819+08:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-12-07T15:05:23.1620891+08:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-12-07T15:05:23.1640688+08:00:Thread #0: creating new test thread executor for BSuiteE2ERegressionTestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-12-07T15:05:23.1663229+08:00:Thread #0: Creating test assembly executor for execution model OutProc
+2021-12-07T15:05:23.1665694+08:00:Thread #0: Creating test assembly executor for execution model OutProc
+2021-12-07T15:05:23.1698260+08:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.OutOfProc.StreamJsonRPC.OutOfProcessTestAssemblyExecutorHost to execute tests
+2021-12-07T15:05:23.1713542+08:00:starting Out Of Process Executor
+2021-12-07T15:05:23.1748193+08:00:Assembly resolving Microsoft.VisualStudio.Validation, Version=15.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:23.1775105+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Validation' from .deps.json file
+2021-12-07T15:05:23.1775272+08:00:[AssemblyCache] Could not resolve 'Microsoft.VisualStudio.Validation' from .deps.json
+2021-12-07T15:05:23.1786369+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Validation' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:23.1789545+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Validation' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Validation.dll'
+2021-12-07T15:05:23.1790463+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Validation' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Validation.exe'
+2021-12-07T15:05:23.1790789+08:00:[AssemblyCache] Could not resolve 'Microsoft.VisualStudio.Validation' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:23.1792548+08:00:TargetFramework: .NETCoreApp,Version=v3.1
+2021-12-07T15:05:23.1794536+08:00:Tfm: netcoreapp3.1
+2021-12-07T15:05:23.1794669+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Validation' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1'
+2021-12-07T15:05:23.1794688+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Validation' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\Microsoft.VisualStudio.Validation.dll'
+2021-12-07T15:05:23.1795120+08:00:[AssemblyCache] Found file 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\Microsoft.VisualStudio.Validation.dll' for assembly 'Microsoft.VisualStudio.Validation'
+2021-12-07T15:05:23.1798364+08:00:[AssemblyCache] Resolved 'Microsoft.VisualStudio.Validation' to C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\Microsoft.VisualStudio.Validation.dll
+2021-12-07T15:05:23.1804346+08:00:Starting callback TCP Rpc server
+2021-12-07T15:05:23.1984902+08:00:Asynchronously starting background TCP Rpc Server on port 32768
+2021-12-07T15:05:23.1985699+08:00:Started callback TCP Rpc server on port 32768
+2021-12-07T15:05:23.1985744+08:00:Starting logger TCP Rpc server
+2021-12-07T15:05:23.1998264+08:00:Asynchronously starting background TCP Rpc Server on port 32769
+2021-12-07T15:05:23.1998458+08:00:Started logger TCP Rpc server on port 32769
+2021-12-07T15:05:23.2738376+08:00:Executing test executor at 'dotnet' 'exec "C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\TechTalk.SpecRun.Framework.Executor.anycpu.netcoreapp3_1.dll" --remoteRunnerPid 1316 --uniqueId "2021-12-07T150522" --outputFolder "C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults" --callbackPort 32768 --loggerPort 32769' in 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:23.2804083+08:00:Executor with PID 3020 has been started successfully.
+2021-12-07T15:05:23.2830594+08:00:Out of Process Executor 3020 started
+2021-12-07T15:05:23.2830757+08:00:Waiting for endpoint
+2021-12-07T15:05:24.5904183+08:00:Assembly resolving Microsoft.VisualStudio.Threading, Version=15.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:24.5904842+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Threading' from .deps.json file
+2021-12-07T15:05:24.5904899+08:00:[AssemblyCache] Could not resolve 'Microsoft.VisualStudio.Threading' from .deps.json
+2021-12-07T15:05:24.5904937+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Threading' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:24.5904957+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Threading' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Threading.dll'
+2021-12-07T15:05:24.5905316+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Threading' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Threading.exe'
+2021-12-07T15:05:24.5905606+08:00:[AssemblyCache] Could not resolve 'Microsoft.VisualStudio.Threading' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:24.5905643+08:00:TargetFramework: .NETCoreApp,Version=v3.1
+2021-12-07T15:05:24.5905778+08:00:Tfm: netcoreapp3.1
+2021-12-07T15:05:24.5905818+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Threading' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1'
+2021-12-07T15:05:24.5905830+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.Threading' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\Microsoft.VisualStudio.Threading.dll'
+2021-12-07T15:05:24.5906090+08:00:[AssemblyCache] Found file 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\Microsoft.VisualStudio.Threading.dll' for assembly 'Microsoft.VisualStudio.Threading'
+2021-12-07T15:05:24.5909777+08:00:[AssemblyCache] Resolved 'Microsoft.VisualStudio.Threading' to C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\Microsoft.VisualStudio.Threading.dll
+2021-12-07T15:05:26.5995980+08:00:Remote executor port received: 32770
+2021-12-07T15:05:26.5999183+08:00:Creating executor TCP client on port 32770
+2021-12-07T15:05:26.6002976+08:00:Created executor TCP client on port 32770
+2021-12-07T15:05:26.6003347+08:00:Connecting to remote executor TCP server
+2021-12-07T15:05:26.6009288+08:00:Connected remote executor TCP server
+2021-12-07T15:05:26.6010442+08:00:trying to connect to Out of Process Executor the 1 attempt
+2021-12-07T15:05:26.6010470+08:00:Connection to Out of Process Executor established in the 1 attempt
+2021-12-07T15:05:26.7160094+08:00:2021-12-07T15:05:26.7134196+08:00:OutOfProcessTestAssemblyExecutor: initialized for C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\BSuiteE2ERegressionTestSuite.dll on test thread #0
+2021-12-07T15:05:26.7196665+08:00:Endpoint 3020 started
+2021-12-07T15:05:26.7346081+08:00:2021-12-07T15:05:26.7342073+08:00:OutOfProcessTestAssemblyExecutor: running tests...
+2021-12-07T15:05:26.8301341+08:00:2021-12-07T15:05:26.8296422+08:00:Assembly resolving TechTalk.SpecFlow, Version=3.9.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41
+2021-12-07T15:05:26.8328201+08:00:2021-12-07T15:05:26.8324379+08:00:[AssemblyCache] Trying to resolve 'TechTalk.SpecFlow' from .deps.json file
+2021-12-07T15:05:26.8351665+08:00:2021-12-07T15:05:26.8347504+08:00:[AssemblyCache] Resolved 'TechTalk.SpecFlow' to 'C:\Users\ContainerAdministrator\.nuget\packages\specflow\3.9.8\lib\netstandard2.0\TechTalk.SpecFlow.dll'
+2021-12-07T15:05:26.9221299+08:00:2021-12-07T15:05:26.9216616+08:00:Thread#0:T:-> Loading plugin C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\BSuiteE2ERegressionTestSuite.dll
+2021-12-07T15:05:26.9232450+08:00:2021-12-07T15:05:26.9229087+08:00:Assembly resolving Microsoft.Extensions.DependencyModel, Version=1.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-12-07T15:05:26.9236274+08:00:2021-12-07T15:05:26.9234129+08:00:[AssemblyCache] Trying to resolve 'Microsoft.Extensions.DependencyModel' from .deps.json file
+2021-12-07T15:05:26.9242741+08:00:2021-12-07T15:05:26.9238757+08:00:[AssemblyCache] Resolved 'Microsoft.Extensions.DependencyModel' to 'C:\Users\ContainerAdministrator\.nuget\packages\microsoft.extensions.dependencymodel\1.0.3\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll'
+2021-12-07T15:05:26.9570325+08:00:2021-12-07T15:05:26.9565144+08:00:Assembly resolving Microsoft.DotNet.PlatformAbstractions, Version=1.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-12-07T15:05:26.9575878+08:00:2021-12-07T15:05:26.9573205+08:00:[AssemblyCache] Trying to resolve 'Microsoft.DotNet.PlatformAbstractions' from .deps.json file
+2021-12-07T15:05:26.9580984+08:00:2021-12-07T15:05:26.9578388+08:00:[AssemblyCache] Resolved 'Microsoft.DotNet.PlatformAbstractions' to 'C:\Users\ContainerAdministrator\.nuget\packages\microsoft.dotnet.platformabstractions\1.0.3\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll'
+2021-12-07T15:05:26.9638697+08:00:2021-12-07T15:05:26.9634724+08:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in BSuiteE2ERegressionTestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-12-07T15:05:26.9645500+08:00:2021-12-07T15:05:26.9642245+08:00:Thread#0:T:-> Loading plugin C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\LivingDoc.SpecFlowPlugin.dll
+2021-12-07T15:05:26.9682074+08:00:2021-12-07T15:05:26.9678451+08:00:Assembly resolving LivingDoc.Dtos, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null
+2021-12-07T15:05:26.9685492+08:00:2021-12-07T15:05:26.9683666+08:00:[AssemblyCache] Trying to resolve 'LivingDoc.Dtos' from .deps.json file
+2021-12-07T15:05:26.9690272+08:00:2021-12-07T15:05:26.9687686+08:00:[AssemblyCache] Resolved 'LivingDoc.Dtos' to 'C:\Users\ContainerAdministrator\.nuget\packages\specflow.plus.livingdocplugin\3.9.57\lib\netstandard2.0\LivingDoc.Dtos.dll'
+2021-12-07T15:05:26.9706929+08:00:2021-12-07T15:05:26.9703974+08:00:Thread#0:T:-> Loading plugin C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-12-07T15:05:26.9771565+08:00:2021-12-07T15:05:26.9767758+08:00:Thread#0:T:-> Using default config
+2021-12-07T15:05:26.9847189+08:00:2021-12-07T15:05:26.9843306+08:00:Assembly resolving Cucumber.Messages, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b10c5988214f940c
+2021-12-07T15:05:26.9851207+08:00:2021-12-07T15:05:26.9848880+08:00:[AssemblyCache] Trying to resolve 'Cucumber.Messages' from .deps.json file
+2021-12-07T15:05:26.9855972+08:00:2021-12-07T15:05:26.9853595+08:00:[AssemblyCache] Resolved 'Cucumber.Messages' to 'C:\Users\ContainerAdministrator\.nuget\packages\cucumber.messages\6.0.1\lib\netstandard2.0\Cucumber.Messages.dll'
+2021-12-07T15:05:26.9864449+08:00:2021-12-07T15:05:26.9862037+08:00:Assembly resolving Google.Protobuf, Version=3.7.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604
+2021-12-07T15:05:26.9866955+08:00:2021-12-07T15:05:26.9865783+08:00:[AssemblyCache] Trying to resolve 'Google.Protobuf' from .deps.json file
+2021-12-07T15:05:26.9869831+08:00:2021-12-07T15:05:26.9868600+08:00:[AssemblyCache] Resolved 'Google.Protobuf' to 'C:\Users\ContainerAdministrator\.nuget\packages\google.protobuf\3.7.0\lib\netstandard1.0\Google.Protobuf.dll'
+2021-12-07T15:05:26.9915218+08:00:2021-12-07T15:05:26.9911846+08:00:Assembly resolving Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:26.9919140+08:00:2021-12-07T15:05:26.9916944+08:00:[AssemblyCache] Trying to resolve 'Microsoft.VisualStudio.TestPlatform.ObjectModel' from .deps.json file
+2021-12-07T15:05:26.9924233+08:00:2021-12-07T15:05:26.9921715+08:00:[AssemblyCache] Resolved 'Microsoft.VisualStudio.TestPlatform.ObjectModel' to 'C:\Users\ContainerAdministrator\.nuget\packages\microsoft.testplatform.objectmodel\16.11.0\lib\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll'
+2021-12-07T15:05:27.0301176+08:00:2021-12-07T15:05:27.0296015+08:00:Assembly resolving SpecFlow.Internal.Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41
+2021-12-07T15:05:27.0304493+08:00:2021-12-07T15:05:27.0303109+08:00:[AssemblyCache] Trying to resolve 'SpecFlow.Internal.Json' from .deps.json file
+2021-12-07T15:05:27.0309197+08:00:2021-12-07T15:05:27.0306561+08:00:[AssemblyCache] Resolved 'SpecFlow.Internal.Json' to 'C:\Users\ContainerAdministrator\.nuget\packages\specflow.internal.json\1.0.8\lib\netstandard2.0\SpecFlow.Internal.Json.dll'
+2021-12-07T15:05:27.1044182+08:00:Thread#0: Test #4/0 is started on thread #0
+2021-12-07T15:05:27.1121187+08:00:2021-12-07T15:05:27.1111830+08:00:Assembly resolving SeleniumExtras.PageObjects.Linq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2021-12-07T15:05:27.1126495+08:00:2021-12-07T15:05:27.1124064+08:00:[AssemblyCache] Trying to resolve 'SeleniumExtras.PageObjects.Linq' from .deps.json file
+2021-12-07T15:05:27.1131544+08:00:2021-12-07T15:05:27.1129418+08:00:[AssemblyCache] Resolved 'SeleniumExtras.PageObjects.Linq' to 'C:\Users\ContainerAdministrator\.nuget\packages\dotnetseleniumextras.pageobjects.core.linq\1.0.0\lib\netstandard2.0\SeleniumExtras.PageObjects.Linq.dll'
+2021-12-07T15:05:27.1202790+08:00:2021-12-07T15:05:27.1199177+08:00:Assembly resolving WebDriver, Version=3.141.0.0, Culture=neutral, PublicKeyToken=null
+2021-12-07T15:05:27.1207613+08:00:2021-12-07T15:05:27.1205476+08:00:[AssemblyCache] Trying to resolve 'WebDriver' from .deps.json file
+2021-12-07T15:05:27.1212676+08:00:2021-12-07T15:05:27.1210597+08:00:[AssemblyCache] Resolved 'WebDriver' to 'C:\Users\ContainerAdministrator\.nuget\packages\selenium.webdriver\3.141.0\lib\netstandard2.0\WebDriver.dll'
+2021-12-07T15:05:28.6307240+08:00:2021-12-07T15:05:28.6282827+08:00:Thread#0:T:Chrome executable version: 96.0.4664.45
+2021-12-07T15:05:28.6324515+08:00:2021-12-07T15:05:28.6318865+08:00:Thread#0:T:Chromedriver Path: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\Drivers\chromedriver\V96
+2021-12-07T15:05:28.8728093+08:00:2021-12-07T15:05:28.8712330+08:00:Thread#0:B:Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
+2021-12-07T15:05:28.8746005+08:00:2021-12-07T15:05:28.8731684+08:00:Thread#0:B:  --- table step argument ---
+2021-12-07T15:05:28.8752203+08:00:2021-12-07T15:05:28.8748992+08:00:Thread#0:B:  | Role         | Username         | Password |
+2021-12-07T15:05:28.8757320+08:00:2021-12-07T15:05:28.8754634+08:00:Thread#0:B:  | System Admin | TestSystemAdmin3 | bsuite   |
+2021-12-07T15:05:28.8919887+08:00:2021-12-07T15:05:28.8913167+08:00:Assembly resolving nunit.framework, Version=3.13.2.0, Culture=neutral, PublicKeyToken=2638cd05610744eb
+2021-12-07T15:05:28.8926227+08:00:2021-12-07T15:05:28.8922816+08:00:[AssemblyCache] Trying to resolve 'nunit.framework' from .deps.json file
+2021-12-07T15:05:28.8933008+08:00:2021-12-07T15:05:28.8930175+08:00:[AssemblyCache] Resolved 'nunit.framework' to 'C:\Users\ContainerAdministrator\.nuget\packages\nunit\3.13.2\lib\netstandard2.0\nunit.framework.dll'
+2021-12-07T15:05:28.9048590+08:00:2021-12-07T15:05:28.9041332+08:00:Assembly resolving System.Net.Requests.resources, Version=4.1.2.0, Culture=en-US, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:28.9057128+08:00:2021-12-07T15:05:28.9052632+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' from .deps.json file
+2021-12-07T15:05:28.9063746+08:00:2021-12-07T15:05:28.9060271+08:00:[AssemblyCache] Could not resolve 'System.Net.Requests.resources' from .deps.json
+2021-12-07T15:05:28.9106069+08:00:2021-12-07T15:05:28.9098189+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:28.9175517+08:00:2021-12-07T15:05:28.9168613+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\System.Net.Requests.resources.dll'
+2021-12-07T15:05:28.9188977+08:00:2021-12-07T15:05:28.9182164+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\System.Net.Requests.resources.exe'
+2021-12-07T15:05:28.9200224+08:00:2021-12-07T15:05:28.9195034+08:00:[AssemblyCache] Could not resolve 'System.Net.Requests.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:28.9212769+08:00:2021-12-07T15:05:28.9208228+08:00:TargetFramework: .NETCoreApp,Version=v3.1
+2021-12-07T15:05:28.9450368+08:00:2021-12-07T15:05:28.9443279+08:00:Tfm: netcoreapp3.1
+2021-12-07T15:05:28.9571920+08:00:2021-12-07T15:05:28.9456933+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1'
+2021-12-07T15:05:28.9654932+08:00:2021-12-07T15:05:28.9598259+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\System.Net.Requests.resources.dll'
+2021-12-07T15:05:28.9749571+08:00:2021-12-07T15:05:28.9696747+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\System.Net.Requests.resources.exe'
+2021-12-07T15:05:28.9799184+08:00:2021-12-07T15:05:28.9782892+08:00:[AssemblyCache] Could not resolve 'System.Net.Requests.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1'
+2021-12-07T15:05:29.0118625+08:00:2021-12-07T15:05:29.0068497+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0'
+2021-12-07T15:05:29.0246950+08:00:2021-12-07T15:05:29.0225601+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0\System.Net.Requests.resources.dll'
+2021-12-07T15:05:29.0409065+08:00:2021-12-07T15:05:29.0395760+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0\System.Net.Requests.resources.exe'
+2021-12-07T15:05:29.0631551+08:00:2021-12-07T15:05:29.0603105+08:00:[AssemblyCache] Could not resolve 'System.Net.Requests.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0'
+2021-12-07T15:05:29.0648157+08:00:2021-12-07T15:05:29.0642534+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0'
+2021-12-07T15:05:29.0654744+08:00:2021-12-07T15:05:29.0651464+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0\System.Net.Requests.resources.dll'
+2021-12-07T15:05:29.0664416+08:00:2021-12-07T15:05:29.0658068+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0\System.Net.Requests.resources.exe'
+2021-12-07T15:05:29.0794080+08:00:2021-12-07T15:05:29.0668434+08:00:[AssemblyCache] Could not resolve 'System.Net.Requests.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0'
+2021-12-07T15:05:29.0813009+08:00:2021-12-07T15:05:29.0805005+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0'
+2021-12-07T15:05:29.0821571+08:00:2021-12-07T15:05:29.0817412+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0\System.Net.Requests.resources.dll'
+2021-12-07T15:05:29.0847069+08:00:2021-12-07T15:05:29.0842549+08:00:[AssemblyCache] Trying to resolve 'System.Net.Requests.resources' to 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0\System.Net.Requests.resources.exe'
+2021-12-07T15:05:29.0854490+08:00:2021-12-07T15:05:29.0851610+08:00:[AssemblyCache] Could not resolve 'System.Net.Requests.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0'
+2021-12-07T15:05:29.0887864+08:00:2021-12-07T15:05:29.0882223+08:00:Assembly resolving System.Net.Requests.resources, Version=4.1.2.0, Culture=en, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:29.1343656+08:00:2021-12-07T15:05:29.1338414+08:00:Thread#0:T:error: invalid argument
+2021-12-07T15:05:29.1350432+08:00:2021-12-07T15:05:29.1347440+08:00:Thread#0:T:  (Session info: chrome=96.0.4664.45) (0.2s)
+2021-12-07T15:05:29.2562790+08:00:2021-12-07T15:05:29.2554456+08:00:Thread#0:T:SCREENSHOT[ file:///C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\tmpC47.png ]SCREENSHOT
+2021-12-07T15:05:29.2588376+08:00:2021-12-07T15:05:29.2583249+08:00:Thread#0:B:Then login is successful
+2021-12-07T15:05:29.2704158+08:00:2021-12-07T15:05:29.2602635+08:00:Thread#0:T:skipped because of previous errors
+2021-12-07T15:05:29.3174481+08:00:Thread#0:TestItem#4:Scheduler: reschedule tests for testitem #4
+2021-12-07T15:05:29.3203319+08:00:Thread#0:Scheduler: get next test for thread 0
+2021-12-07T15:05:29.3204359+08:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2021-12-07T15:05:29.3204431+08:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-12-07T15:05:29.3205365+08:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-12-07T15:05:29.3205677+08:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-12-07T15:05:29.3205726+08:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-12-07T15:05:29.3205758+08:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-12-07T15:05:29.3206364+08:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-12-07T15:05:29.3207239+08:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2021-12-07T15:05:29.3269727+08:00:2021-12-07T15:05:29.3263946+08:00:Thread#0:T:Test Run End Date and Time:12/7/2021 3:05:29 PM
+2021-12-07T15:05:29.3281315+08:00:2021-12-07T15:05:29.3275985+08:00:Thread#0:T:Test Run Duration: 0 hours 0 minutes 0 seconds 0 milliseconds
+2021-12-07T15:05:29.3288515+08:00:2021-12-07T15:05:29.3285209+08:00:Thread#0:T:Test Environment: TTN</p>
+2021-12-07T15:05:29.3378878+08:00:2021-12-07T15:05:29.3371320+08:00:Thread#0:T:Test Run Initiated By: User Manager\ContainerAdministrator from computer with hostname: a0e0f3dbad1b</p>
+2021-12-07T15:05:29.3388589+08:00:2021-12-07T15:05:29.3384280+08:00:Thread#0:T:BSuite Application Software Version Tested: 
+2021-12-07T15:05:29.3394344+08:00:2021-12-07T15:05:29.3391224+08:00:Thread#0:T:Browser Name: chrome
+2021-12-07T15:05:29.3401582+08:00:2021-12-07T15:05:29.3397992+08:00:Thread#0:T:Browser Version: 96.0.4664.45
+2021-12-07T15:05:29.3454673+08:00:2021-12-07T15:05:29.3444788+08:00:Thread#0:T:Platform Name: windows
+2021-12-07T15:05:29.4797968+08:00:2021-12-07T15:05:29.4792327+08:00:Thread#0:T:Exception: no such element: Unable to locate element: {"method":"css selector","selector":"#ctl0_ctl3_logout"}
+2021-12-07T15:05:29.4803419+08:00:2021-12-07T15:05:29.4800671+08:00:Thread#0:T:  (Session info: chrome=96.0.4664.45)
+2021-12-07T15:05:29.8008260+08:00:Thread#0: Test #4/0 is finished on thread #0 as Failed within 2.6955151 seconds
+2021-12-07T15:05:29.8038873+08:00:Thread#0: Test #4/1 is started on thread #0
+2021-12-07T15:05:31.0692062+08:00:2021-12-07T15:05:31.0506180+08:00:Thread#0:T:Chrome executable version: 96.0.4664.45
+2021-12-07T15:05:31.0782499+08:00:2021-12-07T15:05:31.0704875+08:00:Thread#0:T:Chromedriver Path: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\Drivers\chromedriver\V96
+2021-12-07T15:05:31.1205322+08:00:2021-12-07T15:05:31.1186830+08:00:Thread#0:B:Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
+2021-12-07T15:05:31.1227858+08:00:2021-12-07T15:05:31.1211291+08:00:Thread#0:B:  --- table step argument ---
+2021-12-07T15:05:31.1361440+08:00:2021-12-07T15:05:31.1233536+08:00:Thread#0:B:  | Role         | Username         | Password |
+2021-12-07T15:05:31.1713755+08:00:2021-12-07T15:05:31.1368139+08:00:Thread#0:B:  | System Admin | TestSystemAdmin3 | bsuite   |
+2021-12-07T15:05:31.1817357+08:00:2021-12-07T15:05:31.1805321+08:00:Thread#0:T:error: invalid argument
+2021-12-07T15:05:31.1827353+08:00:2021-12-07T15:05:31.1823708+08:00:Thread#0:T:  (Session info: chrome=96.0.4664.45) (0.0s)
+2021-12-07T15:05:31.2664234+08:00:2021-12-07T15:05:31.2654242+08:00:Thread#0:T:SCREENSHOT[ file:///C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\tmp1437.png ]SCREENSHOT
+2021-12-07T15:05:31.2676110+08:00:2021-12-07T15:05:31.2671972+08:00:Thread#0:B:Then login is successful
+2021-12-07T15:05:31.2686332+08:00:2021-12-07T15:05:31.2681838+08:00:Thread#0:T:skipped because of previous errors
+2021-12-07T15:05:31.2722680+08:00:Thread#0:Scheduler: get next test for thread 0
+2021-12-07T15:05:31.2723327+08:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2021-12-07T15:05:31.2723432+08:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-12-07T15:05:31.2724846+08:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-12-07T15:05:31.2724928+08:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-12-07T15:05:31.2724953+08:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-12-07T15:05:31.2724982+08:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-12-07T15:05:31.2725624+08:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-12-07T15:05:31.2726425+08:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2021-12-07T15:05:31.2760036+08:00:2021-12-07T15:05:31.2735491+08:00:Thread#0:T:Test Run End Date and Time:12/7/2021 3:05:31 PM
+2021-12-07T15:05:31.2768870+08:00:2021-12-07T15:05:31.2764320+08:00:Thread#0:T:Test Run Duration: 0 hours 0 minutes 1 seconds 947 milliseconds
+2021-12-07T15:05:31.2776015+08:00:2021-12-07T15:05:31.2772479+08:00:Thread#0:T:Test Environment: TTN</p>
+2021-12-07T15:05:31.2793168+08:00:2021-12-07T15:05:31.2789122+08:00:Thread#0:T:Test Run Initiated By: User Manager\ContainerAdministrator from computer with hostname: a0e0f3dbad1b</p>
+2021-12-07T15:05:31.2797938+08:00:2021-12-07T15:05:31.2795756+08:00:Thread#0:T:BSuite Application Software Version Tested: 
+2021-12-07T15:05:31.2803080+08:00:2021-12-07T15:05:31.2800489+08:00:Thread#0:T:Browser Name: chrome
+2021-12-07T15:05:31.2806454+08:00:2021-12-07T15:05:31.2804792+08:00:Thread#0:T:Browser Version: 96.0.4664.45
+2021-12-07T15:05:31.2810652+08:00:2021-12-07T15:05:31.2808752+08:00:Thread#0:T:Platform Name: windows
+2021-12-07T15:05:31.3087610+08:00:2021-12-07T15:05:31.3076201+08:00:Thread#0:T:Exception: no such element: Unable to locate element: {"method":"css selector","selector":"#ctl0_ctl3_logout"}
+2021-12-07T15:05:31.3094748+08:00:2021-12-07T15:05:31.3091310+08:00:Thread#0:T:  (Session info: chrome=96.0.4664.45)
+2021-12-07T15:05:31.4502037+08:00:Thread#0: Test #4/1 is finished on thread #0 as Failed within 1.6460918 seconds
+2021-12-07T15:05:31.4517126+08:00:Thread#0: Test #4/2 is started on thread #0
+2021-12-07T15:05:32.8852138+08:00:2021-12-07T15:05:32.8832795+08:00:Thread#0:T:Chrome executable version: 96.0.4664.45
+2021-12-07T15:05:32.8995438+08:00:2021-12-07T15:05:32.8952476+08:00:Thread#0:T:Chromedriver Path: C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\Drivers\chromedriver\V96
+2021-12-07T15:05:32.9472783+08:00:2021-12-07T15:05:32.9415944+08:00:Thread#0:B:Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
+2021-12-07T15:05:32.9501519+08:00:2021-12-07T15:05:32.9489665+08:00:Thread#0:B:  --- table step argument ---
+2021-12-07T15:05:32.9516792+08:00:2021-12-07T15:05:32.9509609+08:00:Thread#0:B:  | Role         | Username         | Password |
+2021-12-07T15:05:32.9521909+08:00:2021-12-07T15:05:32.9519405+08:00:Thread#0:B:  | System Admin | TestSystemAdmin3 | bsuite   |
+2021-12-07T15:05:32.9645597+08:00:2021-12-07T15:05:32.9637659+08:00:Thread#0:T:error: invalid argument
+2021-12-07T15:05:32.9652759+08:00:2021-12-07T15:05:32.9649317+08:00:Thread#0:T:  (Session info: chrome=96.0.4664.45) (0.0s)
+2021-12-07T15:05:33.0594038+08:00:2021-12-07T15:05:33.0588895+08:00:Thread#0:T:SCREENSHOT[ file:///C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\tmp1B2E.png ]SCREENSHOT
+2021-12-07T15:05:33.0602617+08:00:2021-12-07T15:05:33.0599929+08:00:Thread#0:B:Then login is successful
+2021-12-07T15:05:33.0608397+08:00:2021-12-07T15:05:33.0606318+08:00:Thread#0:T:skipped because of previous errors
+2021-12-07T15:05:33.0635269+08:00:Thread#0:Scheduler: get next test for thread 0
+2021-12-07T15:05:33.0636003+08:00:Thread#:Scheduler: at the end of normal test queue
+2021-12-07T15:05:33.0636066+08:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-12-07T15:05:33.0636103+08:00:Thread#0:Scheduler: No more tests for thread
+2021-12-07T15:05:33.0649170+08:00:2021-12-07T15:05:33.0645270+08:00:Thread#0:T:Test Run End Date and Time:12/7/2021 3:05:33 PM
+2021-12-07T15:05:33.0655087+08:00:2021-12-07T15:05:33.0651409+08:00:Thread#0:T:Test Run Duration: 0 hours 0 minutes 3 seconds 738 milliseconds
+2021-12-07T15:05:33.0659442+08:00:2021-12-07T15:05:33.0657443+08:00:Thread#0:T:Test Environment: TTN</p>
+2021-12-07T15:05:33.0672394+08:00:2021-12-07T15:05:33.0668542+08:00:Thread#0:T:Test Run Initiated By: User Manager\ContainerAdministrator from computer with hostname: a0e0f3dbad1b</p>
+2021-12-07T15:05:33.0676367+08:00:2021-12-07T15:05:33.0674619+08:00:Thread#0:T:BSuite Application Software Version Tested: 
+2021-12-07T15:05:33.0679990+08:00:2021-12-07T15:05:33.0677976+08:00:Thread#0:T:Browser Name: chrome
+2021-12-07T15:05:33.0683479+08:00:2021-12-07T15:05:33.0681450+08:00:Thread#0:T:Browser Version: 96.0.4664.45
+2021-12-07T15:05:33.0686269+08:00:2021-12-07T15:05:33.0684897+08:00:Thread#0:T:Platform Name: windows
+2021-12-07T15:05:33.0917813+08:00:2021-12-07T15:05:33.0913252+08:00:Thread#0:T:Exception: no such element: Unable to locate element: {"method":"css selector","selector":"#ctl0_ctl3_logout"}
+2021-12-07T15:05:33.0924960+08:00:2021-12-07T15:05:33.0921489+08:00:Thread#0:T:  (Session info: chrome=96.0.4664.45)
+2021-12-07T15:05:33.1986535+08:00:Thread#0: Test #4/2 is finished on thread #0 as Failed within 1.7466849 seconds
+2021-12-07T15:05:33.2101701+08:00:2021-12-07T15:05:33.2094504+08:00:Got Deinitialize Signal
+2021-12-07T15:05:33.2150458+08:00:RPC Client disconnected, because 'Disposed'. 
+LastMessage: 
+Description:Stream has been disposed
+Exception:<none>
+2021-12-07T15:05:33.2156829+08:00:RPC Server disconnected, because 'Disposed'. 
+LastMessage: 
+Description:Reached end of stream.
+Exception:<none>
+2021-12-07T15:05:33.2183704+08:00:RPC Server disconnected, because 'Disposed'. 
+LastMessage: 
+Description:Stream has been disposed
+Exception:<none>
+2021-12-07T15:05:33.2233484+08:00:Assembly resolving System.Diagnostics.Process.resources, Version=4.2.2.0, Culture=en-US, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:33.2233797+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' from .deps.json file
+2021-12-07T15:05:33.2233966+08:00:[AssemblyCache] Could not resolve 'System.Diagnostics.Process.resources' from .deps.json
+2021-12-07T15:05:33.2234100+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:33.2234259+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\System.Diagnostics.Process.resources.dll'
+2021-12-07T15:05:33.2234957+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\System.Diagnostics.Process.resources.exe'
+2021-12-07T15:05:33.2235546+08:00:[AssemblyCache] Could not resolve 'System.Diagnostics.Process.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1'
+2021-12-07T15:05:33.2235691+08:00:TargetFramework: .NETCoreApp,Version=v3.1
+2021-12-07T15:05:33.2236779+08:00:Tfm: netcoreapp3.1
+2021-12-07T15:05:33.2236942+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1'
+2021-12-07T15:05:33.2236956+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\System.Diagnostics.Process.resources.dll'
+2021-12-07T15:05:33.2238136+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1\System.Diagnostics.Process.resources.exe'
+2021-12-07T15:05:33.2238527+08:00:[AssemblyCache] Could not resolve 'System.Diagnostics.Process.resources' in folder 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\SpecFlowPlusRunner\netcoreapp3.1'
+2021-12-07T15:05:33.2321249+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0'
+2021-12-07T15:05:33.2321434+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0\System.Diagnostics.Process.resources.dll'
+2021-12-07T15:05:33.2324464+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0\System.Diagnostics.Process.resources.exe'
+2021-12-07T15:05:33.2327242+08:00:[AssemblyCache] Could not resolve 'System.Diagnostics.Process.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.0'
+2021-12-07T15:05:33.2330201+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0'
+2021-12-07T15:05:33.2330295+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0\System.Diagnostics.Process.resources.dll'
+2021-12-07T15:05:33.2345107+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0\System.Diagnostics.Process.resources.exe'
+2021-12-07T15:05:33.2346738+08:00:[AssemblyCache] Could not resolve 'System.Diagnostics.Process.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.0'
+2021-12-07T15:05:33.2354675+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0'
+2021-12-07T15:05:33.2355419+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0\System.Diagnostics.Process.resources.dll'
+2021-12-07T15:05:33.2365461+08:00:[AssemblyCache] Trying to resolve 'System.Diagnostics.Process.resources' to 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0\System.Diagnostics.Process.resources.exe'
+2021-12-07T15:05:33.2369713+08:00:[AssemblyCache] Could not resolve 'System.Diagnostics.Process.resources' in folder 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.0'
+2021-12-07T15:05:33.2410367+08:00:Assembly resolving System.Diagnostics.Process.resources, Version=4.2.2.0, Culture=en, PublicKeyToken=b03f5f7f11d50a3a
+2021-12-07T15:05:33.2506454+08:00:Thread#-1:Scheduler: get next test for thread -1
+2021-12-07T15:05:33.2507659+08:00:Thread#:Scheduler: at the end of normal test queue
+2021-12-07T15:05:33.2507744+08:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-12-07T15:05:33.2591160+08:00;Thread#11;Info;test run finished
+2021-12-07T15:05:33.2597082+08:00;Thread#11;Info;publishing test results
+2021-12-07T15:05:33.2599975+08:00;Thread#11;Info;Not publishing results.
+2021-12-07T15:05:33.2601665+08:00;Thread#11;Info;test results published
+2021-12-07T15:05:33.2602485+08:00;Thread#11;Info;generating reports
+2021-12-07T15:05:33.3380091+08:00;Thread#11;Info;Starting external report generation process
+2021-12-07T15:05:37.3970420+08:00;Thread#11;Info;Successfully generated reports.
+2021-12-07T15:05:37.3993950+08:00;Thread#11;Info;Successfully generated reports
+2021-12-07T15:05:37.4073185+08:00:Total: 1 (test executions: 3)
+2021-12-07T15:05:37.4087180+08:00:Succeeded: 0
+2021-12-07T15:05:37.4089791+08:00:Ignored: 0
+2021-12-07T15:05:37.4091746+08:00:Pending: 0
+2021-12-07T15:05:37.4092738+08:00:Skipped: 0
+2021-12-07T15:05:37.4094580+08:00:Failed: 1
+2021-12-07T15:05:37.4140793+08:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-12-07T15:05:37.4142562+08:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\TestRunReport.html'
+========== End of log file ==========

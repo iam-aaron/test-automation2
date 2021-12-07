@@ -1,0 +1,10 @@
+﻿2021-12-07T15:15:16.2231419+08:00;Thread#1;Info;Reading test run result from Json file "C:\Users\ContainerAdministrator\AppData\Local\Temp\36e03e2c-794b-400b-9359-20b5fbe70f29".
+2021-12-07T15:15:16.3013157+08:00;Thread#1;Info;Successfully read test run result from Json file "C:\Users\ContainerAdministrator\AppData\Local\Temp\36e03e2c-794b-400b-9359-20b5fbe70f29"
+2021-12-07T15:15:16.3013157+08:00;Thread#1;Info;Deserializing test run result
+2021-12-07T15:15:16.9263208+08:00;Thread#1;Info;Successfully deserialized test run result
+2021-12-07T15:15:16.9263208+08:00;Thread#1;Info;Loading test run result
+2021-12-07T15:15:16.9419322+08:00;Thread#1;Info;Successfully loaded test run result
+2021-12-07T15:15:16.9731413+08:00;Thread#1;Info;creating 1 report(s)
+2021-12-07T15:15:16.9731413+08:00;Thread#1;Info;generate Report using template C:\Users\Public\Documents\BSuiteE2ERegressionTestSuite\bin\Debug\netcoreapp3.1\TestResults\Drivers\BSuiteRegressionTestReportTemplate.cshtml
+2021-12-07T15:15:18.4262768+08:00;Thread#1;Info;Finished generating reports.
+========== End of log file ==========
