@@ -12,10 +12,17 @@ namespace BSuiteE2ERegressionTest
     /// </summary>
     public class Config
     {
-        public string TestEnvName = "";
+        public string TestEnvName = string.Empty;
         public bool IsSelected = false;
-        public string BSuiteURL = "";
+        public string BSuiteURL = string.Empty;
         public Dictionary<string, (string UserName, string UserPassword)> Users = new Dictionary<string, (string UserName, string UserPassword)>();
+        public string BSuiteHydraDbServer = string.Empty;
+        public string BSuiteHydraDbName = string.Empty;
+        public string BSuiteHydraDbPort = string.Empty;
+        public string BSuiteHydraDbSshHostName = string.Empty;
+        public string BSuiteHydraDbSshUserName = string.Empty;
+        public string BSuiteHydraDbUserId = string.Empty;
+        public string BSuiteHydraDbPassword = string.Empty;
 
         public void LoadConfig()
         {
@@ -50,36 +57,57 @@ namespace BSuiteE2ERegressionTest
                             case "BSuiteURL":
                                 this.BSuiteURL = envProperty.Value.ToString();
                                 break;
+                            case "BSuiteHydraDbServer":
+                                this.BSuiteHydraDbServer = envProperty.Value.ToString();
+                                break;
+                            case "BSuiteHydraDbName":
+                                this.BSuiteHydraDbName = envProperty.Value.ToString();
+                                break;
+                            case "BSuiteHydraDbPort":
+                                this.BSuiteHydraDbPort = envProperty.Value.ToString();
+                                break;
+                            case "BSuiteHydraDbSshHostName":
+                                this.BSuiteHydraDbSshHostName = envProperty.Value.ToString();
+                                break;
+                            case "BSuiteHydraDbSshUserName":
+                                this.BSuiteHydraDbSshUserName = envProperty.Value.ToString();
+                                break;
+                            case "BSuiteHydraDbUserId":
+                                this.BSuiteHydraDbUserId = envProperty.Value.ToString();
+                                break;
+                            case "BSuiteHydraDbPassword":
+                                this.BSuiteHydraDbPassword = envProperty.Value.ToString();
+                                break;
                             default:
                                 break;
                         }
                     }
                 }
 
-                foreach (Newtonsoft.Json.Linq.JObject user in users.Children<Newtonsoft.Json.Linq.JObject>())
-                {
-                    var role = "";
-                    var userName = "";
-                    var userPassword = "";
-                    foreach (Newtonsoft.Json.Linq.JProperty userProperty in user.Properties())
-                    {
-                        switch (userProperty.Name)
-                        {
-                            case "Role":
-                                role = userProperty.Value.ToString();
-                                break;
-                            case "UserName":
-                                userName = userProperty.Value.ToString();
-                                break;
-                            case "Password":
-                                userPassword = userProperty.Value.ToString();
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    Users.Add(role, new ValueTuple<string, string>(userName, userPassword));
-                }
+                //foreach (Newtonsoft.Json.Linq.JObject user in users.Children<Newtonsoft.Json.Linq.JObject>())
+                //{
+                //    var role = "";
+                //    var userName = "";
+                //    var userPassword = "";
+                //    foreach (Newtonsoft.Json.Linq.JProperty userProperty in user.Properties())
+                //    {
+                //        switch (userProperty.Name)
+                //        {
+                //            case "Role":
+                //                role = userProperty.Value.ToString();
+                //                break;
+                //            case "UserName":
+                //                userName = userProperty.Value.ToString();
+                //                break;
+                //            case "Password":
+                //                userPassword = userProperty.Value.ToString();
+                //                break;
+                //            default:
+                //                break;
+                //        }
+                //    }
+                //    Users.Add(role, new ValueTuple<string, string>(userName, userPassword));
+                //}
             }
         }      
     }

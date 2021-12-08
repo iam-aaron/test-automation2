@@ -8,6 +8,8 @@ using System.IO;
 using System.Linq;
 using TechTalk.SpecFlow;
 
+
+
 namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
 {
     public class PreStartPage
@@ -21,20 +23,28 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
         /// </summary>
         public string url = "/prestart";
 
+
+
         /// <summary>
         /// User Full Name
         /// </summary>
         public IWebElement lnkUserFullName;
+
+
 
         /// <summary>
         /// User Role Hyperlink
         /// </summary>
         public IWebElement lnkRole;
 
+
+
         /// <summary>
         /// Submit button
         /// </summary>
         public IWebElement btnSubmit;
+
+
 
         public PreStartPage(IWebDriver driver)
         {
@@ -43,6 +53,8 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             //this.lnkRole = driver.FindElement(By.Id("ctl0_ctl2_Role"));
             //this.btnSubmit = driver.FindElement(By.Id("ctl0_MainContent_SubmitButton"));
         }
+
+
 
         /// <summary>
         /// Get PreStart Checklist Introduction message
@@ -67,6 +79,8 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             return introduction[0] + ". " + introduction[2];
         }
 
+
+
         /// <summary>
         /// Get PreStart Checklist Question
         /// </summary>
@@ -84,8 +98,12 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             actualQuestionList = questionSet.FindElement(By.ClassName("ques-number"));
             actualQuestion = actualQuestionList.FindElement(By.XPath("following::span")).Text;
 
+
+
             return (actualQuestionNumber, actualQuestion);
         }
+
+
 
         /// <summary>
         /// Respond to a PreStart Checklist question
@@ -99,6 +117,8 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             IWebElement actualQuestionList;
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(this.driver, TimeSpan.FromSeconds(10));
 
+
+
             //Get the list of all PreStart Checklist questions
             var questionSetWrappers = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.ClassName("question-set")));
             var questionSet = questionSetWrappers[questionNumber].FindElement(By.ClassName("ques-text"));
@@ -107,8 +127,12 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             actualQuestion = actualQuestionList.FindElement(By.XPath("following::span")).Text;
 
 
+
+
             var yesResponseInput = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("(//div[@class='input-box'])[" + actualQuestionNumber + "]/span[1]/input"))).FirstOrDefault();
             var noResponseInput = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("(//div[@class='input-box'])[" + actualQuestionNumber + "]/span[2]/input"))).FirstOrDefault();
+
+
 
 
             if (yesResponseInput.Enabled && noResponseInput.Enabled)
@@ -126,6 +150,8 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             }
         }
 
+
+
         /// <summary>
         /// Respond to all PreStart Checklist questions
         /// </summary>
@@ -139,13 +165,19 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
                 RespondToPreStartChecklistQuestion(userResponses[i], i);
             }
 
+
+
         }
+
+
 
         public void validatePromptMessage(int promptNo, string expQuestionStr)
         {
             string alertMessage = this.driver.FindElement(By.XPath("//div[@class='stop-alert-section']/div/span")).Text;
             Assert.IsTrue(alertMessage.Equals(expQuestionStr));
         }
+
+
 
         /// <summary>
         /// Click the Submit button
@@ -156,21 +188,13 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.MobilePortal
             this.btnSubmit.Click();
         }
 
+
+
         ///// <summary>
         ///// Complete PreStart Checklist
         ///// </summary>
         //public (string introduction, string[] questions) CompletePreStartChecklist(bool[] responses)
         //{
-        //    var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-        //    //If PreStart Checklist is presented, then complete PreStart Checklist as per Happy Path
-        //    var preStartChecklistPage = new PreStartPage(webDriver);
-        //    gblCurrentPage = preStartChecklistPage;
-        //    var preStartChecklistIntroduction = preStartChecklistPage.GetChecklistIntroduction();
-        //    var preStartChecklistQuestions = preStartChecklistPage.GetChecklistQuestions(responses);
-        //    Assert.AreEqual(expected: $"Good morning {preStartChecklistPage.lnkUserFullName.Text}. Lets complete your Pre Start Checklist for today {DateTime.Now.ToString($"dd'{GenerateDateSuffix()} 'MMMM yyyy")}",
-        //        actual: preStartChecklistPage.GetChecklistIntroduction(),
-        //        message: "FAILED: PreStart Checklist introduction message is not as expected");
-        //    return (introduction: preStartChecklistIntroduction);
         //}
     }
 }

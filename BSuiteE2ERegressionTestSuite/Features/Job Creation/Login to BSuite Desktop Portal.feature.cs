@@ -84,17 +84,22 @@ namespace BSuiteE2ERegressionTestSuite.Features.JobCreation
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Login to BSuite Desktop Portal", new string[] {
-                "GSQA-10090",
-                "PositiveTests",
-                "NegativeTests"}, SourceLine=8)]
-        public virtual void LoginToBSuiteDesktopPortal()
+        public virtual void LoginToBSuiteDesktopPortal(string role, string username, string password, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "GSQA-10090",
                     "PositiveTests",
-                    "NegativeTests"};
+                    "NegativeTests",
+                    "ignore"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Role", role);
+            argumentsOfScenario.Add("Username", username);
+            argumentsOfScenario.Add("Password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login to BSuite Desktop Portal", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -116,22 +121,49 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+#line 10
+ testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table1.AddRow(new string[] {
-                            "System Admin",
-                            "TestSystemAdmin3",
-                            "bsuite"});
-#line 10
- testRunner.Given("I have logged into \'BSuite Desktop\' portal as a User with following User Profile", ((string)(null)), table1, "Given ");
+                table127.AddRow(new string[] {
+                            string.Format("{0}", role),
+                            string.Format("{0}", username),
+                            string.Format("{0}", password)});
+#line 11
+ testRunner.When("I login as a User with User Profile as follows", ((string)(null)), table127, "When ");
 #line hidden
-#line 13
+#line 14
  testRunner.Then("login is successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Login to BSuite Desktop Portal, Variant 0", new string[] {
+                "GSQA-10090",
+                "PositiveTests",
+                "NegativeTests"}, SourceLine=17)]
+        [TechTalk.SpecRun.IgnoreAttribute()]
+        public virtual void LoginToBSuiteDesktopPortal_Variant0()
+        {
+#line 9
+this.LoginToBSuiteDesktopPortal("System Admin", "akshatha", "akshatha", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Login to BSuite Desktop Portal, Variant 1", new string[] {
+                "GSQA-10090",
+                "PositiveTests",
+                "NegativeTests"}, SourceLine=17)]
+        [TechTalk.SpecRun.IgnoreAttribute()]
+        public virtual void LoginToBSuiteDesktopPortal_Variant1()
+        {
+#line 9
+this.LoginToBSuiteDesktopPortal("System Admin", "sanjanam", "sanjanam", ((string[])(null)));
+#line hidden
         }
     }
 }

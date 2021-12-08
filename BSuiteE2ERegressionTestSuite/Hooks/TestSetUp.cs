@@ -30,7 +30,7 @@ namespace BSuiteE2ERegressionTest
             gblConfig = new Config();
             gblConfig.LoadConfig();
 
-            //TODO: Load test data for the current test run
+            //Load test data for the regression test run
             //LoadTestData();
         }
 

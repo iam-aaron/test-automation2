@@ -141,6 +141,29 @@ namespace BSuiteE2ERegressionTest
             preStartChecklistPage.RespondToPreStartChecklistQuestion(userResponseBool, expectedQuestionNumber);
         }
 
+        
+
+
+
+         
+
+
+        
+
+        [Then(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]
+        [When(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]
+        [Given(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]
+        public void ThenIAmRequiredToCompleteThePreStartChecklistForTheDayInMobilePortal()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            webDriver.Url.Should().Contain(gblConfig.BSuiteURL + "/mobile?AJAX=preStartChecklList");
+            //Add PreStart Checklist page to the container
+            var preStartChecklistPage = new BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.PreStartPage(webDriver);
+            gblCurrentPage = preStartChecklistPage;
+
+
+
+        }
 
         [When(@"I respond '([^']*)' to the '([^']*)' Pre Start Checklist question")]
         [Then(@"I respond '([^']*)' to the '([^']*)' Pre Start Checklist question")]
@@ -242,19 +265,7 @@ namespace BSuiteE2ERegressionTest
             System.Threading.Thread.Sleep(5000);
         }
 
-        [Given(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]        
-        [Then(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]
-        [When(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]
-        [Given(@"I am required to complete the Pre Start Checklist for the day in mobile portal")]
-        public void ThenIAmRequiredToCompleteThePreStartChecklistForTheDayInMobilePortal()
-        {
-            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            webDriver.Url.Should().Contain(gblConfig.BSuiteURL + "/mobile?AJAX=preStartChecklList");
-            //Add PreStart Checklist page to the container
-            var preStartChecklistPage = new BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.PreStartPage(webDriver);
-            gblCurrentPage = preStartChecklistPage;
-
-        }
+        
 
 
 

@@ -91,7 +91,7 @@ namespace BSuiteE2ERegressionTest
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;
             Login(username, password, role);
-        }      
+        }
 
         [Given(@"login is successful")]
         [Then(@"login is successful")]
@@ -130,12 +130,21 @@ namespace BSuiteE2ERegressionTest
             if (bsuitePortal.Equals("BSuite Desktop"))
             {
                 GivenIHaveOpenedTheBSuiteDesktopPortal();
-                WhenILoginAsAUserWithUserProfileAsFollows(userProfile);
+                var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+                var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.DesktopPortal.LoginPage>();
+                var role = userProfile.Rows[0].Values.ToArray()[0].Trim();
+                var username = userProfile.Rows[0].Values.ToArray()[1].Trim();
+                var password = userProfile.Rows[0].Values.ToArray()[2].Trim();
+                gblCurrentUser.UserName = username;
+                gblCurrentUser.Password = password;
+                gblCurrentUser.Role = role;
+                LoginForTheFirstTIme(username, password, role);
+                //WhenILoginAsAUserWithUserProfileAsFollows(userProfile);
                 ThenLoginIsSuccessful();
             }
             else if (bsuitePortal.Equals("BSuite Mobile"))
             {
-                GivenIHaveOpenedTheBSuiteMobilePortal();                
+                GivenIHaveOpenedTheBSuiteMobilePortal();
                 var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
                 var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
                 var role = userProfile.Rows[0].Values.ToArray()[0].Trim();
@@ -143,11 +152,11 @@ namespace BSuiteE2ERegressionTest
                 var password = userProfile.Rows[0].Values.ToArray()[2].Trim();
                 gblCurrentUser.UserName = username;
                 gblCurrentUser.Password = password;
-                gblCurrentUser.Role = role;                
-                LoginForTheFirstTImeInMobile(username, password, role);                
+                gblCurrentUser.Role = role;
+                LoginForTheFirstTImeInMobile(username, password, role);
             }
         }
-        
+
         [When(@"I login as a User with role '([^']*)' for the first time in a day")]
         [Given(@"I login as a User with role '([^']*)' for the first time in a day")]
         [Then(@"I login as a User with role '([^']*)' for the first time in a day")]
@@ -188,7 +197,7 @@ namespace BSuiteE2ERegressionTest
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;
             LoginForTheFirstTIme(username, password, role);
-        }                 
+        }
 
         [When(@"I login as a User with role '([^']*)' for the first time in a day in mobile portal")]
         [Then(@"I login as a User with role '([^']*)' for the first time in a day in mobile portal")]
@@ -197,7 +206,7 @@ namespace BSuiteE2ERegressionTest
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
-            var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage> ();
+            var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
             var username = gblConfig.Users[role].UserName;
             var password = gblConfig.Users[role].UserPassword;
             gblCurrentUser.UserName = username;
@@ -263,7 +272,7 @@ namespace BSuiteE2ERegressionTest
             }
         }
 
-        
+
         /// <summary>
         /// Logging in for the first time in a day
         /// </summary>
@@ -294,31 +303,31 @@ namespace BSuiteE2ERegressionTest
             }
         }
 
-            public void LoginForTheFirstTImeInMobile(string username, string password, string role)
-            {
-                var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-                var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
-                var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
-                loginPage.Login(username, password);
+        public void LoginForTheFirstTImeInMobile(string username, string password, string role)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
+            loginPage.Login(username, password);
 
-                wait.Until(localDriver =>
-                    (localDriver.Url.Equals(gblConfig.BSuiteURL + "/mobile?AJAX=preStartChecklList", StringComparison.InvariantCultureIgnoreCase) ||
-                    (localDriver.Url.Equals(gblConfig.BSuiteURL + "/", StringComparison.InvariantCultureIgnoreCase))));
+            wait.Until(localDriver =>
+                (localDriver.Url.Equals(gblConfig.BSuiteURL + "/mobile?AJAX=preStartChecklList", StringComparison.InvariantCultureIgnoreCase) ||
+                (localDriver.Url.Equals(gblConfig.BSuiteURL + "/", StringComparison.InvariantCultureIgnoreCase))));
 
             //If PreStart Checklist is NOT presented, change user role to the desired role
-            
-                if (webDriver.Url.Equals(gblConfig.BSuiteURL + "/", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    //Add HomePage to the container
-                    var homePage = new BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage(webDriver); //HomePage name changed by veera 25OCt21
-                    gblOjectContainer.RegisterInstanceAs<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage>(homePage);  //HomePage name changed by veera 25OCt21
-                    //Assert.IsTrue(homePage.ChangeRole(role).isSuccess, $"Error: The User {gblCurrentUser.UserName} does not have the role {gblCurrentUser.Role} allocated in the BSuite system"); //Commented by veera 25Oct21
-                    //Assert.IsTrue(homePage.GetUserCurrentRole().Equals("[" + gblCurrentUser.Role + "]"));
-                    //Metrics.BSuiteSoftwareVersion = webDriver.Title.Replace("Home - BSuite - ", "");
-                    gblOjectContainer.RegisterInstanceAs<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage>(homePage);  //HomePage name changed by veera 25OCt21
-                 }
 
+            if (webDriver.Url.Equals(gblConfig.BSuiteURL + "/", StringComparison.InvariantCultureIgnoreCase))
+            {
+                //Add HomePage to the container
+                var homePage = new BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage(webDriver); //HomePage name changed by veera 25OCt21
+                gblOjectContainer.RegisterInstanceAs<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage>(homePage);  //HomePage name changed by veera 25OCt21
+                                                                                                                              //Assert.IsTrue(homePage.ChangeRole(role).isSuccess, $"Error: The User {gblCurrentUser.UserName} does not have the role {gblCurrentUser.Role} allocated in the BSuite system"); //Commented by veera 25Oct21
+                                                                                                                              //Assert.IsTrue(homePage.GetUserCurrentRole().Equals("[" + gblCurrentUser.Role + "]"));
+                                                                                                                              //Metrics.BSuiteSoftwareVersion = webDriver.Title.Replace("Home - BSuite - ", "");
+                gblOjectContainer.RegisterInstanceAs<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage>(homePage);  //HomePage name changed by veera 25OCt21
             }
+
+        }
 
         /// <summary>
         /// Logging in to BSuite Desktop Portal
@@ -393,7 +402,7 @@ namespace BSuiteE2ERegressionTest
                 var homePage = new BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage(webDriver);
                 gblOjectContainer.RegisterInstanceAs<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.HomePage>(homePage);
             }
-             //If PreStart Checklist is presented
+            //If PreStart Checklist is presented
             else if (webDriver.Url.Equals(gblConfig.BSuiteURL + "/mobile?AJAX=preStartChecklList", StringComparison.InvariantCultureIgnoreCase))//If PreStart Checklist is presented
             {
                 //Add PreStart Checklist page to the container
@@ -467,4 +476,3 @@ namespace BSuiteE2ERegressionTest
         }
     }
 }
-

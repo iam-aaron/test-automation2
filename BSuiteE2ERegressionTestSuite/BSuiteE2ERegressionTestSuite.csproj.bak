@@ -1,0 +1,167 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Health and Safety\PreStart Assessment Survey\Pre Start Checklist - Field Technicians Login- In Mobile - Not in Desktop - Copy.Report.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Creation\Call Center - Add Task.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Creation\Job Creation - Break Fix Job via different contracts - System Admin - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Creation\Login to BSuite Desktop Portal.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\System Administration\User Access to System Admin Screen.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Warehouses\Warehouses - Locations - Call Desk Manager - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Warehouses\Warehouses - Locations - Logistics Admin - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.1.1" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core.Linq" Version="1.0.0" />
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="93.0.4577.1500" />
+    <PackageReference Include="SpecFlow" Version="3.9.8" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
+    <PackageReference Include="SpecRun.Runner" Version="3.9.7" />
+
+    
+    <PackageReference Include="SpecRun.SpecFlow" Version="3.9.7" />
+    
+
+    
+
+    
+
+    
+
+    
+    <PackageReference Include="FluentAssertions" Version="6.1.0" />
+    
+
+    
+
+    
+
+    
+
+    
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    
+
+    
+
+    
+
+    
+
+    
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\Health and Safety\PreStart Assessment Survey\Pre Start Checklist - Field Technicians Login- In Mobile - Report.feature.cs">
+      <DependentUpon>Pre Start Checklist - Field Technicians Login- In Mobile - Report.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Health and Safety\PreStart Assessment Survey\Users with these Roles must complete PreStart Form when logging into BSuite via desktop portal.feature.cs">
+      <Visible>true</Visible>
+      <DependentUpon>%(Filename)</DependentUpon>
+      <DesignTime>true</DesignTime>
+      <AutoGen>true</AutoGen>
+    </Compile>
+    <Compile Update="Features\Job Creation\Call Center - Add Task.feature.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Job Creation\Job Creation - Project Bulk Load - System Admin.feature.cs">
+      <DependentUpon>Job Creation - Project Bulk Load - System Admin.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Job Creation\Login to BSuite Desktop Portal.feature.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Features\System Administration\User Access to System Admin Screen.feature.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Warehouses\Warehouses - Locations - State Supply Chain Manager.feature.cs">
+      <DependentUpon>Warehouses - Locations - State Supply Chain Manager.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Warehouses\Warehouses - Locations - Call Desk Manager.feature.cs">
+      <DependentUpon>Warehouses - Locations - Call Desk Manager.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Warehouses\Warehouses - Locations - Logistics Admin.feature.cs">
+      <DependentUpon>Warehouses - Locations - Logistics Admin.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Health and Safety\PreStart Assessment Survey\Pre Start Checklist - Field Technicians Login- In Mobile - Report.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Health and Safety\PreStart Assessment Survey\Users with these Roles must complete PreStart Form when logging into BSuite via desktop portal.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Job Creation\Call Center - Add Task.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Job Creation\Job Creation - Project Bulk Load - System Admin.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Job Creation\Login to BSuite Desktop Portal.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\System Administration\User Access to System Admin Screen.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Warehouses\Warehouses - Locations - State Supply Chain Manager.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Warehouses\Warehouses - Locations - Call Desk Manager.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Warehouses\Warehouses - Locations - Logistics Admin.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Drivers\chromedriver\V94\" />
+    <Folder Include="Drivers\chromedriver\V93\" />
+    <Folder Include="Drivers\Downloads\" />
+    <Folder Include="Models\BCall\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Drivers\BSuiteE2ERegressionReportTemplate.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Drivers\BSuiteRegressionTestReportTemplate.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Drivers\BSuiteRegressionTestReportTemplateOld.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Drivers\sorttable.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Drivers\TestDataConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

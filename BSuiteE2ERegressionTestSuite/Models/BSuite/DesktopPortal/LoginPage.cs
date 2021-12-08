@@ -45,6 +45,9 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.DesktopPortal
             //btnForgotPassword = driver.FindElement(By.XPath($"//*[@id=\"ctl0_MainContent_mainLoginPanel\"]/table/tbody/tr[4]/td/div/input[2]"));
         }
 
+        
+
+
         /// <summary>
         /// Login
         /// </summary>

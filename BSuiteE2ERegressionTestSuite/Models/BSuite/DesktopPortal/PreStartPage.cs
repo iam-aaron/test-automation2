@@ -132,6 +132,7 @@ namespace BSuiteE2ERegressionTest.Models.BSuite.DesktopPortal
                 if (userResponse)
                 {
                     yesResponseInput.Click();
+                    System.Threading.Thread.Sleep(5000);
                     System.Threading.Thread.Sleep(2000);
                 }
                 else

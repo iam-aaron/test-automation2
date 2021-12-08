@@ -1,29 +1,59 @@
 {
-  "Environments": [    
+  "Environments": [
     {
       "TestEnvName": "TTN",
       "IsSelected": "Yes",
-      "BSuiteURL": "https://3.104.140.233"
+      //"BSuiteURL": "https://ttn.tstingbsuite.net",
+      "BSuiteURL": "https://10.174.49.213",
+      //"BSuiteHydraDbServer": "bsuite-ttn-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteHydraDbServer": "10.174.49.252",
+      "BSuiteHydraDbName": "hydra",
+      "BSuiteHydraDbPort": "3306",
+      "BSuiteHydraDbSshHostName": "10.174.49.181",
+      "BSuiteHydraDbSshUserName": "bastion",
+      "BSuiteHydraDbUserId": "kizhakka",
+      "BSuiteHydraDbPassword": "C>93pQ73"
     },
     {
       "TestEnvName": "TST",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233"
+      //"BSuiteURL": "https://tstingbsuite.net",
+      "BSuiteURL": "https://10.174.50.113",
+      "BSuiteHydraDbServer": "bsuite-ttn-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteHydraDbName": "hydra",
+      "BSuiteHydraDbPort": "3306",
+      "BSuiteHydraDbSshHostName": "10.174.49.181",
+      "BSuiteHydraDbSshUserName": "bastion",
+      "BSuiteHydraDbUserId": "kizhakka",
+      "BSuiteHydraDbPassword": "C>93pQ73"
     },
     {
       "TestEnvName": "SIT",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233"
+      //"BSuiteURL": "https://sit.tstingbsuite.net",
+      "BSuiteURL": "https://10.174.50.113",
+      //"BSuiteHydraDbServer": "bsuite-sit-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteHydraDbServer": "10.174.51.224",
+      "BSuiteHydraDbName": "hydra",
+      "BSuiteHydraDbPort": "3306",
+      "BSuiteHydraDbSshHostName": "10.174.49.181",
+      "BSuiteHydraDbSshUserName": "bastion",
+      "BSuiteHydraDbUserId": "kizhakka",
+      "BSuiteHydraDbPassword": "C>93pQ73"
     },
     {
       "TestEnvName": "UAT",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233"
-    },
-    {
-      "TestEnvName": "PRD",
-      "IsSelected": "No",
-      "BSuiteURL": "https://bsuite.net"
+      //"BSuiteURL": "https://uat.tstingbsuite.net"
+      "BSuiteURL": "https://10.174.51.193",
+      //"BSuiteHydraDbServer": "bsuite-sit-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteHydraDbServer": "10.174.51.224",
+      "BSuiteHydraDbName": "hydra",
+      "BSuiteHydraDbPort": "3306",
+      "BSuiteHydraDbSshHostName": "10.174.49.181",
+      "BSuiteHydraDbSshUserName": "bastion",
+      "BSuiteHydraDbUserId": "kizhakka",
+      "BSuiteHydraDbPassword": "C>93pQ73"
     }
   ],
   "Users": [
@@ -139,8 +169,9 @@
     },
     {
       "Role": "Field Technician",
-      "UserName": "TestField167Tech167",
+      "UserName": "TestField167Tech2",
       "Password": "bsuite"
+
     },
     {
       "Role": "Finance",
@@ -189,18 +220,18 @@
     },
     {
       "Role": "Logistics Storeman",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Logistics Storeman (Casual)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
+      "UserName": "TestLogStoreman1",
+      "Password": "bsuite"
     },
     {
       "Role": "Logistics Storeman (Limited CallDesk)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
+      "UserName": "TestLogStoreman1",
+      "Password": "bsuite"
+    },
+    {
+      "Role": "Logistics Storeman (Casual)",
+      "UserName": "TestLogStoreman1",
+      "Password": "bsuite"
     },
     {
       "Role": "Logistics Supervisor",
@@ -209,7 +240,7 @@
     },
     {
       "Role": "Logistics Technician",
-      "UserName": "TestLog177Tech177",
+      "UserName": "TestLog177Tech10",
       "Password": "bsuite"
     },
     {

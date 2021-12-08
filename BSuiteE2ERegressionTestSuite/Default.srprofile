@@ -9,7 +9,7 @@
   <!-- <Report copyAlsoToBaseFolder="true"> -->
     <!-- <Template name="BSuiteRegressionTestReportTemplate.cshtml" outputName="BSuiteRegressionTestReport_{now:yyyy-MM-dd-HHmmss}.xml" /> -->
   <!-- </Report> -->
-  <Execution stopAfterFailures="0" testThreadCount="1" testSchedulingMode="Sequential" />
+  <Execution stopAfterFailures="0" testThreadCount="1" testSchedulingMode="Sequential" retryFor="None" retryCount="0"/>
   <!-- For collecting by a SpecRun server update and enable the following element. For using the 
       collected statistics, set testSchedulingMode="Adaptive" attribute on the <Execution> element.
     <Server serverUrl="http://specrunserver:6365" publishResults="true" />

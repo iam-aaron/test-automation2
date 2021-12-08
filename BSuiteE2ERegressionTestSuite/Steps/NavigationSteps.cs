@@ -26,6 +26,7 @@ namespace BSuiteE2ERegressionTest
         }
 
         [Given(@"I have navigated to '([^']*)' page from the top menu")]
+        [Given(@"I can navigate to '([^']*)' page from the top menu")]
         [Then(@"I can navigate to '([^']*)' page from the top menu")]
         [When(@"I can navigate to '([^']*)' page from the top menu")]
         public void GivenIHaveNavigatedToPageFromTheTopMenu(string topMenuItem)
@@ -57,6 +58,7 @@ namespace BSuiteE2ERegressionTest
             wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[subMenuItem].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[subMenuItem].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             gblMenuItemSelected = UIMap.UIPageMap[subMenuItem].resourceName;
+
             PerformActions(testVectorDataTable);
         }
 
@@ -69,6 +71,16 @@ namespace BSuiteE2ERegressionTest
             PerformActions(testVectorDataTable);
         }
 
+        [Given(@"Daily preStartChecklList Should not be displayed")]
+        [When(@"Daily preStartChecklList Should not be displayed")]
+        [Then(@"Daily preStartChecklList Should not be displayed")]
+        public void DailyPrestartChecklistShouldnotbedisplayed()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            Assert.IsFalse(webDriver.Url.Contains("?AJAX=preStartChecklList", StringComparison.InvariantCultureIgnoreCase));
+
+        }
+
         [Then(@"a new Field Task is saved with the following Client Targets")]
         public void ThenANewFieldTaskIsSavedWithTheFollowingClientTargets(Table testVectorDataTable)
         {
@@ -77,7 +89,24 @@ namespace BSuiteE2ERegressionTest
 
             Assert.IsTrue(ReadPageElement("Task ##")["Task ##"].Count == 1,
                 message: "New Task/Job was not created.");
+
         }
+
+        [Then(@"I fetch the task number")]
+        public void ThenIFetchTheTaskNumber()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var taskNumber = UIMap.UIElementMap.Find(z => (z.elementName.Equals("TaskNumber"))).elementId;
+            //wait.Until(ExpectedConditions.ElementExists(By.XPath(taskNumber)));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(taskNumber)));
+            gblTaskNumber = webDriver.FindElement(By.XPath(taskNumber)).Text;
+            Console.WriteLine(gblTaskNumber);
+
+
+
+        }
+
 
         [Given(@"I click the '([^']*)' button")]
         [When(@"I click the '([^']*)' button")]
@@ -86,6 +115,60 @@ namespace BSuiteE2ERegressionTest
         {
 
             PerformAction(new Dictionary<string, string>() { { buttonName, "Click" } });
+        }
+
+        [Given(@"I am required to change the Status to '([^']*)'")]
+        [When(@"I am required to change the Status to '([^']*)'")]
+        [Then(@"I am required to change the Status to '([^']*)'")]
+        public void GivenIAmRequiredToChangeTheStatusTo(string statusValue)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(50));
+            var totalRows = webDriver.FindElements(By.XPath("//form[@id='updateStatusF']/table/tbody/tr"));
+            gblMenuItemSelected = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIPageMap["Status Update Task"].resourceName;
+            //gblMenuItemSelected = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIPageMap["BSuite on WAP"].resourceName;
+
+
+            foreach (var eachRow in totalRows)
+            {
+                var totalColumn = eachRow.FindElements(By.TagName("td"));
+                if (totalColumn[0].Text.Equals("Status"))
+                {
+                    IWebElement webElement = totalColumn[1].FindElement(By.TagName("select"));
+                    var selectElement = new OpenQA.Selenium.Support.UI.SelectElement(webElement);
+                    foreach (IWebElement element in selectElement.Options)
+                    {
+                        if (element.Text == statusValue)
+                        {
+                            element.Click();
+                            System.Threading.Thread.Sleep(2000);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        [When(@"I have clicked '([^']*)' button on Mobile Portal")]
+        public void WhenIHaveClickedButton(string button)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals(button))).elementId;
+            webDriver.FindElement(By.XPath(id)).Click();
+            System.Threading.Thread.Sleep(2000);
+        }
+
+
+
+        [When(@"I click on '([^']*)' link")]
+        [Then(@"I click on '([^']*)' link")]
+        [Given(@"I click on '([^']*)' link")]
+        public void WhenIClickOnLink(string linkText)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            webDriver.FindElement(By.LinkText(linkText)).Click();
+            System.Threading.Thread.Sleep(4000);
         }
 
         [Given(@"I have clicked '(.*)' link and entered details as follows")]
@@ -126,7 +209,7 @@ namespace BSuiteE2ERegressionTest
                 IList<string> totWindowHandles = new List<string>(webDriver.WindowHandles);
                 webDriver.SwitchTo().Window(totWindowHandles[1]);
                 var actionMessage = verifyNewlyOpenedWindowDetailsForProjectBulkLoad();
-                Assert.IsTrue(actionMessage.Contains(gblTaskNumberForBulkUpload[1] + "\' At Status \'QUEUED\' Via Email"));
+                Assert.IsTrue(actionMessage.Contains(gblTaskNumberForBulkUpload[1] + "\' At Status \'QUEUED\' Via"));
                 webDriver.SwitchTo().Window(webDriver.WindowHandles[1]).Close();
                 webDriver.SwitchTo().Window(webDriver.WindowHandles[0]);
             }
@@ -140,21 +223,30 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(30));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.LinkText(linkTextName)));
-            webDriver.FindElement(By.LinkText(linkTextName)).Click();
+            webDriver.FindElement(By.LinkText(linkTextName)).Click();           
             System.Threading.Thread.Sleep(3000);
         }
 
-        [Given(@"Daily preStartChecklList Should not be displayed")]
-        [When(@"Daily preStartChecklList Should not be displayed")]
-        [Then(@"Daily preStartChecklList Should not be displayed")]
-        public void DailyPrestartChecklistShouldnotbedisplayed()
+
+
+        [Given(@"The Agent Technician is NOT presented with the Daily PreStart Form")]
+        [When(@"The Agent Technician is NOT presented with the Daily PreStart Form")]
+        [Then(@"The Agent Technician is NOT presented with the Daily PreStart Form")]
+        public void TheAgentTechnicianisNOTpresentedwiththeDailyPreStartForm()
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            Assert.IsFalse(webDriver.Url.Contains("?AJAX=preStartChecklList", StringComparison.InvariantCultureIgnoreCase));
-
+            if (webDriver.Url.Contains("mobile"))
+            {
+                Assert.IsFalse(webDriver.Url.Contains("?AJAX=preStartChecklList", StringComparison.InvariantCultureIgnoreCase));
+            }
+            else
+            {
+                Assert.IsFalse(webDriver.Url.Contains("prestart", StringComparison.InvariantCultureIgnoreCase));
+            }
         }
 
         [Given(@"I click the '([^']*)' button to load details")]
+        [When(@"I click the '([^']*)' button to load details")]
         public void GivenIClickTheButtonToLoadDetails(string buttonName)
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
@@ -175,17 +267,6 @@ namespace BSuiteE2ERegressionTest
         public void GivenIFetchTheWarehouseDetails()
         {
             fetchWarehouseIdAndAddress();
-        }
-
-        [Then(@"I fetch the task number")]
-        public void ThenIFetchTheTaskNumber()
-        {
-            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(50));
-            var taskNumber = UIMap.UIElementMap.Find(z => (z.elementName.Equals("TaskNumber"))).elementId;
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath(taskNumber)));
-            gblTaskNumber = webDriver.FindElement(By.XPath(taskNumber)).Text;
-            Console.WriteLine(gblTaskNumber);
         }
 
         [Given(@"I have navigated to '([^']*)' page from '([^']*)' in '([^']*)' top menu")]
@@ -237,6 +318,8 @@ namespace BSuiteE2ERegressionTest
             webDriver.FindElement(By.Name(id)).Click();
         }
 
+
+
         [Then(@"A new window is displayed  for '([^']*)'")]
         public void ThenANewWindowIsDisplayedFor(string textToVerify)
         {
@@ -247,7 +330,7 @@ namespace BSuiteE2ERegressionTest
                 IList<string> totWindowHandles = new List<string>(webDriver.WindowHandles);
                 webDriver.SwitchTo().Window(totWindowHandles[1]);
 
-                
+
 
                 webDriver.SwitchTo().Window(webDriver.WindowHandles[1]).Close();
                 webDriver.SwitchTo().Window(webDriver.WindowHandles[0]);
@@ -275,6 +358,7 @@ namespace BSuiteE2ERegressionTest
                         executor.ExecuteScript("arguments[0].click();", actualElement);
                         System.Threading.Thread.Sleep(3000);
                         break;
+
                     }
 
                 }
@@ -294,6 +378,8 @@ namespace BSuiteE2ERegressionTest
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             webDriver.FindElement(By.LinkText(linkText)).Click();
+
+
             System.Threading.Thread.Sleep(2000);
         }
 
@@ -374,7 +460,7 @@ namespace BSuiteE2ERegressionTest
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[subMenuItem].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[subMenuItem].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
-            gblMenuItemSelected = UIMap.UIPageMap[subMenuItem].resourceName;            
+            gblMenuItemSelected = UIMap.UIPageMap[subMenuItem].resourceName;
             userExistsInToList(gbluserFullName, toList);
             PerformAction(new Dictionary<string, string>() { { fromList, gbluserFullName } });
             PerformAction(new Dictionary<string, string>() { { "Add Technicians", "Click" } });
@@ -385,13 +471,14 @@ namespace BSuiteE2ERegressionTest
         public void GivenIAddTheTechnicianFromToInPage(string technicianName, string fromList, string toList, string subMenuItem)
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             var userFullName = "";
             wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[subMenuItem].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[subMenuItem].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             gblMenuItemSelected = UIMap.UIPageMap[subMenuItem].resourceName;
-            userFullName=fetchUserFullNameFromEditReferenceWatchList(technicianName, fromList);
-            if(userFullName.Equals(""))
+            userFullName = fetchUserFullNameFromEditReferenceWatchList(technicianName, fromList);
+            if (userFullName.Equals(""))
             {
                 userFullName = fetchUserFullNameFromEditReferenceWatchList(technicianName, toList);
                 gbluserFullName = userFullName;
@@ -405,7 +492,7 @@ namespace BSuiteE2ERegressionTest
             else
             {
                 PerformAction(new Dictionary<string, string>() { { "Add Technicians", "Click" } });
-            }  
+            }
             System.Threading.Thread.Sleep(2000);
         }
 
@@ -435,24 +522,25 @@ namespace BSuiteE2ERegressionTest
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             var id = UIMap.UIElementMap.Find(z => (z.elementName.Equals("Unassigned Panel"))).elementId;
             var flag = 0;
-            IWebElement unAssignedPanelTable=webDriver.FindElement(By.XPath(id));
-            var unAssignedPanelTableRow=unAssignedPanelTable.FindElements(By.TagName("tr")).ToList();
-            for(int i=1;i<= unAssignedPanelTableRow.Count;i++)
+            IWebElement unAssignedPanelTable = webDriver.FindElement(By.XPath(id));
+            var unAssignedPanelTableRow = unAssignedPanelTable.FindElements(By.TagName("tr")).ToList();
+            for (int i = 1; i <= unAssignedPanelTableRow.Count; i++)
+
             {
-                var unAssignedPanelTableRowColumn= unAssignedPanelTableRow[i].FindElements(By.TagName("td"));
-                var unAssignedPanelTableRowStateValue=unAssignedPanelTableRowColumn[0].Text;
+                var unAssignedPanelTableRowColumn = unAssignedPanelTableRow[i].FindElements(By.TagName("td"));
+                var unAssignedPanelTableRowStateValue = unAssignedPanelTableRowColumn[0].Text;
                 if (unAssignedPanelTableRowStateValue.Equals(stateId))
                 {
-                    var unAssignedPanelTableRowWorkType=unAssignedPanelTableRowColumn[1].Text;
-                    if(unAssignedPanelTableRowWorkType.Equals(workType))
+                    var unAssignedPanelTableRowWorkType = unAssignedPanelTableRowColumn[1].Text;
+                    if (unAssignedPanelTableRowWorkType.Equals(workType))
                     {
-                        var unAssignedTasks=unAssignedPanelTableRowColumn[2].FindElement(By.TagName("div"));
-                        var actualTasks=unAssignedTasks.FindElements(By.TagName("div"));
-                        foreach(var eachTask in actualTasks)
+                        var unAssignedTasks = unAssignedPanelTableRowColumn[2].FindElement(By.TagName("div"));
+                        var actualTasks = unAssignedTasks.FindElements(By.TagName("div"));
+                        foreach (var eachTask in actualTasks)
                         {
-                            var actualTaskNumberLink=eachTask.FindElement(By.TagName("a"));
+                            var actualTaskNumberLink = eachTask.FindElement(By.TagName("a"));
                             var actualTaskNumber = actualTaskNumberLink.Text;
-                            if(actualTaskNumber.Equals(gblTaskNumber))
+                            if (actualTaskNumber.Equals(gblTaskNumber))
                             {
                                 actualTaskNumberLink.Click();
                                 System.Threading.Thread.Sleep(2000);
@@ -462,7 +550,7 @@ namespace BSuiteE2ERegressionTest
                         }
                     }
                 }
-                if(flag==1)
+                if (flag == 1)
                 {
                     flag = 0;
                     break;
@@ -478,7 +566,8 @@ namespace BSuiteE2ERegressionTest
             wait.Until(localDriver => webDriver.WindowHandles.Count > 1);
             gblMenuItemSelected = "fieldtaskstatus/edit";
             int windowCount = webDriver.WindowHandles.Count();
-            if (windowCount > 1)            {
+            if (windowCount > 1)
+            {
                 IList<string> totWindowHandles = new List<string>(webDriver.WindowHandles);
                 webDriver.SwitchTo().Window(totWindowHandles[1]);
                 var taskId = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Task No Status"))).elementId;
@@ -506,13 +595,13 @@ namespace BSuiteE2ERegressionTest
             {
                 IList<string> totWindowHandles = new List<string>(webDriver.WindowHandles);
                 webDriver.SwitchTo().Window(totWindowHandles[1]);
-                var taskId= UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Task No Status"))).elementId;
+                var taskId = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Task No Status"))).elementId;
                 gblTaskNumber = webDriver.FindElement(By.Id(taskId)).Text;
                 PerformAction(new Dictionary<string, string>() { { elementName, dropDownValue } });
                 if (dropDownValue.Equals("TAKEN"))
                 {
                     var dropDownTechnician = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Technician"))).elementId;
-                    var webElement=webDriver.FindElement(By.Id(dropDownTechnician));                    
+                    var webElement = webDriver.FindElement(By.Id(dropDownTechnician));
                     var selectElement = new OpenQA.Selenium.Support.UI.SelectElement(webElement);
                     selectElement.SelectByIndex(1);
                 }
@@ -532,6 +621,8 @@ namespace BSuiteE2ERegressionTest
 
         [Then(@"I verify the task in My Tasks page on mobile portal")]
         public void ThenIVerifyTheTaskInMyTasksPageOnMobilePortal()
+
+
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
@@ -540,17 +631,17 @@ namespace BSuiteE2ERegressionTest
             var id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals("taskNumber"))).elementId;
             List<IWebElement> taskNumbers = webDriver.FindElements(By.XPath(id)).ToList();
             foreach (IWebElement eachTaskNumber in taskNumbers)
-                {
-                    var actualTaskNumber = eachTaskNumber.Text;
-                    
-                    if (actualTaskNumber.Contains(gblTaskNumber))
-                    {
-                        Assert.IsTrue(actualTaskNumber.Contains(gblTaskNumber));
-                        flag = 1;
-                        break;
-                    }
+            {
+                var actualTaskNumber = eachTaskNumber.Text;
 
+                if (actualTaskNumber.Contains(gblTaskNumber))
+                {
+                    Assert.IsTrue(actualTaskNumber.Contains(gblTaskNumber));
+                    flag = 1;
+                    break;
                 }
+
+            }
             if (flag == 0)
             {
                 Assert.IsTrue(false);
@@ -597,7 +688,7 @@ namespace BSuiteE2ERegressionTest
             wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             gblMenuItemSelected = UIMap.UIPageMap[pageName].resourceName;
-            IWebElement webElementTaskNumber = null;            
+            IWebElement webElementTaskNumber = null;
             PerformAction(new Dictionary<string, string>() { { "Task No", gblTaskNumber } });
             PerformAction(new Dictionary<string, string>() { { "Search Field Tasks", "Click" } });
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Tasks Result"))).elementId;
@@ -605,7 +696,7 @@ namespace BSuiteE2ERegressionTest
             string actualTaskNum = webElementTaskNumber.Text;
             Assert.IsTrue(actualTaskNum.Contains(gblTaskNumber));
             System.Threading.Thread.Sleep(2000);
-            webElementTaskNumber.Click();            
+            webElementTaskNumber.Click();
         }
 
         [Given(@"I click '([^']*)' button")]
@@ -614,16 +705,16 @@ namespace BSuiteE2ERegressionTest
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(buttonName))).elementId;
-            try 
+            try
             {
-                webDriver.FindElement(By.Id(id)).Click();                
+                webDriver.FindElement(By.Id(id)).Click();
                 System.Threading.Thread.Sleep(5000);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
-            
+
         }
 
         [Given(@"I select the task number with status as '([^']*)'")]
@@ -631,19 +722,19 @@ namespace BSuiteE2ERegressionTest
         [Then(@"I select the task number with status as '([^']*)'")]
         public void GivenISelectTheTaskNumberWithStatusAs(string taskStatus)
         {
-            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();            
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Tasks Result Table"))).elementId;
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
-            IWebElement resultTable=webDriver.FindElement(By.XPath(id));
-           // var flag = 0;
-            var tableRows=resultTable.FindElements(By.TagName("tr")).ToList();
-            foreach(var eachRow in tableRows)
+            IWebElement resultTable = webDriver.FindElement(By.XPath(id));
+            // var flag = 0;
+            var tableRows = resultTable.FindElements(By.TagName("tr")).ToList();
+            foreach (var eachRow in tableRows)
             {
-                var eachRowData=eachRow.FindElements(By.TagName("td")).ToList();
-                if(eachRowData[5].Text.Equals(taskStatus))
+                var eachRowData = eachRow.FindElements(By.TagName("td")).ToList();
+                if (eachRowData[5].Text.Equals(taskStatus))
                 {
-                    eachRowData[0].Click();                    
+                    eachRowData[0].Click();
                     break;
                 }
                 /*foreach(var eachData in eachRowData)
@@ -661,7 +752,7 @@ namespace BSuiteE2ERegressionTest
                     flag = 0;
                     break;
                 }*/
-            } 
+            }
         }
 
         [Given(@"I click PreStart link for the '([^']*)' No response and reactivate it for '([^']*)'")]
@@ -674,7 +765,7 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
             wait.Until(localDriver => localDriver.Url.Contains($"taskbytech", StringComparison.InvariantCultureIgnoreCase));
-            if(responseNumber.Equals("first"))
+            if (responseNumber.Equals("first"))
             {
                 WhenIClickTheButton("Edit Preferences");
                 var technicianName = gblConfig.Users[role].UserName;
@@ -689,8 +780,8 @@ namespace BSuiteE2ERegressionTest
                 PerformAction(new Dictionary<string, string>() { { "Add Technicians", "Click" } });
                 System.Threading.Thread.Sleep(2000);
                 gbluserFullName = userFullName;
-                WhenIClickTheButton("Save and Update");                
-            }            
+                WhenIClickTheButton("Save and Update");
+            }
             clickPreStartLinkToProvideResponseAndReactivate(gbluserFullName);
             var expectedResponseNumber = 0;
             switch (responseNumber)
@@ -720,7 +811,7 @@ namespace BSuiteE2ERegressionTest
         [Then(@"I fetch the '([^']*)' full name")]
         public void ThenIFetchTheFullName(string role)
         {
-            
+
             ThenILogOffFromBsuitePortal("Desktop");
             GivenIHaveOpenedTheBSuiteDesktopPortal();
             LoginToBSuiteDesktopPortal(role);
@@ -745,7 +836,7 @@ namespace BSuiteE2ERegressionTest
                 testVectorData.Add(row.Values.ToArray()[0].Trim(), "Exist");
             }
             PerformAction(testVectorData);
-            
+
         }
 
         [Given(@"I verify the '([^']*)' page has the following buttons")]
@@ -775,19 +866,19 @@ namespace BSuiteE2ERegressionTest
             {
                 id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Assigned to Techs Table"))).elementId;
             }
-            else if(tabName.Equals("Assigned to Agents"))
+            else if (tabName.Equals("Assigned to Agents"))
             {
                 id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Assigned to Agents Table"))).elementId;
             }
-            else if(tabName.Equals("Unassigned"))
+            else if (tabName.Equals("Unassigned"))
             {
                 id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Unassigned Table"))).elementId;
             }
-            else 
+            else
             {
                 id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Pending Table"))).elementId;
             }
-            
+
             List<IWebElement> pendingTechniciansList = webDriver.FindElements(By.XPath(id)).ToList();
             var tableHeader = pendingTechniciansList[0].FindElements(By.TagName("th"));
             foreach (var eachData in tableHeader)
@@ -799,7 +890,7 @@ namespace BSuiteE2ERegressionTest
                 }
             }
 
-            for (int i=2;i<=pendingTechniciansList.Count;i++)
+            for (int i = 2; i <= pendingTechniciansList.Count; i++)
             {
                 if ((tableHeaderName.Equals("Technicians")) || (tableHeaderName.Equals("Agents/Clients")))
                 {
@@ -817,7 +908,7 @@ namespace BSuiteE2ERegressionTest
                 {
                     dataId = id + "[" + i + "]" + "/" + "td[" + increment + "]";
                     var preStartStatus = webDriver.FindElement(By.XPath(dataId)).Text;
-                    if((preStartStatus.Contains("Not Started"))|| (preStartStatus.Contains("Pre Start")))
+                    if ((preStartStatus.Contains("Not Started")) || (preStartStatus.Contains("Pre Start")))
                     {
                         Assert.IsTrue(true);
                         flag = 1;
@@ -838,9 +929,9 @@ namespace BSuiteE2ERegressionTest
 
                 }
             }
-            if(flag==0)
+            if (flag == 0)
             {
-                Assert.IsTrue(false);                
+                Assert.IsTrue(false);
             }
         }
 
@@ -854,22 +945,22 @@ namespace BSuiteE2ERegressionTest
 
         [Given(@"I verify the '([^']*)' '([^']*)' added to watch list under '([^']*)'")]
         [Then(@"I verify the '([^']*)' '([^']*)' added to watch list under '([^']*)'")]
-        public void GivenIVerifyTheAddedToWatchListUnder(string tableHeaderName, string stateName, string tabName)        
+        public void GivenIVerifyTheAddedToWatchListUnder(string tableHeaderName, string stateName, string tabName)
         {
             int increment = 0;
             var dataId = "";
             var flag = 0;
             var id = "";
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            if(tabName.Equals("Unassigned"))
+            if (tabName.Equals("Unassigned"))
             {
                 id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Unassigned Table"))).elementId;
             }
-            else 
+            else
             {
                 id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Pending Table"))).elementId;
             }
-          
+
             List<IWebElement> unAssignedTasks = webDriver.FindElements(By.XPath(id)).ToList();
             var tableHeader = unAssignedTasks[0].FindElements(By.TagName("th"));
             foreach (var eachData in tableHeader)
@@ -905,10 +996,10 @@ namespace BSuiteE2ERegressionTest
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Tasks Result Table"))).elementId;
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
-            IWebElement resultTable = webDriver.FindElement(By.XPath(id));           
+            IWebElement resultTable = webDriver.FindElement(By.XPath(id));
             var tableRows = resultTable.FindElements(By.TagName("tr")).ToList();
-            var eachRowData = tableRows[1].FindElements(By.TagName("td")).ToList();            
-            var dataLink=eachRowData[0].FindElement(By.TagName("a"));
+            var eachRowData = tableRows[1].FindElements(By.TagName("td")).ToList();
+            var dataLink = eachRowData[0].FindElement(By.TagName("a"));
             if (dataLink.GetAttribute("href").Contains("fieldtaskstatus/edit"))
             {
                 gblTaskNumber = dataLink.Text;
@@ -941,6 +1032,12 @@ namespace BSuiteE2ERegressionTest
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(checkBoxName))).elementId;
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            IWebElement chkBox = webDriver.FindElement(By.XPath(id));
+            if (chkBox.Selected)
+            {
+                webDriver.FindElement(By.XPath(id)).Click();
+                System.Threading.Thread.Sleep(1000);
+            }
             webDriver.FindElement(By.XPath(id)).Click();
             System.Threading.Thread.Sleep(1000);
         }
@@ -958,7 +1055,7 @@ namespace BSuiteE2ERegressionTest
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
-            Dictionary<string , string> colourMap = new Dictionary<string, string>()            
+            Dictionary<string, string> colourMap = new Dictionary<string, string>()
             {
                 {"//div[text()='OnCall']","90ff90"},
                 {"//div[text()='OffCall']","c0c0c0"},
@@ -967,9 +1064,9 @@ namespace BSuiteE2ERegressionTest
                 {"//div[text()='Meeting']","9f4453"},
                 {"//div[text()='Remote Depot']","646231"},
                 {"//div[text()='Training']","b35c3a"},
-            };            
+            };
             var id = "";
-            foreach(var row in colourMap)
+            foreach (var row in colourMap)
             {
                 id = row.Key;
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
@@ -977,7 +1074,7 @@ namespace BSuiteE2ERegressionTest
                 Console.WriteLine(bgColourRGBFormat);
                 Color colourName = ParseColor(bgColourRGBFormat);
                 Assert.IsTrue(colourName.Name.Contains(row.Value));
-            }  
+            }
         }
 
         [Given(@"I verify that the column '([^']*)' is '([^']*)' as desired")]
@@ -987,14 +1084,14 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var flag = 0;
-            gblMenuItemSelected = "fieldtaskstatus";                      
+            gblMenuItemSelected = "fieldtaskstatus";
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Tasks Result Table Header"))).elementId;
             var tableHeader = webDriver.FindElement(By.XPath(id));
             var tableHeaderRow = tableHeader.FindElement(By.TagName("tr"));
             var tableHeaders = tableHeaderRow.FindElements(By.TagName("th"));
-            foreach(var head in tableHeaders)
+            foreach (var head in tableHeaders)
             {
-                if(status.Equals("viewed"))
+                if (status.Equals("viewed"))
                 {
                     var actualHead = head.FindElement(By.TagName("a")).Text;
                     if (actualHead.Contains(columnName))
@@ -1005,45 +1102,45 @@ namespace BSuiteE2ERegressionTest
                     }
                 }
             }
-            if(flag ==0)
+            if (flag == 0)
             {
                 Assert.IsTrue(false);
             }
         }
 
-            public Color ParseColor(string bgColourRGBFormat)
+        public Color ParseColor(string bgColourRGBFormat)
+        {
+            bgColourRGBFormat = bgColourRGBFormat.Trim();
+            if (bgColourRGBFormat.StartsWith("#"))
             {
-                bgColourRGBFormat = bgColourRGBFormat.Trim();
-                if (bgColourRGBFormat.StartsWith("#"))
+                return ColorTranslator.FromHtml(bgColourRGBFormat);
+            }
+            else if (bgColourRGBFormat.StartsWith("rgb")) //rgb or argb
+            {
+                int left = bgColourRGBFormat.IndexOf('(');
+                int right = bgColourRGBFormat.IndexOf(')');
+
+                if (left < 0 || right < 0)
+                    throw new FormatException("rgba format error");
+                string noBrackets = bgColourRGBFormat.Substring(left + 1, right - left - 1);
+
+                string[] parts = noBrackets.Split(',');
+
+                int r = int.Parse(parts[0], CultureInfo.InvariantCulture);
+                int g = int.Parse(parts[1], CultureInfo.InvariantCulture);
+                int b = int.Parse(parts[2], CultureInfo.InvariantCulture);
+
+                if (parts.Length == 3)
                 {
-                    return ColorTranslator.FromHtml(bgColourRGBFormat);
+                    return Color.FromArgb(r, g, b);
                 }
-                else if (bgColourRGBFormat.StartsWith("rgb")) //rgb or argb
+                else if (parts.Length == 4)
                 {
-                    int left = bgColourRGBFormat.IndexOf('(');
-                    int right = bgColourRGBFormat.IndexOf(')');
-
-                    if (left < 0 || right < 0)
-                        throw new FormatException("rgba format error");
-                    string noBrackets = bgColourRGBFormat.Substring(left + 1, right - left - 1);
-
-                    string[] parts = noBrackets.Split(',');
-
-                    int r = int.Parse(parts[0], CultureInfo.InvariantCulture);
-                    int g = int.Parse(parts[1], CultureInfo.InvariantCulture);
-                    int b = int.Parse(parts[2], CultureInfo.InvariantCulture);
-
-                    if (parts.Length == 3)
-                    {
-                        return Color.FromArgb(r, g, b);
-                    }
-                    else if (parts.Length == 4)
-                    {
-                        float a = float.Parse(parts[3], CultureInfo.InvariantCulture);
-                        return Color.FromArgb((int)(a * 255), r, g, b);
-                    }
+                    float a = float.Parse(parts[3], CultureInfo.InvariantCulture);
+                    return Color.FromArgb((int)(a * 255), r, g, b);
                 }
-                throw new FormatException("Not rgb, rgba or hexa color string");          
+            }
+            throw new FormatException("Not rgb, rgba or hexa color string");
 
         }
 
@@ -1164,15 +1261,7 @@ namespace BSuiteE2ERegressionTest
             }
         }
 
-        [When(@"I have clicked '([^']*)' button on Mobile Portal")]
-        public void WhenIHaveClickedButton(string button)
-        {
-            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
-            var id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals(button))).elementId;
-            webDriver.FindElement(By.XPath(id)).Click();
-            System.Threading.Thread.Sleep(2000);
-        }
+        
 
         [When(@"Status of the tasks is updated as TAKEN")]
         [Then(@"Status of the tasks is updated as TAKEN")]
@@ -1216,6 +1305,524 @@ namespace BSuiteE2ERegressionTest
                 }
             }
         }
+
+
+        [Given(@"I have navigated to '([^']*)' page from the top menu Lookup")]
+        [Then(@"I have navigated to '([^']*)' page from the top menu Lookup")]
+        [When(@"I have navigated to '([^']*)' page from the top menu Lookup")]
+        public void GivenIHaveNavigatedToPageFromTheTopMenuLookup(string topMenuItem)
+        {
+            GivenIHaveNavigatedToPageFromTheTopMenu(topMenuItem);
+        }
+
+        [Given(@"I click the '([^']*)' button to save the user details")]
+        public void GivenIClickTheButtonToSaveTheUserDetails(string save)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));           
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Save"))).elementId;
+            webDriver.FindElement(By.Id(id)).Click();
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.AlertIsPresent());
+            IAlert simpleAlert = webDriver.SwitchTo().Alert();
+            String alertText = simpleAlert.Text;
+            Console.WriteLine("Alert Text is :" + alertText);
+            simpleAlert.Accept();
+        }
+
+        [Then(@"I verify the user name newly added")]
+        public void ThenIVerifyTheUserNameNewlyAdded()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();            
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search User Results"))).elementId;
+            var userNameWebElement=webDriver.FindElement(By.XPath(id));
+            var userName=userNameWebElement.Text;
+            if(userName.Contains(gblCommonVariable))
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [Given(@"I click the '([^']*)' link to add cause category")]
+        public void GivenIClickTheLinkToAddCauseCategory(string linkName)
+        {
+            GivenIClickTheLink(linkName);
+            gblMenuItemSelected = UIMap.UIPageMap[linkName].resourceName;
+        }
+
+        [Then(@"I verify the category newly added")]
+        public void ThenIVerifyTheCategoryNewlyAdded()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();                        
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Seach Category Results"))).elementId;
+            var userNameWebElement = webDriver.FindElement(By.XPath(id));
+            var userName = userNameWebElement.Text;
+            if (userName.Contains(gblCommonVariable))
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [Given(@"I click the '([^']*)' button to save the details")]
+        [When(@"I click the '([^']*)' button to save the details")]
+        public void GivenIClickTheButtonToSaveTheDetails(string buttonName)
+        {
+            gblMenuItemSelected = "serviceplan";
+            PerformAction(new Dictionary<string, string>() { { buttonName, "Click" } });           
+        }
+
+        [Given(@"I enter into '([^']*)' frame and type as '([^']*)'")]
+        public void GivenIEnterIntoFrameAndTypeAs(string elementName, string textValue)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId;
+            var iFrameElement = webDriver.FindElement(By.Id("mce_editor_0"));
+            webDriver.SwitchTo().Frame(iFrameElement);
+            var webElement = webDriver.FindElement(By.ClassName(id));
+            webElement.SendKeys(textValue);
+            webDriver.SwitchTo().DefaultContent();
+     }
+
+        [Given(@"'([^']*)' page is displayed")]
+        [Then(@"'([^']*)' page is displayed")]
+        public void ThenPageIsDisplayed(string pageName)
+        {
+            GivenIHaveNavigatedToPageFromTheTopMenu(pageName);
+        }
+
+        [Then(@"I verify the service plan newly added")]
+        public void ThenIVerifyTheServicePlanNewlyAdded()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Service Plans Results"))).elementId;
+            var userNameWebElement = webDriver.FindElement(By.XPath(id));            
+            if (userNameWebElement.Displayed)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+
+        [Then(@"I verify the Action Type newly added")]
+        public void ThenIVerifyTheActionTypeNewlyAdded()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Action Type Results"))).elementId;
+            var userNameWebElement = webDriver.FindElement(By.XPath(id));
+            var actualText = userNameWebElement.Text;
+            if (actualText.Contains(gblCommonVariable))
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [When(@"I click the '([^']*)' button to search the details")]
+        public void WhenIClickTheButtonToSearchTheDetails(string buttonName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(buttonName))).elementId;
+            if (id.Contains("/"))
+            {
+                webDriver.FindElement(By.XPath(id)).Click();
+            }
+            else
+            {
+                webDriver.FindElement(By.Id(id)).Click();
+
+            }
+            System.Threading.Thread.Sleep(3000);
+        }
+
+        [Given(@"I select the '([^']*)' drop down value as '([^']*)' for the country '([^']*)' '([^']*)'")]
+        [When(@"I select the '([^']*)' drop down value as '([^']*)' for the country '([^']*)' '([^']*)'")]
+        public void GivenISelectTheDropDownValueAsForTheCountry(string dropDownName, string dropDownValue, string tableHeaderName, string countryName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = "";
+            int increment = 0;            
+            var flag = 0;
+            id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("List of Countries Header"))).elementId;
+            var webElementHeader = webDriver.FindElement(By.XPath(id));
+            List<IWebElement> tableHeader = webElementHeader.FindElements(By.TagName("th")).ToList();
+            foreach (var eachData in tableHeader)
+            {
+                increment++;
+                if (eachData.Text == tableHeaderName)
+                {
+                    break;
+                }
+            }
+            id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("List of Countries body"))).elementId;
+            var webElementBody=webDriver.FindElement(By.XPath(id));
+            var tableBodyRows=webElementBody.FindElements(By.TagName("tr")).ToList();
+            for(int i=1;i<=tableBodyRows.Count;i++)
+            {
+                id = "//table[@id='ctl0_MainContent_DataList']/tbody/tr["+i+"]//table/tbody/tr/td[" + increment + "]";
+                var actualName =webDriver.FindElement(By.XPath(id)).Text;
+                if(actualName.Contains(countryName))
+                {
+                    var locatorId = "ctl0_MainContent_DataList_ctl"+i+"_ctl2";
+                    var selectWebElement=webDriver.FindElement(By.Id(locatorId));
+                    var selectElement = new OpenQA.Selenium.Support.UI.SelectElement(selectWebElement);
+                    foreach (IWebElement element in selectElement.Options)
+                    {
+                        if (element.Text == dropDownValue)
+                        {
+                            element.Click();
+                            System.Threading.Thread.Sleep(2000);
+                            flag = 1;
+                            break;
+                        }
+                    }
+                }
+                if(flag==1)
+                {
+                    flag = 0;
+                    break;
+                }
+            }            
+        }
+
+        [Then(@"The '([^']*)' within the country '([^']*)' is displayed")]
+        public void ThenTheWithinTheCountryIsDisplayed(string elementName, string countryrName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            int increment = 0;
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId; ;
+            var tableRows = webDriver.FindElements(By.XPath(id)).ToList();
+            int count = tableRows.Count();
+            foreach (var row in tableRows)
+            {
+                var dataRow=row.FindElements(By.TagName("td"));
+                foreach(var data in dataRow)
+                {
+                    var actualCountryName=data.Text;
+                    if(actualCountryName.Contains(countryrName))
+                    {
+                        increment++;
+                        break;
+                    }
+                }
+            }
+            if(increment==count)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [When(@"I click the '([^']*)' button for the '([^']*)' '([^']*)'")]
+        public void WhenIClickTheButtonForThe(string buttonName, string tableHeaderName, string areaName)
+        {
+           var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = "";
+            int increment = 0;
+            var locatorId = "";
+            var locatorname = "";
+            IWebElement webElement = null;
+            id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("List of Regions Headers"))).elementId;
+            var webElementHeader = webDriver.FindElement(By.XPath(id));
+            List<IWebElement> tableHeader = webElementHeader.FindElements(By.TagName("th")).ToList();
+            foreach (var eachData in tableHeader)
+            {
+                increment++;
+                if (eachData.Text == tableHeaderName)
+                {
+                    break;
+                }
+            }
+            id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("List of Regions"))).elementId;
+            var tableBodyRows = webDriver.FindElements(By.XPath(id));            
+            for (int i = 1; i <= tableBodyRows.Count; i++)
+            {
+                id = "//table[@id='ctl0_MainContent_DataList']/tbody/tr[" + i + "]//table/tbody/tr/td[" + increment + "]";
+                var actualName = webDriver.FindElement(By.XPath(id)).Text;
+                if (actualName.Contains(areaName))
+                {
+                    if(buttonName.Equals("Zone Sets"))
+                    {
+                        locatorId = "ctl0_MainContent_DataList_ctl" + i + "_ViewZoneSets";
+                    }
+                    else if(buttonName.Equals("Zones"))
+                    {
+                        locatorId = "ctl0_MainContent_DataList_ctl" + i + "_ViewZone";                        
+                    }
+                    else if (buttonName.Equals("Sites"))
+                    {
+                        locatorId = "ctl0$MainContent$DataList$ctl"+i+"$ctl2";
+                        locatorname = "name";
+                    }
+                    else
+                    {
+                        locatorId = "ctl0_MainContent_DataList_ctl" + i + "_ViewAreas";
+                    }
+                    if (locatorname.Equals("name"))
+                    {
+                        webElement = webDriver.FindElement(By.Name(locatorId));
+                    }
+                    else
+                    {
+                        webElement = webDriver.FindElement(By.Id(locatorId));
+                    }                    
+                    webElement.Click();
+                    System.Threading.Thread.Sleep(2000);                    
+                    break;
+                }                
+            }
+        }
+
+        [Then(@"The '([^']*)' under the region '([^']*)' within the country '([^']*)' is displayed")]
+        public void ThenTheUnderTheRegionWithinTheCountryIsDisplayed_(string elementName, string areaName, string australia)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            int increment = 0;
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId; 
+            var tableRows = webDriver.FindElements(By.XPath(id)).ToList();
+            int count = tableRows.Count();
+            foreach (var row in tableRows)
+            {
+                var dataRow = row.FindElements(By.TagName("td"));
+                foreach (var data in dataRow)
+                {
+                    var actualCountryName = data.Text;
+                    if (actualCountryName.Contains(areaName))
+                    {
+                        increment++;
+                        break;
+                    }
+                }
+            }
+            if (increment == count)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [Then(@"The '([^']*)' under the area '([^']*)' within the Region '([^']*)' is displayed")]
+        public void ThenTheUnderTheAreaWithinTheRegionIsDisplayed(string elementName, string areaName, string name)
+        {
+            ThenTheUnderTheRegionWithinTheCountryIsDisplayed_(elementName, areaName, name);
+        }
+
+        [Then(@"The '([^']*)' under the zone set '([^']*)' within the area '([^']*)' is displayed")]
+        public void ThenTheUnderTheZoneSetWithinTheAreaIsDisplayed(string elementName, string areaName, string name)
+        {
+            ThenTheUnderTheRegionWithinTheCountryIsDisplayed_(elementName, areaName, name);
+        }
+
+        [Then(@"The '([^']*)' under the zone '([^']*)' within the zone set '([^']*)' is displayed")]
+        public void ThenTheUnderTheZoneWithinTheZoneSetIsDisplayed(string elementName, string areaName, string name)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();           
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId; ;
+            var tableRows = webDriver.FindElements(By.XPath(id)).ToList();
+            int count = tableRows.Count();            
+            if (count>1)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [Given(@"I click the '([^']*)' link to clone the user account")]
+        public void GivenIClickTheLinkToCloneTheUserAccount(string linkName)
+        {
+            GivenIClickTheLink(linkName);
+            gblMenuItemSelected = UIMap.UIPageMap[linkName].resourceName;
+        }
+
+        [Then(@"I fetch the user full name created successfully")]
+        public void ThenIFetchTheUserNameCreatedSuccessfully()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(20));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("UserName After Creation"))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(id)));
+            var userCreationText = webDriver.FindElement(By.Id(id)).Text;
+            var afterFirstSplit=userCreationText.Split(" ");
+            var afterSecondSplit = afterFirstSplit[7].Split(".");
+            gblCommonVariable = afterFirstSplit[6]+" "+ afterSecondSplit[0];
+        }
+
+        [Then(@"'([^']*)' is displayed")]
+        public void ThenIsDisplayed(string elementName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(20));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            IWebElement webElement = webDriver.FindElement(By.XPath(id));
+            Assert.IsTrue(webElement.Displayed);
+        }
+
+        [Given(@"I select a '([^']*)' and click the icon for Edit Record")]
+        public void GivenISelectAAndClickTheIconFor(string dataToSelect)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(20));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(dataToSelect))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            var tableRows=webDriver.FindElements(By.XPath(id));
+            int increment = 0;
+            foreach(var row in tableRows)
+            {
+                var data=row.FindElements(By.TagName("td"));
+                var partCode=data[0].Text;
+                var name=data[1].Text;
+                increment++;
+                if ((partCode!="") && (name != "s"))
+                {
+                    gblCommonVariable = partCode + " " + name;
+                    var editId = "ctl0_MainContent_DataList_ctl"+ increment + "_ctl1";
+                    webDriver.FindElement(By.Id(editId)).Click();
+                    gblCount = increment;
+                    System.Threading.Thread.Sleep(2000);
+                    break;
+                }
+            }
+        }
+
+        [Given(@"I select '([^']*)' from '([^']*)' drop down list")]
+        public void GivenISelectFromDropDownList(string dropDownValue, string dropDownName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(20));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(dropDownName))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            var tableRows = webDriver.FindElements(By.XPath(id));
+            var count=tableRows.Count-1;
+            var selectElement = new OpenQA.Selenium.Support.UI.SelectElement(tableRows[count]);
+            foreach (IWebElement element in selectElement.Options)
+            {
+                if (element.Text == dropDownValue)
+                {
+                    element.Click();
+                    break;
+                }
+            }
+        }
+
+        [Given(@"I enter '([^']*)' text as '([^']*)'")]
+        public void GivenIEnterStringAs(string elementName, string textValue)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();           
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId;
+            var tableRows = webDriver.FindElements(By.XPath(id));
+            foreach(var webElement in tableRows)
+            {
+                var val = webElement.GetAttribute("value");
+                if ((webElement.GetAttribute("type").Equals("text")) && (val.Equals("")))
+                {
+                    webElement.SendKeys(textValue);
+                    break;
+                }
+            }
+        }
+
+        [Given(@"I click the Save button to save the changes")]
+        public void GivenIClickTheButtonToSaveTheChanges()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var id = "ctl0_MainContent_DataList_ctl"+gblCount+"_checkButton2";
+            webDriver.FindElement(By.Id(id)).Click();
+            System.Threading.Thread.Sleep(3000);
+        }
+
+        [Given(@"I enter part code and name used for Edit Record")]
+        public void GivenIEnterPartCodeAndNameUsedForEditRecord()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(30));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Part Code"))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(id)));
+            var partCodeAndName=gblCommonVariable.Split(" ");
+            var partCode = partCodeAndName[0];
+            var partName = partCodeAndName[1];
+            PerformAction(new Dictionary<string, string>() { { "Search Part Code", partCode } });
+            PerformAction(new Dictionary<string, string>() { { "Search Part Name", partName } });
+        }
+
+        [Given(@"I select the Alias drop down value as '([^']*)' and enter the Alias text as '([^']*)'")]
+        public void GivenISelectTheAliasDropDownValueAsAndEnterTheAliasTextAs(string dropDownValue, string dropDownText)
+        {
+            PerformAction(new Dictionary<string, string>() { { "Search Alias Type", dropDownValue } });
+            PerformAction(new Dictionary<string, string>() { { "Search Alias Text", dropDownText } });
+        }
+
+        [Then(@"I click on the '([^']*)'")]
+        public void ThenIClickOnTheIcon(string elementName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(30));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            webDriver.FindElement(By.XPath(id)).Click();
+        }
+
+        [Then(@"I verify the changes newly added")]
+        public void ThenIVerifyTheChangesNewlyAdded()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(50));
+            wait.Until(localDriver => webDriver.WindowHandles.Count > 1);
+            int windowCount = webDriver.WindowHandles.Count();
+            if (windowCount > 1)
+            {
+                IList<string> totWindowHandles = new List<string>(webDriver.WindowHandles);
+                webDriver.SwitchTo().Window(totWindowHandles[1]);
+                var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("List of Parts"))).elementId;
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+                var tableRows = webDriver.FindElements(By.XPath(id));
+                var count = tableRows.Count - 1;
+                var tableData = tableRows[count].FindElements(By.TagName("td"));
+                foreach (var data in tableData)
+                {
+                    var innerTable = data.FindElement(By.TagName("table"));
+                    var innerTableData = innerTable.FindElements(By.TagName("td"));
+                    var alias=innerTableData[0].Text;
+                    var type=innerTableData[1].Text;
+                    Assert.IsTrue(alias.Contains("RegressionTest"));
+                    Assert.IsTrue(type.Contains("Other"));
+                    break;
+                }
+                webDriver.SwitchTo().Window(webDriver.WindowHandles[1]).Close();
+                webDriver.SwitchTo().Window(webDriver.WindowHandles[0]);
+            }
+            
+        }
+
+
+
+
+
+
+
+
+
     }
 }
-
