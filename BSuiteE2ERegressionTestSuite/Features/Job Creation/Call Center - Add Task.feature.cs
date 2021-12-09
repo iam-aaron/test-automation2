@@ -84,7 +84,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.JobCreation
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void CallCentre_AddTask(string role, string username, string password, string[] exampleTags)
+        public virtual void CallCentre_AddTask(string role, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "BSUITE-800",
@@ -97,8 +97,6 @@ namespace BSuiteE2ERegressionTestSuite.Features.JobCreation
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Role", role);
-            argumentsOfScenario.Add("Username", username);
-            argumentsOfScenario.Add("Password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call Centre - Add Task", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -137,7 +135,7 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void CallCentre_AddTask_SystemAdmin()
         {
 #line 9
-this.CallCentre_AddTask("System Admin", "sanjanam", "sanjanam", ((string[])(null)));
+this.CallCentre_AddTask("System Admin", ((string[])(null)));
 #line hidden
         }
     }

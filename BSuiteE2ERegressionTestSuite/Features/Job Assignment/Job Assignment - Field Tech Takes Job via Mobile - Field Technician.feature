@@ -16,11 +16,12 @@ Scenario: Job Assignment - Field Tech Takes Job via Mobile - Field Technician
 	Then New tasks should be created and I fetch the task numbers
 	And I log off from Bsuite 'Desktop' portal
 	#When I have logged into BSuite 'Mobile' portal as a User with role 'Field Technician'
-	When I have opened the BSuite Mobile Portal
-	And I login as a User with User Profile as follows
-		| Role             | Username               | Password |
-		| Field Technician | TestFieldTechnician100 | bsuite   |  
-	And I have clicked 'Task #' link 
+	#When I have opened the BSuite Mobile Portal
+	#And I login as a User with User Profile as follows
+	#	| Role             | Username               | Password |
+	#	| Field Technician | TestFieldTechnician100 | bsuite   |  
+	Given I have logged into BSuite 'Mobile' portal as a User with role 'Field Technician'	 
+	When I have clicked 'Task #' link 
 	And I search for the task number and click on the task
 	And I have clicked 'Take Task' link
 	And I have clicked '« Back to Task List' link

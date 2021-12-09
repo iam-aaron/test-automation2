@@ -4,8 +4,9 @@ Feature: System Administration - Cause Codes - System Admin
 
 @GSQA-111 @PositiveTests
 Scenario: System Administration - Cause Codes - System Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with role '<Role>'	
+	#Given I have opened the BSuite Desktop Portal
+	#And I login as a User with role '<Role>'	
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I can navigate to 'Admin' page from the top menu
 	And I click the 'Cause Categories' link to add cause category
 	And I click the 'Add Cause Category' button 
@@ -23,12 +24,12 @@ Scenario: System Administration - Cause Codes - System Admin
 	And I click the 'Search' button to load details
 	Then I verify the category newly added
 
-
-
-	
-
-Examples: 
-	| Role         | 
-	| System Admin | 
+#
+#
+#	
+#
+#Examples: 
+#	| Role         | 
+#	| System Admin | 
 
 

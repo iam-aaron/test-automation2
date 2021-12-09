@@ -22,8 +22,11 @@ namespace BSuiteE2ERegressionTestSuite.Features.Reporting
     [TechTalk.SpecRun.FeatureAttribute("Reporting - Worm and Graphs - Call Desk Manager", new string[] {
             "AllTests",
             "BSuite",
-            "BSuiteDesktop",
-            "Reporting"}, Description="\tTODO", SourceFile="Features\\Reporting\\Reporting - Worm and Graphs - Call Desk Manager.feature", SourceLine=1)]
+            "BSuite-Website",
+            "Reporting",
+            "Call-Desk-Manager",
+            "WormGraph"}, Description="As a User with role \"Call Desk Manager\" accessing the BSuite Desktop portal\r\nI am" +
+        " able to generate Report of type \"Worm Graph\".", SourceFile="Features\\Reporting\\Reporting - Worm and Graphs - Call Desk Manager.feature", SourceLine=1)]
     public partial class Reporting_WormAndGraphs_CallDeskManagerFeature
     {
         
@@ -32,8 +35,10 @@ namespace BSuiteE2ERegressionTestSuite.Features.Reporting
         private string[] _featureTags = new string[] {
                 "AllTests",
                 "BSuite",
-                "BSuiteDesktop",
-                "Reporting"};
+                "BSuite-Website",
+                "Reporting",
+                "Call-Desk-Manager",
+                "WormGraph"};
         
 #line 1 "Reporting - Worm and Graphs - Call Desk Manager.feature"
 #line hidden
@@ -42,11 +47,14 @@ namespace BSuiteE2ERegressionTestSuite.Features.Reporting
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Reporting", "Reporting - Worm and Graphs - Call Desk Manager", "\tTODO", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Reporting", "Reporting - Worm and Graphs - Call Desk Manager", "As a User with role \"Call Desk Manager\" accessing the BSuite Desktop portal\r\nI am" +
+                    " able to generate Report of type \"Worm Graph\".", ProgrammingLanguage.CSharp, new string[] {
                         "AllTests",
                         "BSuite",
-                        "BSuiteDesktop",
-                        "Reporting"});
+                        "BSuite-Website",
+                        "Reporting",
+                        "Call-Desk-Manager",
+                        "WormGraph"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,16 +91,16 @@ namespace BSuiteE2ERegressionTestSuite.Features.Reporting
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Reporting - Worm and Graphs - Call Desk Manager", new string[] {
-                "GSQA-128"}, SourceLine=5)]
-        [TechTalk.SpecRun.IgnoreAttribute()]
+                "GSQA-128",
+                "PositiveTests"}, SourceLine=6)]
         public virtual void Reporting_WormAndGraphs_CallDeskManager()
         {
             string[] tagsOfScenario = new string[] {
                     "GSQA-128",
-                    "ignore"};
+                    "PositiveTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reporting - Worm and Graphs - Call Desk Manager", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -112,8 +120,36 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'Call Desk Manager" +
+                        "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 12
+ testRunner.And("I have navigated to \'Reports\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value/Action"});
+                table151.AddRow(new string[] {
+                            "Contract-WorkType(s)",
+                            "ALH Group - IT Support: Break Fix"});
+                table151.AddRow(new string[] {
+                            "Preferred Time Zone",
+                            "Australia/Brisbane"});
+                table151.AddRow(new string[] {
+                            "List of Areas",
+                            "QLD"});
+#line 13
+ testRunner.And("I have clicked \'Worm\' link and entered details as follows", ((string)(null)), table151, "And ");
+#line hidden
+#line 18
+ testRunner.And("I check if \'With Mitigation\' check box is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+ testRunner.And("I click the \'Display\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+ testRunner.And("I verify the \'Worm Graph\' is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

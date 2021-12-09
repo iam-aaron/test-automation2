@@ -2,6 +2,7 @@
 using ExcelDataReader;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -53,19 +54,24 @@ namespace BSuiteE2ERegressionTest
             foreach (var kvp in testVectorData)
             {
                 var id = "";
-                if ((webDriver.Url.Contains("mobile")))
-                { 
-                if (webDriver.Url.Contains("preStartChecklList"))
+                if (webDriver.Url.Contains("mobile"))
                 {
+                    if (webDriver.Url.Contains("preStartChecklList")) 
+                    { 
                     gblMenuItemSelected = "?AJAX=preStartChecklList";
-
+                    
+                    }
+                    else if (webDriver.Url.Contains("siteSafeCheck=1"))
+                    {
+                        gblMenuItemSelected = "mobile?siteSafeCheck=1";
+                    }
+                    else if (webDriver.Url.Contains("createtask"))
+                    {
+                        gblMenuItemSelected = "mobile?taskstatus=1&createtask=1";
+                    }
+                        id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(kvp.Key))).elementId;
+                    
                 }
-                else if (webDriver.Url.Contains("siteSafeCheck=1"))
-                {
-                    gblMenuItemSelected = "mobile?siteSafeCheck=1";
-                }
-                id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(kvp.Key))).elementId;
-            }
                 else
                 {
                    id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(kvp.Key))).elementId;
@@ -82,11 +88,13 @@ namespace BSuiteE2ERegressionTest
                 {
                     webElement = wait.Until(drv => drv.FindElement(By.Name(id)));
                 }
+                else if ((kvp.Key.Equals("Rec. Qty")) || (kvp.Key.Equals("Part Notes")) &&  (webDriver.Url.Contains("reconcile")))
+                {
+                    webElement = wait.Until(drv => drv.FindElement(By.XPath(id)));
+                }
                 else
                 {
                     webElement = wait.Until(drv => drv.FindElement(By.Id(id)));
-
-
                 }
                
 
@@ -94,14 +102,34 @@ namespace BSuiteE2ERegressionTest
                 {
                     webElement.Click();
                     webElement.Clear();
-                    if (kvp.Key.Equals("Serial Number") || kvp.Key.Equals("Client Ref #"))
+                    if (kvp.Key.Equals("Serial Number") || kvp.Key.Equals("Client Ref #") || kvp.Key.Equals("Serial No") || kvp.Key.Equals("Purchase Order No")|| kvp.Key.Equals("Delivery/Invoice No"))
                     {
-                        webElement.SendKeys(kvp.Value.Trim() + System.DateTime.Now.ToString("yyyyMMddHHmm"));
+                        //webElement.SendKeys(kvp.Value.Trim() + System.DateTime.Now.ToString("yyyyMMddHHmm"));
+                        if (kvp.Key.Equals("Serial Number"))
+                        {
+                            gblSerialNumber = kvp.Value.Trim() + System.DateTime.Now.ToString("yyyyMMddHHmm");
+                            webElement.SendKeys(gblSerialNumber);
+                        }
+                        else if(kvp.Key.Equals("Serial No") || kvp.Key.Equals("Purchase Order No") || kvp.Key.Equals("Delivery/Invoice No"))
+                        {
+                            gblNumberWithDate = kvp.Value.Trim() + System.DateTime.Now.ToString("yyyyMMddHHmm");
+                            webElement.SendKeys(gblNumberWithDate);
+                        }
+                        else
+                        {
+                            gblClientRef = kvp.Value.Trim() + System.DateTime.Now.ToString("yyyyMMddHHmm");
+                            webElement.SendKeys(gblClientRef);
+                            Console.WriteLine(gblClientRef);
+                        }
+                        
                     }
+                       
+                
                     else if (kvp.Key.Equals("Part"))
                     {
                         System.Threading.Thread.Sleep(1000);
                         webElement.SendKeys(kvp.Value.Trim());
+                        System.Threading.Thread.Sleep(2000);
                     }
                     else if ((kvp.Key.Equals("First Name")) && (gblMenuItemSelected.Equals("person")|| gblMenuItemSelected.Equals("admin/createuser")))
                     {
@@ -144,16 +172,28 @@ namespace BSuiteE2ERegressionTest
                     {
                         webElement.SendKeys(gblCommonVariable);
                     }
+                    else if (kvp.Key.Equals("ReconcilePoNumber"))
+                    {
+                        System.Threading.Thread.Sleep(1000);
+                        webElement.SendKeys(gblNumberWithDate);
+                        System.Threading.Thread.Sleep(2000);
+                    }
+                    else if (kvp.Key.Equals("Site") && webDriver.Url.Contains("mobile"))
+                    {
+                        System.Threading.Thread.Sleep(2000);
+                    }
+
                     else
                     {
-                       webElement.SendKeys(kvp.Value.Trim());
+                        webElement.SendKeys(kvp.Value.Trim());
                     }
-                    if (kvp.Key.Equals("Site") || kvp.Key.Equals("Contact") || kvp.Key.Equals("Part"))
+                    if (kvp.Key.Contains("Site") || kvp.Key.Equals("Contact") || kvp.Key.Equals("Part") || kvp.Key.Equals("Part Type") || kvp.Key.Equals("ReconcilePoNumber"))
                     {
                         System.Threading.Thread.Sleep(4000);
                     }
 
                     var searchResultDivBox = FindWebElement(By.Id($"{id}_result"));
+                    var searchResultMobileDivBox = FindWebElement(By.XPath("//ul[@role='listbox']"));
                     if (searchResultDivBox != null)
                     {
                         var searchResultsList = wait.Until(drv => searchResultDivBox.FindElements(By.TagName("ul")).ToList());
@@ -169,10 +209,48 @@ namespace BSuiteE2ERegressionTest
                                         searchResult.Click();
                                     }
                                 }
+
+                            }
+                        }
+                    }
+                    else if (searchResultMobileDivBox != null)
+                    {
+                        if (kvp.Key.Contains("Site"))
+                        {
+                            webDriver.FindElement(By.XPath("//input[@id='createtask_site']")).Clear();
+                            webDriver.FindElement(By.XPath("//input[@id='createtask_site']")).Click();
+                            webDriver.FindElement(By.XPath("//input[@id='createtask_site']")).SendKeys(kvp.Value.Trim());
+                            System.Threading.Thread.Sleep(4000);
+                            var option = webDriver.FindElement(By.XPath("//ul[@role='listbox'][2]/li[1]/a"));
+                            Actions ac = new Actions(webDriver);
+                            ac.MoveToElement(option).Perform();
+                            IJavaScriptExecutor executor = (IJavaScriptExecutor)webDriver;
+                            executor.ExecuteScript("arguments[0].click();", option);
+                            System.Threading.Thread.Sleep(3000);
+                        }
+                        else if (kvp.Key.Equals("Part"))
+                        {
+                            var searchResultMobileDivBoxPart = FindWebElement(By.XPath("//ul[@role='listbox'][1]"));
+                            var searchResultsList = wait.Until(drv => searchResultMobileDivBoxPart.FindElements(By.TagName("li")).ToList());
+                            if (searchResultsList.Count != 0)
+                            {
+                                List<IWebElement> searchResults = wait.Until(drv => searchResultsList.FirstOrDefault().FindElements(By.TagName("a")).ToList());
+                                if (searchResults.Count != 0)
+                                {
+                                    foreach (IWebElement searchResult in searchResults)
+                                    {
+                                        if (searchResult.Text.Contains(kvp.Value.Trim()))
+                                        {
+                                            searchResult.Click();
+                                            System.Threading.Thread.Sleep(3000);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
+               
                 else if(webElement.TagName.Equals("input") && webElement.GetProperty("type").Equals("password") && webElement.Enabled)
                 {
                     webElement.SendKeys(kvp.Value.Trim());
@@ -181,14 +259,14 @@ namespace BSuiteE2ERegressionTest
                 else if (webElement.TagName.Equals("textarea")  && webElement.Enabled)
                 {
                     webElement.Click();
-                    if (kvp.Key.Equals("Problem Desc")) 
+                    if (kvp.Key.Equals("Problem Desc") || kvp.Key.Equals("Problem Description") || kvp.Key.Equals("Comments") || kvp.Key.Equals("Delivery Notes") || kvp.Key.Equals("Part Notes"))
                     {
                         webElement.SendKeys(kvp.Value.Trim());
                     }
-                }                
+                }
                 else if (webElement.TagName.Equals("input") && webElement.GetProperty("type").Equals("file") && webElement.Enabled)
                 {
-                    var filePath = System.IO.Directory.GetCurrentDirectory() + @"\Drivers\testData\"+ kvp.Value.Trim();
+                    var filePath = System.IO.Directory.GetCurrentDirectory() + @"\Drivers\testData\" + kvp.Value.Trim();
                     webElement.SendKeys(filePath);
                 }
 
@@ -210,10 +288,11 @@ namespace BSuiteE2ERegressionTest
                 
                 else if (webElement.TagName.Equals("button") && webElement.Enabled)
                 {
-                    if (webElement.GetProperty("value").Equals(kvp.Key.Trim()))
+                    if (webElement.GetProperty("value").Contains(kvp.Key.Trim()))
                     {
                         IJavaScriptExecutor executor = (IJavaScriptExecutor)webDriver;
                         executor.ExecuteScript("arguments[0].click();", webElement);
+                        System.Threading.Thread.Sleep(3000);
                         //webElement.Click();
                         // break;
                     }
@@ -255,6 +334,12 @@ namespace BSuiteE2ERegressionTest
                         Console.WriteLine(taskNum);
                         taskNum = "";
                     }
+                }
+                else if (webElement.TagName.Equals("select") && webElement.Enabled && kvp.Key.Equals("Priority") && webDriver.Url.Contains("mobile"))
+                {
+                    var priority = kvp.Value.Trim();
+                    IWebElement select = webElement;
+                    js.ExecuteScript("var select = arguments[0];for(var i = 0; i < select.options.length; i++){ if(select.options[i].text == arguments[1]){ select.options[i].selected = true; } }", select, priority);
                 }
                 else if (webElement.TagName.Equals("select") && webElement.Enabled)
                 {

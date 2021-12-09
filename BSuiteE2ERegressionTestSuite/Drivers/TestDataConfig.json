@@ -3,7 +3,9 @@
     {
       "TestEnvName": "TTN",
       "IsSelected": "Yes",
-      "BSuiteURL": "https://3.104.140.233",
+      //"BSuiteURL": "https://ttn.tstingbsuite.net",
+      "BSuiteURL": "https://10.174.49.213",
+      //"BSuiteHydraDbServer": "bsuite-ttn-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
       "BSuiteHydraDbServer": "10.174.49.252",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -15,7 +17,8 @@
     {
       "TestEnvName": "TST",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233",
+      //"BSuiteURL": "https://tstingbsuite.net",
+      "BSuiteURL": "https://10.174.50.113",
       "BSuiteHydraDbServer": "bsuite-ttn-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -27,7 +30,9 @@
     {
       "TestEnvName": "SIT",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233",
+      //"BSuiteURL": "https://sit.tstingbsuite.net",
+      "BSuiteURL": "https://10.174.50.113",
+      //"BSuiteHydraDbServer": "bsuite-sit-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
       "BSuiteHydraDbServer": "10.174.51.224",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -39,7 +44,9 @@
     {
       "TestEnvName": "UAT",
       "IsSelected": "No",
-      "BSuiteURL": "https://3.104.140.233",
+      //"BSuiteURL": "https://uat.tstingbsuite.net"
+      "BSuiteURL": "https://10.174.51.193",
+      //"BSuiteHydraDbServer": "bsuite-sit-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
       "BSuiteHydraDbServer": "10.174.51.224",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -47,304 +54,6 @@
       "BSuiteHydraDbSshUserName": "bastion",
       "BSuiteHydraDbUserId": "kizhakka",
       "BSuiteHydraDbPassword": "C>93pQ73"
-    }
-  ],
-  "Users": [
-    {
-      "Role": "After Hours Supervisor",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Agent Logistics (Stock Take)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Agent Manager",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Agent Manager (Logistics)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Agent Technician",
-      "UserName": "testagenttechnician100",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Agent View",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "BSuite Documentation",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Call Desk + Logistics RO",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Call Desk Contractor",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Call Desk Manager",
-      "UserName": "TestCallDeskMgr1",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Call Desk Manager (Service Plan Admin)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Call Desk OCC",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Call Desk Supervisor",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Call Desk Technician",
-      "UserName": "TestCallDeskTech1",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Client Admin",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Client Technician",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Contact Centre Operator",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Dashboard View",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Field Supervisor",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Field Supervisor (Stocktake)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Field Tech + Logistics",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Field Tech + Workshop + Logistics",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Field Technician",
-      "UserName": "TestField167Tech2",
-      "Password": "bsuite"
-
-    },
-    {
-      "Role": "Finance",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Finance Admin",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Human Resources",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Kamco Client",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Logistics + Call Desk Technician",
-      "UserName": "TestCallDeskTech1",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Logistics + Reports",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Logistics Admin",
-      "UserName": "TestLogisticsAdmin",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Logistics Admin (Limited Call Desk)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Logistics Admin (Limited Call Desk) + PO",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Logistics Storeman",
-      "UserName": "TestLogStoreman1",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Logistics Storeman (Limited CallDesk)",
-      "UserName": "TestLogStoreman1",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Logistics Storeman (Casual)",
-      "UserName": "TestLogStoreman1",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Logistics Supervisor",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Logistics Technician",
-      "UserName": "TestLog177Tech10",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "National Inventory",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "National Workshop Manager",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Part Type Creation",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Projects",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Projects - SME",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Purchasing",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Service Delivery Manager",
-      "UserName": "TestSvcDeliveryMgr",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Staging",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "State Inventory",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "State Supply Chain Manager",
-      "UserName": "TstStateSplyChnMgr99",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Stock Take",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Stocktake Reports",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "System Admin",
-      "UserName": "TestSystemAdmin3",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Trainer",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "VG Agent Logistics",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Workshop + Logistics",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Workshop Admin",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Workshop Admin (NEW)",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Workshop Supervisor",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
-    },
-    {
-      "Role": "Workshop Technician",
-      "UserName": "TestWorkshopTech2",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Workshop Technician (NEW)",
-      "UserName": "TestWorkshopTech8",
-      "Password": "bsuite"
-    },
-    {
-      "Role": "Worm",
-      "UserName": "kizhakka",
-      "Password": "abhymax"
     }
   ]
 }

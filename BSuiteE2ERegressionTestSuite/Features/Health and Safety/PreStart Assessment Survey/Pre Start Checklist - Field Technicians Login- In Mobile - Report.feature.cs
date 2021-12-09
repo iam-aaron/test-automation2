@@ -27,6 +27,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             "Pre-Start-Form"}, Description="\tAs a BSuite Mobile User\r\n\tI can login to BSuite mobile portal\r\n\tSo that I can ve" +
         "rify is Daily PreStart form is being displayed in mobile portal", SourceFile="Features\\Health and Safety\\PreStart Assessment Survey\\Pre Start Checklist - Field" +
         " Technicians Login- In Mobile - Report.feature", SourceLine=1)]
+    [TechTalk.SpecRun.IgnoreAttribute()]
     public partial class HealthAndSafety_MobileDailyPreStartForm_FieldTechnicians_HappyPath_ViaMobileFeature
     {
         
@@ -36,7 +37,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                 "AllTests",
                 "BSuite",
                 "HealthAndSafety",
-                "Pre-Start-Form"};
+                "Pre-Start-Form",
+                "ignore"};
         
 #line 1 "Pre Start Checklist - Field Technicians Login- In Mobile - Report.feature"
 #line hidden
@@ -51,7 +53,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                         "AllTests",
                         "BSuite",
                         "HealthAndSafety",
-                        "Pre-Start-Form"});
+                        "Pre-Start-Form",
+                        "ignore"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -124,16 +127,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table57.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             string.Format("{0}", role),
                             string.Format("{0}", username),
                             string.Format("{0}", password)});
 #line 10
- testRunner.Given("I have logged into \'BSuite Mobile\' portal as a User with following User Profile", ((string)(null)), table57, "Given ");
+ testRunner.Given("I have logged into \'BSuite Mobile\' portal as a User with following User Profile", ((string)(null)), table54, "Given ");
 #line hidden
 #line 14
  testRunner.When("login is successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -141,73 +144,73 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.And("I am required to complete the Pre Start Checklist for the day in mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table58.AddRow(new string[] {
+                table55.AddRow(new string[] {
                             "1",
                             "My vehicle is roadworthy – e.g. windscreen and mirrors free of damage, all lights" +
                                 " operational and tyres inflated with sufficient tread."});
 #line 16
  testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows in mobile" +
-                        " portal", ((string)(null)), table58, "Then ");
+                        " portal", ((string)(null)), table55, "Then ");
 #line hidden
 #line 19
  testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question in mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table59.AddRow(new string[] {
+                table56.AddRow(new string[] {
                             "2",
                             "Are all licenses that you require for your duties / role currently valid? E.G. dr" +
                                 "ivers licence, gaming licence?"});
 #line 20
  testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows in mobil" +
-                        "e portal", ((string)(null)), table59, "Then ");
+                        "e portal", ((string)(null)), table56, "Then ");
 #line hidden
 #line 23
  testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question in mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table60.AddRow(new string[] {
+                table57.AddRow(new string[] {
                             "3",
                             "Are your tools and equipment in good condition and do you have sufficient / enoug" +
                                 "h PPE?"});
 #line 24
  testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows in mobile" +
-                        " portal", ((string)(null)), table60, "Then ");
+                        " portal", ((string)(null)), table57, "Then ");
 #line hidden
 #line 27
  testRunner.When("I respond \'Yes\' to the \'third\' Pre Start Checklist question in mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table61.AddRow(new string[] {
+                table58.AddRow(new string[] {
                             "4",
                             "Have you completed all mandatory training relevant to your Field Technicians Role" +
                                 " – (e.g. Electrical safety / lifting / ladders etc.) OR are you familiar with al" +
                                 "l of the SWP (Safe Work Practice) documents relevant to your role?"});
 #line 28
  testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows in mobil" +
-                        "e portal", ((string)(null)), table61, "Then ");
+                        "e portal", ((string)(null)), table58, "Then ");
 #line hidden
 #line 31
  testRunner.When("I respond \'Yes\' to the \'fourth\' Pre Start Checklist question in mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table62.AddRow(new string[] {
+                table59.AddRow(new string[] {
                             "5",
                             "I am fit for work and can perform my work without compromising the safety or heal" +
                                 "th of myself or others."});
 #line 32
  testRunner.Then("the \'fifth\' question of the Pre Start Checklist is displayed as follows in mobile" +
-                        " portal", ((string)(null)), table62, "Then ");
+                        " portal", ((string)(null)), table59, "Then ");
 #line hidden
 #line 35
  testRunner.When("I respond \'Yes\' to the \'fifth\' Pre Start Checklist question in mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -228,7 +231,7 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void HealthAndSafety_MobileDailyPreStartForm_FieldTechniciansDailyPreStartFormWillBeAvailableForFieldTechnicianInMobilePortalOnly_FieldTechnician()
         {
 #line 8
-this.HealthAndSafety_MobileDailyPreStartForm_FieldTechniciansDailyPreStartFormWillBeAvailableForFieldTechnicianInMobilePortalOnly("Field Technician", "TestField163Tech6", "bsuite", ((string[])(null)));
+this.HealthAndSafety_MobileDailyPreStartForm_FieldTechniciansDailyPreStartFormWillBeAvailableForFieldTechnicianInMobilePortalOnly("Field Technician", "TestField163Tech1", "bsuite", ((string[])(null)));
 #line hidden
         }
     }

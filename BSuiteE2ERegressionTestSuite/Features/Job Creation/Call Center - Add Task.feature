@@ -45,7 +45,5 @@ Scenario Outline: Call Centre - Add Task
 	#Then I click the 'Finish' button
 
 Examples: 
-	| Role         | Username | Password |
-	| System Admin | sanjanam | sanjanam |
-
-
+	| Role         |
+	| System Admin |

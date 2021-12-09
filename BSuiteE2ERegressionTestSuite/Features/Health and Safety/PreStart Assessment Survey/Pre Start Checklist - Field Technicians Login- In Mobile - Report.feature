@@ -1,4 +1,4 @@
-﻿@AllTests @BSuite @HealthAndSafety @Pre-Start-Form 
+﻿@AllTests @BSuite @HealthAndSafety @Pre-Start-Form @ignore
 Feature: Health and Safety - Mobile Daily PreStart Form - Field Technicians - Happy Path - via Mobile
 	As a BSuite Mobile User
 	I can login to BSuite mobile portal
@@ -37,6 +37,6 @@ Scenario Outline: Health and Safety - Mobile Daily PreStart Form - Field Technic
 		
 	Examples: 
 	| Role             | Username          | Password |
-	| Field Technician | TestField163Tech6 | bsuite   |
+	| Field Technician | TestField163Tech1 | bsuite   |
 
  

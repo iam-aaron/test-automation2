@@ -15,7 +15,6 @@ namespace BSuiteE2ERegressionTest
         public string TestEnvName = string.Empty;
         public bool IsSelected = false;
         public string BSuiteURL = string.Empty;
-        public Dictionary<string, (string UserName, string UserPassword)> Users = new Dictionary<string, (string UserName, string UserPassword)>();
         public string BSuiteHydraDbServer = string.Empty;
         public string BSuiteHydraDbName = string.Empty;
         public string BSuiteHydraDbPort = string.Empty;
@@ -23,6 +22,7 @@ namespace BSuiteE2ERegressionTest
         public string BSuiteHydraDbSshUserName = string.Empty;
         public string BSuiteHydraDbUserId = string.Empty;
         public string BSuiteHydraDbPassword = string.Empty;
+        public Dictionary<string, (string UserName, string UserPassword)> Users = new Dictionary<string, (string UserName, string UserPassword)>();
 
         public void LoadConfig()
         {

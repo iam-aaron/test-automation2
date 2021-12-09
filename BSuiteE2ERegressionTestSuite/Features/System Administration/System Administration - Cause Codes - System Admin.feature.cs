@@ -88,18 +88,15 @@ namespace BSuiteE2ERegressionTestSuite.Features.SystemAdministration
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SystemAdministration_CauseCodes_SystemAdmin(string role, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Cause Codes - System Admin", new string[] {
+                "GSQA-111",
+                "PositiveTests"}, SourceLine=5)]
+        public virtual void SystemAdministration_CauseCodes_SystemAdmin()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-111",
                     "PositiveTests"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("System Administration - Cause Codes - System Admin", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -121,72 +118,59 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.And(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 9
- testRunner.And("I can navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.And("I click the \'Cause Categories\' link to add cause category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I can navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
+ testRunner.And("I click the \'Cause Categories\' link to add cause category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
  testRunner.And("I click the \'Add Cause Category\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table132.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Category Code",
                             "RT"});
-                table132.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "CauseCategory Name",
                             "RegressionTest"});
-                table132.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Active",
                             "Checked"});
-                table132.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Billable",
                             "Not Checked"});
-                table132.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "WorkTypeList",
                             "ALH Group - IT Support - Break Fix"});
-#line 12
- testRunner.And("I enter the following details in the \'Cause Categories\' page", ((string)(null)), table132, "And ");
+#line 13
+ testRunner.And("I enter the following details in the \'Cause Categories\' page", ((string)(null)), table155, "And ");
 #line hidden
-#line 19
+#line 20
  testRunner.And("I click the \'Save\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table133.AddRow(new string[] {
+                table156.AddRow(new string[] {
                             "Search Cause Category",
                             "RT"});
-#line 20
- testRunner.When("I enter the following details in the \'Cause Categories\' page", ((string)(null)), table133, "When ");
-#line hidden
-#line 23
- testRunner.And("I click the \'Search\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.When("I enter the following details in the \'Cause Categories\' page", ((string)(null)), table156, "When ");
 #line hidden
 #line 24
+ testRunner.And("I click the \'Search\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
  testRunner.Then("I verify the category newly added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Cause Codes - System Admin, System Admin", new string[] {
-                "GSQA-111",
-                "PositiveTests"}, SourceLine=31)]
-        public virtual void SystemAdministration_CauseCodes_SystemAdmin_SystemAdmin()
-        {
-#line 6
-this.SystemAdministration_CauseCodes_SystemAdmin("System Admin", ((string[])(null)));
-#line hidden
         }
     }
 }

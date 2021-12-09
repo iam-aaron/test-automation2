@@ -1,4 +1,4 @@
-﻿@Health&Safety @Pre-Start-Form
+﻿@Health&Safety @Pre-Start-Form @ignore
 Feature: Health and Safety - Daily PreStart Form - Field Technician No Scenario and Supervisors View
 
 User Journey (Field Technician):
@@ -32,7 +32,7 @@ Once the Checklist is reactivated the Field Technician can then proceed to the n
 Relates to Question 1,2 and 5 of the Field Technicians mobile Pre Start check list only.
 Where the response is No at Q5 the supervisor may manually update the Field Technician to On Call to enable them to complete other activities ( i.e. not field tasks).
 
-@BSuite @BSuite-Mobile @BSuite-Website 
+@BSuite @BSuite-Mobile @BSuite-Website
 @Field-Technician @Supervisor @GSQA-167
 Scenario: Health and Safety - Daily PreStart Form - Field Technician No Scenario and Supervisors View
 	Given I have logged into BSuite 'Mobile' portal as a User with role 'Field Technician'

@@ -4,8 +4,9 @@ Feature: System Administration - Cloning Records - System Admin
 
 @GSQA-109 @PositiveTests
 Scenario: System Administration - Cloning Records - System Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with role '<Role>'	
+	#Given I have opened the BSuite Desktop Portal
+	#And I login as a User with role '<Role>'	
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I can navigate to 'Admin' page from the top menu
 	And I click the 'Clone User Account' link to clone the user account	 
 	And I enter the following details in the 'Clone User Account' page
@@ -27,14 +28,14 @@ Scenario: System Administration - Cloning Records - System Admin
 	And I click the 'Search User' button to load details
 	Then I verify the user name newly added
 
-	
-
-
-
-	
-
-Examples: 
-	| Role         | 
-	| System Admin | 
+#	
+#
+#
+#
+#	
+#
+#Examples: 
+#	| Role         | 
+#	| System Admin | 
 
 

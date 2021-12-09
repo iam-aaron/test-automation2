@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Health and Safety\Survey Reporting\Verify the Pre Start Checklist - Field Technicians.Report.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Remove="Features\Health and Safety\Survey Reporting\Verify the Pre Start Checklist - Field Technicians.Report.feature" />
+  </ItemGroup>
+
+  <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Assignment\Job Assignment - Field Tech Assigned Job via Desktop - Call Desk Manager - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Assignment\Job Assignment - Field Tech Removed from Job - Call Desk Manager - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Assignment\Job Assignment - Field Tech Removed from Job - System Admin - Copy.feature.cs" />
@@ -12,9 +20,14 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Completion\Job Assignment - Field Tech Removed from Job - Call Desk Manager.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Completion\Job Completion - Job Cancelled via Desktop - Call Desk Manager - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Completion\Job Completion - Job Cancelled via Desktop - System Admin - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Health and Safety\PreStart Assessment Survey\Pre Start Checklist - Field Technicians Login- In Mobile - Not in Desktop - Copy.Report.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Completion\Job Completion - Break Fix Consumable Used via Mobile - Agent Technician - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Creation\Call Center - Add Task.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Creation\Job Creation - Break Fix Job via different contracts - System Admin - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Job Creation\Login to BSuite Desktop Portal.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Call Desk Manager - Copy (2).feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Call Desk Manager - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Logitics Admin - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Monitoring\Monitoring - Task Lists - Call Desk Manager - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Parts\Parts - Create Purchase Order - State Supply Chain Manager - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\System Administration\System Administration - Action Types - System Admin - Copy.feature.cs" />
@@ -25,6 +38,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\System Administration\System Administration - Zones - System Admin - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\System Administration\System Administration - Zonesets - System Admin - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\System Administration\User Access to System Admin Screen - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Monitoring\Monitoring - Task Lists - Logistics Admin - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\System Administration\User Access to System Admin Screen.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Warehouses\Warehouses - Locations - Call Desk Manager - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Warehouses\Warehouses - Locations - Logistics Admin - Copy.feature.cs" />
@@ -105,6 +119,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\Health and Safety\PreStart Assessment Survey\Mobile PreStart Form - Agent Technicians are not presented - Daily PreStart Form - Mobile.feature.cs">
+      <DependentUpon>Mobile PreStart Form - Agent Technicians are not presented - Daily PreStart Form - Mobile.feature</DependentUpon>
+    </Compile>
     <Compile Update="Features\Health and Safety\PreStart Assessment Survey\Pre Start Checklist - Field Technicians Login- In Mobile - Report.feature.cs">
       <DependentUpon>Pre Start Checklist - Field Technicians Login- In Mobile - Report.feature</DependentUpon>
     </Compile>
@@ -173,6 +190,27 @@
     </Compile>
     <Compile Update="Features\System Administration\System Administration - User Records - System Admin.feature.cs">
       <DependentUpon>System Administration - User Records - System Admin.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Logitics Storeman.feature.cs">
+      <DependentUpon>Monitoring - Search  And Filter Task Lists - Logitics Storeman.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Logitics Admin.feature.cs">
+      <DependentUpon>Monitoring - Search  And Filter Task Lists - Logitics Admin.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - State Supply Chain Manager.feature.cs">
+      <DependentUpon>Monitoring - Search  And Filter Task Lists - State Supply Chain Manager.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Call Desk Manager.feature.cs">
+      <DependentUpon>Monitoring - Search  And Filter Task Lists - Call Desk Manager.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Task Lists - Logistics Storeman.feature.cs">
+      <DependentUpon>Monitoring - Task Lists - Logistics Storeman.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Task Lists - State Supply Chain Manager.feature.cs">
+      <DependentUpon>Monitoring - Task Lists - State Supply Chain Manager.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Monitoring\Monitoring - Task Lists - Logistics Admin.feature.cs">
+      <DependentUpon>Monitoring - Task Lists - Logistics Admin.feature</DependentUpon>
     </Compile>
     <Compile Update="Features\System Administration\User Access to System Admin Screen.feature.cs">
       <DependentUpon>%(Filename)</DependentUpon>
@@ -274,6 +312,34 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\System Administration\System Administration - User Records - System Admin.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Logitics Storeman.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Logitics Admin.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - State Supply Chain Manager.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Search  And Filter Task Lists - Call Desk Manager.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Task Lists - Logistics Storeman.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Task Lists - State Supply Chain Manager.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Monitoring\Monitoring - Task Lists - Logistics Admin.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

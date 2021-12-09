@@ -29,6 +29,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.SurveyReporting
             "PreStart-Desktop-Report"}, Description="\tAs a BSuite Desktop User\r\n\tI can login to BSuite Desktop portal\r\n\tSo that I can " +
         "carry out my tasks", SourceFile="Features\\Health and Safety\\Survey Reporting\\Health and Safety - Reports - Prestar" +
         "t Desktop Report.feature", SourceLine=1)]
+    [TechTalk.SpecRun.IgnoreAttribute()]
     public partial class HealthAndSafety_Reports_PrestartDesktopReportFeature
     {
         
@@ -41,7 +42,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.SurveyReporting
                 "HealthAndSafety",
                 "Survey-Reporting",
                 "Logistics-Team-Member",
-                "PreStart-Desktop-Report"};
+                "PreStart-Desktop-Report",
+                "ignore"};
         
 #line 1 "Health and Safety - Reports - Prestart Desktop Report.feature"
 #line hidden
@@ -58,7 +60,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.SurveyReporting
                         "HealthAndSafety",
                         "Survey-Reporting",
                         "Logistics-Team-Member",
-                        "PreStart-Desktop-Report"});
+                        "PreStart-Desktop-Report",
+                        "ignore"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -136,55 +139,55 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.Then("I am required to complete the Pre Start Checklist for the day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table69.AddRow(new string[] {
+                table66.AddRow(new string[] {
                             "1",
                             "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
                                 "ers licence, gaming licence/forklift licence?"});
 #line 14
- testRunner.And("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table69, "And ");
+ testRunner.And("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table66, "And ");
 #line hidden
 #line 17
  testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table70.AddRow(new string[] {
+                table67.AddRow(new string[] {
                             "2",
                             "Are your tools and equipment in good condition and do you have sufficient/enough " +
                                 "PPE?"});
 #line 18
- testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table70, "Then ");
+ testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table67, "Then ");
 #line hidden
 #line 21
  testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table71.AddRow(new string[] {
+                table68.AddRow(new string[] {
                             "3",
                             "Have you completed all mandatory training relevant to your Field Technicians Role" +
                                 " - (e.g. Electrical safety/lifting/ladders etc.) OR are you familiar with all of" +
                                 " the SWP (Safe Work Practice) documents relevant to your role?"});
 #line 22
- testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table71, "Then ");
+ testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table68, "Then ");
 #line hidden
 #line 25
  testRunner.When("I respond \'Yes\' to the \'third\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table72.AddRow(new string[] {
+                table69.AddRow(new string[] {
                             "4",
                             "I am fit for work and can perform my work without compromising the safety or heal" +
                                 "th of myself or others."});
 #line 26
- testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table72, "Then ");
+ testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table69, "Then ");
 #line hidden
 #line 29
  testRunner.When("I respond \'Yes\' to the \'fourth\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -225,7 +228,7 @@ this.ScenarioInitialize(scenarioInfo);
         [TechTalk.SpecRun.ScenarioAttribute("Health and Safety - Reports - Prestart Desktop Report - Day 1 Prestart Form, Logi" +
             "stics Technician", new string[] {
                 "GSQA-177",
-                "PositiveTests"}, SourceLine=44)]
+                "PositiveTests"}, SourceLine=41)]
         public virtual void HealthAndSafety_Reports_PrestartDesktopReport_Day1PrestartForm_LogisticsTechnician()
         {
 #line 9

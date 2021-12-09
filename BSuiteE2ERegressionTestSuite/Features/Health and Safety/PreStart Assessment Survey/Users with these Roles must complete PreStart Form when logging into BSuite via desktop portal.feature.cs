@@ -160,55 +160,55 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.Then("I am required to complete the Pre Start Checklist for the day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table63.AddRow(new string[] {
+                table60.AddRow(new string[] {
                             "1",
                             "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
                                 "ers licence, gaming licence/forklift licence?"});
 #line 26
- testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table63, "Then ");
+ testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table60, "Then ");
 #line hidden
 #line 29
  testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table64.AddRow(new string[] {
+                table61.AddRow(new string[] {
                             "2",
                             "Are your tools and equipment in good condition and do you have sufficient/enough " +
                                 "PPE?"});
 #line 30
- testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table64, "Then ");
+ testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table61, "Then ");
 #line hidden
 #line 33
  testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table65.AddRow(new string[] {
+                table62.AddRow(new string[] {
                             "3",
                             "Have you completed all mandatory training relevant to your Field Technicians Role" +
                                 " - (e.g. Electrical safety/lifting/ladders etc.) OR are you familiar with all of" +
                                 " the SWP (Safe Work Practice) documents relevant to your role?"});
 #line 34
- testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table65, "Then ");
+ testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table62, "Then ");
 #line hidden
 #line 37
  testRunner.When("I respond \'Yes\' to the \'third\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table66.AddRow(new string[] {
+                table63.AddRow(new string[] {
                             "4",
                             "I am fit for work and can perform my work without compromising the safety or heal" +
                                 "th of myself or others."});
 #line 38
- testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table66, "Then ");
+ testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table63, "Then ");
 #line hidden
 #line 41
  testRunner.When("I respond \'Yes\' to the \'fourth\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -292,15 +292,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 55
  testRunner.Then("I am required to complete the Pre Start Checklist for the day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table67.AddRow(new string[] {
+                table64.AddRow(new string[] {
                             "1",
                             "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
                                 "ers licence, gaming licence/forklift licence?"});
 #line 56
- testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table67, "Then ");
+ testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table64, "Then ");
 #line hidden
 #line 59
  testRunner.When("I respond \'No\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -314,15 +314,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 62
  testRunner.And("supervisot accepts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table68.AddRow(new string[] {
+                table65.AddRow(new string[] {
                             "2",
                             "Are your tools and equipment in good condition and do you have sufficient/enough " +
                                 "PPE?"});
 #line 63
- testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table68, "Then ");
+ testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table65, "Then ");
 #line hidden
 #line 66
  testRunner.Then("the Submit button is enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -119,13 +119,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 10
- testRunner.When(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 11
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 12
  testRunner.Then("I can navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -136,7 +133,7 @@ this.ScenarioInitialize(scenarioInfo);
             "ystem Admin", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=14)]
+                "NegativeTests"}, SourceLine=15)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void OnlyUsersWithSystemAdminRoleShallBeAllowedAccessToAdminMenuScreen_SystemAdmin()
         {
@@ -160,7 +157,7 @@ this.OnlyUsersWithSystemAdminRoleShallBeAllowedAccessToAdminMenuScreen("System A
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Users without System Admin role shall not be allowed access to Admin menu screen", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 19
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -180,13 +177,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+ testRunner.Given(string.Format("I have logged into BSuite \'Desktop\' portal as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
- testRunner.When(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 22
+#line 24
  testRunner.Then("I cannot navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -197,11 +191,11 @@ this.ScenarioInitialize(scenarioInfo);
             " After Hours Supervisor", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_AfterHoursSupervisor()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("After Hours Supervisor", ((string[])(null)));
 #line hidden
         }
@@ -210,11 +204,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("After 
             " Agent Logistics (Stock Take)", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_AgentLogisticsStockTake()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent Logistics (Stock Take)", ((string[])(null)));
 #line hidden
         }
@@ -223,11 +217,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent 
             " Agent Manager", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_AgentManager()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent Manager", ((string[])(null)));
 #line hidden
         }
@@ -236,11 +230,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent 
             " Agent Manager (Logistics)", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_AgentManagerLogistics()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent Manager (Logistics)", ((string[])(null)));
 #line hidden
         }
@@ -249,11 +243,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent 
             " Agent Technician", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_AgentTechnician()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent Technician", ((string[])(null)));
 #line hidden
         }
@@ -262,11 +256,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent 
             " Agent View", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_AgentView()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent View", ((string[])(null)));
 #line hidden
         }
@@ -275,11 +269,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Agent 
             " BSuite Documentation", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_BSuiteDocumentation()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("BSuite Documentation", ((string[])(null)));
 #line hidden
         }
@@ -288,11 +282,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("BSuite
             " Call Desk + Logistics RO", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskLogisticsRO()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk + Logistics RO", ((string[])(null)));
 #line hidden
         }
@@ -301,11 +295,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Call Desk Contractor", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskContractor()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk Contractor", ((string[])(null)));
 #line hidden
         }
@@ -314,11 +308,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Call Desk Manager", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskManager()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk Manager", ((string[])(null)));
 #line hidden
         }
@@ -327,11 +321,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Call Desk Manager (Service Plan Admin)", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskManagerServicePlanAdmin()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk Manager (Service Plan Admin)", ((string[])(null)));
 #line hidden
         }
@@ -340,11 +334,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Call Desk OCC", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskOCC()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk OCC", ((string[])(null)));
 #line hidden
         }
@@ -353,11 +347,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Call Desk Supervisor", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskSupervisor()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk Supervisor", ((string[])(null)));
 #line hidden
         }
@@ -366,11 +360,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Call Desk Technician", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_CallDeskTechnician()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call Desk Technician", ((string[])(null)));
 #line hidden
         }
@@ -379,11 +373,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Call D
             " Client Admin", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_ClientAdmin()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Client Admin", ((string[])(null)));
 #line hidden
         }
@@ -392,11 +386,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Client
             " Client Technician", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_ClientTechnician()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Client Technician", ((string[])(null)));
 #line hidden
         }
@@ -405,11 +399,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Client
             " Contact Centre Operator", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_ContactCentreOperator()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Contact Centre Operator", ((string[])(null)));
 #line hidden
         }
@@ -418,11 +412,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Contac
             " Dashboard View", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_DashboardView()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Dashboard View", ((string[])(null)));
 #line hidden
         }
@@ -431,11 +425,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Dashbo
             " Field Supervisor", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_FieldSupervisor()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field Supervisor", ((string[])(null)));
 #line hidden
         }
@@ -444,11 +438,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field 
             " Field Supervisor (Stocktake)", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_FieldSupervisorStocktake()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field Supervisor (Stocktake)", ((string[])(null)));
 #line hidden
         }
@@ -457,11 +451,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field 
             " Field Tech + Logistics", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_FieldTechLogistics()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field Tech + Logistics", ((string[])(null)));
 #line hidden
         }
@@ -470,11 +464,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field 
             " Field Tech + Workshop + Logistics", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_FieldTechWorkshopLogistics()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field Tech + Workshop + Logistics", ((string[])(null)));
 #line hidden
         }
@@ -483,11 +477,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field 
             " Field Technician", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_FieldTechnician()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field Technician", ((string[])(null)));
 #line hidden
         }
@@ -496,11 +490,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Field 
             " Finance", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Finance()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Finance", ((string[])(null)));
 #line hidden
         }
@@ -509,11 +503,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Financ
             " Finance Admin", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_FinanceAdmin()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Finance Admin", ((string[])(null)));
 #line hidden
         }
@@ -522,11 +516,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Financ
             " Human Resources", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_HumanResources()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Human Resources", ((string[])(null)));
 #line hidden
         }
@@ -535,11 +529,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Human 
             " Kamco Client", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_KamcoClient()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Kamco Client", ((string[])(null)));
 #line hidden
         }
@@ -548,11 +542,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Kamco 
             " Logistics + Reports", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_LogisticsReports()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Logistics + Reports", ((string[])(null)));
 #line hidden
         }
@@ -561,11 +555,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Logist
             " National Inventory", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_NationalInventory()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("National Inventory", ((string[])(null)));
 #line hidden
         }
@@ -574,11 +568,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Nation
             " National Workshop Manager", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_NationalWorkshopManager()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("National Workshop Manager", ((string[])(null)));
 #line hidden
         }
@@ -587,11 +581,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Nation
             " Part Type Creation", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_PartTypeCreation()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Part Type Creation", ((string[])(null)));
 #line hidden
         }
@@ -600,11 +594,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Part T
             " Projects", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Projects()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Projects", ((string[])(null)));
 #line hidden
         }
@@ -613,11 +607,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Projec
             " Projects - SME", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Projects_SME()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Projects - SME", ((string[])(null)));
 #line hidden
         }
@@ -626,11 +620,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Projec
             " Purchasing", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Purchasing()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Purchasing", ((string[])(null)));
 #line hidden
         }
@@ -639,11 +633,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Purcha
             " Service Delivery Manager", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_ServiceDeliveryManager()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Service Delivery Manager", ((string[])(null)));
 #line hidden
         }
@@ -652,11 +646,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Servic
             " Staging", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Staging()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Staging", ((string[])(null)));
 #line hidden
         }
@@ -665,11 +659,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Stagin
             " State Inventory", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_StateInventory()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("State Inventory", ((string[])(null)));
 #line hidden
         }
@@ -678,11 +672,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("State 
             " State Supply Chain Manager", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_StateSupplyChainManager()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("State Supply Chain Manager", ((string[])(null)));
 #line hidden
         }
@@ -691,11 +685,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("State 
             " Stock Take", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_StockTake()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Stock Take", ((string[])(null)));
 #line hidden
         }
@@ -704,11 +698,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Stock 
             " Stocktake Reports", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_StocktakeReports()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Stocktake Reports", ((string[])(null)));
 #line hidden
         }
@@ -717,11 +711,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Stockt
             " Trainer", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Trainer()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Trainer", ((string[])(null)));
 #line hidden
         }
@@ -730,11 +724,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Traine
             " VG Agent Logistics", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_VGAgentLogistics()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("VG Agent Logistics", ((string[])(null)));
 #line hidden
         }
@@ -743,11 +737,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("VG Age
             " Workshop Admin", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_WorkshopAdmin()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Workshop Admin", ((string[])(null)));
 #line hidden
         }
@@ -756,11 +750,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Worksh
             " Workshop Technician", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_WorkshopTechnician()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Workshop Technician", ((string[])(null)));
 #line hidden
         }
@@ -769,11 +763,11 @@ this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Worksh
             " Worm", new string[] {
                 "BSUITE-10092",
                 "PositiveTests",
-                "NegativeTests"}, SourceLine=25)]
+                "NegativeTests"}, SourceLine=27)]
         [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen_Worm()
         {
-#line 19
+#line 20
 this.UsersWithoutSystemAdminRoleShallNotBeAllowedAccessToAdminMenuScreen("Worm", ((string[])(null)));
 #line hidden
         }

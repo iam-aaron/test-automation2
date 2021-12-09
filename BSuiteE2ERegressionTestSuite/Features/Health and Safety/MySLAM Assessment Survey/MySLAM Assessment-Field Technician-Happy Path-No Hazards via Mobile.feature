@@ -4,9 +4,10 @@ Feature: Health and Safety - MySLAM Assessment - Field Technician - Happy Path -
 @BSuite @BSuite-Mobile 
 @Field-Technician @GSQA-170
 Scenario: Health and Safety - MySLAM Assessment - Field Technician - Happy Path - No Hazards via Mobile
-	Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
-		| Role         | Username         | Password |
-		| System Admin | testsystemadmin1 | bsuite   |
+	#Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
+	#	| Role         | Username         | Password |
+	#	| System Admin | testsystemadmin1 | bsuite   |
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I have navigated to 'Call Centre' page from the top menu
 	And I have navigated to 'Add Task' page and entered details as follows
 		| Field             | Value      |
@@ -45,9 +46,10 @@ Scenario: Health and Safety - MySLAM Assessment - Field Technician - Happy Path 
 	And I click the 'Finish' button
 	Then I log off from Bsuite 'Desktop' portal  
 	When I have opened the BSuite Mobile Portal
-	And I login as a User with User Profile as follows
-	| Role             | Username        | Password |
-	| Field Technician | test2fieldtech170 | bsuite   |
+	#And I login as a User with User Profile as follows
+	#| Role             | Username        | Password |
+	#| Field Technician | test2fieldtech170 | bsuite   |
+	Given I have logged into BSuite 'Mobile' portal as a User with role 'Field Technician'
 	Then I click on 'Task #' link
 	Then I am required to select the created task using the task number
 	Then I click on 'Take Task' link
@@ -84,12 +86,10 @@ Scenario: Health and Safety - MySLAM Assessment - Field Technician - Happy Path 
 	Then I click on 'Task List' link
 	And I am required to select the created task using the task number
 	And I verify the task status as 'ONSITE'
-
-	
 	
 	Examples:
-		| Contract       | Site | App. Start Time | App. Start Hour | App. Start Minute | App. End Time | App. End Hour | App. End Minute | Position | Part    | Part Status | Priority | Problem Category | Problem Code |
-		| QLD Pokies - PM | 688  | 2021-11-17      | 02              | 00                | 2021-11-17    | 02            | 30              | 1        | 1000041 | Degraded    | 31        | Unknown          | Unknown      |
+		| Contract        | Site | App. Start Time | App. Start Hour | App. Start Minute | App. End Time | App. End Hour | App. End Minute | Position | Part    | Part Status | Priority | Problem Category | Problem Code |
+		| QLD Pokies - PM | 688  | 2021-11-17      | 02              | 00                | 2021-11-17    | 02            | 30              | 1        | 1000041 | Degraded    | 31       | Unknown          | Unknown      |
 		
 
 	

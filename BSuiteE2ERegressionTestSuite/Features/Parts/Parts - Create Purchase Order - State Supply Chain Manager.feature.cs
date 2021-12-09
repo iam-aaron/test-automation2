@@ -22,8 +22,11 @@ namespace BSuiteE2ERegressionTestSuite.Features.Parts
     [TechTalk.SpecRun.FeatureAttribute("Parts - Create Purchase Order - State Supply Chain Manager", new string[] {
             "AllTests",
             "BSuite",
-            "BSuiteDesktop",
-            "Parts"}, Description="\tTODO", SourceFile="Features\\Parts\\Parts - Create Purchase Order - State Supply Chain Manager.feature" +
+            "BSuite-Website",
+            "State-Supply-Chain-Manager",
+            "Parts",
+            "Purchase-order"}, Description="As a BSuite Desktop User with Role State Supply Chain Manager\r\nI am able to creat" +
+        "e a Purchase Order in BSuite", SourceFile="Features\\Parts\\Parts - Create Purchase Order - State Supply Chain Manager.feature" +
         "", SourceLine=1)]
     public partial class Parts_CreatePurchaseOrder_StateSupplyChainManagerFeature
     {
@@ -33,8 +36,10 @@ namespace BSuiteE2ERegressionTestSuite.Features.Parts
         private string[] _featureTags = new string[] {
                 "AllTests",
                 "BSuite",
-                "BSuiteDesktop",
-                "Parts"};
+                "BSuite-Website",
+                "State-Supply-Chain-Manager",
+                "Parts",
+                "Purchase-order"};
         
 #line 1 "Parts - Create Purchase Order - State Supply Chain Manager.feature"
 #line hidden
@@ -43,11 +48,14 @@ namespace BSuiteE2ERegressionTestSuite.Features.Parts
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Parts", "Parts - Create Purchase Order - State Supply Chain Manager", "\tTODO", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Parts", "Parts - Create Purchase Order - State Supply Chain Manager", "As a BSuite Desktop User with Role State Supply Chain Manager\r\nI am able to creat" +
+                    "e a Purchase Order in BSuite", ProgrammingLanguage.CSharp, new string[] {
                         "AllTests",
                         "BSuite",
-                        "BSuiteDesktop",
-                        "Parts"});
+                        "BSuite-Website",
+                        "State-Supply-Chain-Manager",
+                        "Parts",
+                        "Purchase-order"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,17 +91,20 @@ namespace BSuiteE2ERegressionTestSuite.Features.Parts
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Parts - Create Purchase Order - State Supply Chain Manager", new string[] {
-                "GSQA-77"}, SourceLine=5)]
-        [TechTalk.SpecRun.IgnoreAttribute()]
-        public virtual void Parts_CreatePurchaseOrder_StateSupplyChainManager()
+        public virtual void Parts_CreatePurchaseOrder_StateSupplyChainManager(string purchaseOrderNo, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "GSQA-77",
-                    "ignore"};
+                    "PositiveTests"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Purchase Order No", purchaseOrderNo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Parts - Create Purchase Order - State Supply Chain Manager", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -113,11 +124,106 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'State Supply Chai" +
+                        "n Manager\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 13
+ testRunner.And("I have navigated to \'Purchase Orders\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+ testRunner.And("I click the \'Add New Purchase Order\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table147 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value/Action"});
+                table147.AddRow(new string[] {
+                            "Purchase Order No",
+                            string.Format("{0}", purchaseOrderNo)});
+                table147.AddRow(new string[] {
+                            "Supplier Name",
+                            "3rd Party Supplier"});
+                table147.AddRow(new string[] {
+                            "Order Status",
+                            "ORDERED"});
+                table147.AddRow(new string[] {
+                            "Order Currency",
+                            "AUD"});
+                table147.AddRow(new string[] {
+                            "Comments",
+                            "This PO is created for regression testing purpose only. Not a real P.O"});
+                table147.AddRow(new string[] {
+                            "Part Type",
+                            "1000000 : GMIC (GREY/BLUE)"});
+                table147.AddRow(new string[] {
+                            "Diss. Code",
+                            "11.11.1111.11.11111"});
+                table147.AddRow(new string[] {
+                            "Quantity",
+                            "1"});
+                table147.AddRow(new string[] {
+                            "Unit Cost (Ex. GST)",
+                            "100"});
+#line 15
+ testRunner.And("I enter the following details in the \'Purchase Orders\' page", ((string)(null)), table147, "And ");
+#line hidden
+#line 26
+ testRunner.And("I have clicked \'Add\' button on Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+ testRunner.And("I have clicked \'Save\' button on Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+ testRunner.And("I enter the successfully created Purchase Order No", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
+ testRunner.And("I have clicked \'Search\' button on Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+ testRunner.And("I verify the Purchase Order created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Parts - Create Purchase Order - State Supply Chain Manager, BYT", new string[] {
+                "GSQA-77",
+                "PositiveTests"}, SourceLine=33)]
+        public virtual void Parts_CreatePurchaseOrder_StateSupplyChainManager_BYT()
+        {
+#line 7
+this.Parts_CreatePurchaseOrder_StateSupplyChainManager("BYT", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Parts - Create Purchase Order - State Supply Chain Manager, FS", new string[] {
+                "GSQA-77",
+                "PositiveTests"}, SourceLine=33)]
+        public virtual void Parts_CreatePurchaseOrder_StateSupplyChainManager_FS()
+        {
+#line 7
+this.Parts_CreatePurchaseOrder_StateSupplyChainManager("FS", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Parts - Create Purchase Order - State Supply Chain Manager, WS", new string[] {
+                "GSQA-77",
+                "PositiveTests"}, SourceLine=33)]
+        public virtual void Parts_CreatePurchaseOrder_StateSupplyChainManager_WS()
+        {
+#line 7
+this.Parts_CreatePurchaseOrder_StateSupplyChainManager("WS", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Parts - Create Purchase Order - State Supply Chain Manager, B00", new string[] {
+                "GSQA-77",
+                "PositiveTests"}, SourceLine=33)]
+        public virtual void Parts_CreatePurchaseOrder_StateSupplyChainManager_B00()
+        {
+#line 7
+this.Parts_CreatePurchaseOrder_StateSupplyChainManager("B00", ((string[])(null)));
+#line hidden
         }
     }
 }

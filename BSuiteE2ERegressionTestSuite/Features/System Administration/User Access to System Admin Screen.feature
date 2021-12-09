@@ -6,8 +6,9 @@ Feature: User Access to System Admin Screen
 
 @BSUITE-10092 @PositiveTests @NegativeTests @ignore
 Scenario Outline: Only Users with System Admin role shall be allowed access to Admin menu screen
-	Given I have opened the BSuite Desktop Portal
-	When I login as a User with role '<Role>'
+	#Given I have opened the BSuite Desktop Portal
+	#When I login as a User with role '<Role>'
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	Then I can navigate to 'Admin' page from the top menu
 
 Examples: 
@@ -17,8 +18,9 @@ Examples:
 
 @BSUITE-10092 @PositiveTests @NegativeTests @ignore
 Scenario Outline: Users without System Admin role shall not be allowed access to Admin menu screen
-	Given I have opened the BSuite Desktop Portal
-	When I login as a User with role '<Role>'
+	#Given I have opened the BSuite Desktop Portal
+	#When I login as a User with role '<Role>'
+	Given I have logged into BSuite 'Desktop' portal as a User with role '<Role>'
 	Then I cannot navigate to 'Admin' page from the top menu
 
 Examples: 

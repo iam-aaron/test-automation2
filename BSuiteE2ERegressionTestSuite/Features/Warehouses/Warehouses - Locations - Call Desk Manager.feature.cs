@@ -87,17 +87,13 @@ namespace BSuiteE2ERegressionTestSuite.Features.Warehouses
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void Warehouses_Locations_CallDeskManager(string role, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Warehouses - Locations - Call Desk Manager", new string[] {
+                "GSQA-98"}, SourceLine=6)]
+        public virtual void Warehouses_Locations_CallDeskManager()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-98"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Warehouses - Locations - Call Desk Manager", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -120,7 +116,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 8
- testRunner.Given(string.Format("I have logged into BSuite \'Desktop\' portal as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'Call Desk Manager" +
+                        "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
  testRunner.And("I have navigated to \'Admin Warehouse\' page from \'Administration\' in \'Logistics\' t" +
@@ -252,15 +249,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Warehouses - Locations - Call Desk Manager, Call Desk Manager", new string[] {
-                "GSQA-98"}, SourceLine=49)]
-        public virtual void Warehouses_Locations_CallDeskManager_CallDeskManager()
-        {
-#line 7
-this.Warehouses_Locations_CallDeskManager("Call Desk Manager", ((string[])(null)));
-#line hidden
         }
     }
 }

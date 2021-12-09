@@ -41,6 +41,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
 	I must complete a Pre Start Assessment Survey when I login for the first time via the BSuite Desktop Portal
 	So that I can continue to use the BSuite application to carry out my duties", SourceFile="Features\\Health and Safety\\PreStart Assessment Survey\\Desktop PreStart Form-Works" +
         "hop Technician - Happy Path via Desktop.feature", SourceLine=1)]
+    [TechTalk.SpecRun.IgnoreAttribute()]
     public partial class HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_WorkshopTechnician_HappyPathViaDesktopFeature
     {
         
@@ -50,7 +51,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                 "AllTests",
                 "BSuite",
                 "HealthAndSafety",
-                "PreStartAssessment"};
+                "PreStartAssessment",
+                "ignore"};
         
 #line 1 "Desktop PreStart Form-Workshop Technician - Happy Path via Desktop.feature"
 #line hidden
@@ -79,7 +81,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                         "AllTests",
                         "BSuite",
                         "HealthAndSafety",
-                        "PreStartAssessment"});
+                        "PreStartAssessment",
+                        "ignore"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -154,69 +157,69 @@ this.ScenarioInitialize(scenarioInfo);
 #line 22
  testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table36.AddRow(new string[] {
+                table34.AddRow(new string[] {
                             string.Format("{0}", role),
                             string.Format("{0}", username),
                             string.Format("{0}", password)});
 #line 23
- testRunner.And("I login as a User for the first time in a day with user details as follows", ((string)(null)), table36, "And ");
+ testRunner.And("I login as a User for the first time in a day with user details as follows", ((string)(null)), table34, "And ");
 #line hidden
 #line 26
  testRunner.Then("I am required to complete the Pre Start Checklist for the day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Question Number",
+                            "Question"});
+                table35.AddRow(new string[] {
+                            "1",
+                            "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
+                                "ers licence, gaming licence/forklift licence?"});
+#line 27
+ testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table35, "Then ");
+#line hidden
+#line 30
+ testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Question Number",
+                            "Question"});
+                table36.AddRow(new string[] {
+                            "2",
+                            "Are your tools and equipment in good condition and do you have sufficient/enough " +
+                                "PPE?"});
+#line 31
+ testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table36, "Then ");
+#line hidden
+#line 34
+ testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
                 table37.AddRow(new string[] {
-                            "1",
-                            "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
-                                "ers licence, gaming licence/forklift licence?"});
-#line 27
- testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table37, "Then ");
-#line hidden
-#line 30
- testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Question Number",
-                            "Question"});
-                table38.AddRow(new string[] {
-                            "2",
-                            "Are your tools and equipment in good condition and do you have sufficient/enough " +
-                                "PPE?"});
-#line 31
- testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table38, "Then ");
-#line hidden
-#line 34
- testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Question Number",
-                            "Question"});
-                table39.AddRow(new string[] {
                             "3",
                             "Have you completed all mandatory training relevant to your Field Technicians Role" +
                                 " - (e.g. Electrical safety/lifting/ladders etc.) OR are you familiar with all of" +
                                 " the SWP (Safe Work Practice) documents relevant to your role?"});
 #line 35
- testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table39, "Then ");
+ testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table37, "Then ");
 #line hidden
 #line 38
  testRunner.When("I respond \'Yes\' to the \'third\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table40.AddRow(new string[] {
+                table38.AddRow(new string[] {
                             "4",
                             "I am fit for work and can perform my work without compromising the safety or heal" +
                                 "th of myself or others."});
 #line 39
- testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table40, "Then ");
+ testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table38, "Then ");
 #line hidden
 #line 42
  testRunner.When("I respond \'Yes\' to the \'fourth\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

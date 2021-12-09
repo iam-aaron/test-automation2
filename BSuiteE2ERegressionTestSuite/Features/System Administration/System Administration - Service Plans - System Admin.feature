@@ -4,8 +4,9 @@ Feature: System Administration - Service Plans - System Admin
 
 @GSQA-112 @PositiveTests
 Scenario: System Administration - Service Plans - System Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with role '<Role>'	
+	#Given I have opened the BSuite Desktop Portal
+	#And I login as a User with role '<Role>'	
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I have navigated to 'Service Plan' page from the top menu Lookup
 	And I click the 'Add New' button to load details	
 	And I enter the following details in the 'Service Plan' page
@@ -26,9 +27,9 @@ Scenario: System Administration - Service Plans - System Admin
 	And I click the 'Home' link
 	And I log off from Bsuite 'Desktop' portal
 	
-
-Examples: 
-	| Role         | 
-	| System Admin | 
+#
+#Examples: 
+#	| Role         | 
+#	| System Admin | 
 
 

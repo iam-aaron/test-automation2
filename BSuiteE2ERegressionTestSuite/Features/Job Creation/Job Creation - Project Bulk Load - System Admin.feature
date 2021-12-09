@@ -8,7 +8,8 @@ Scenario: Job Creation - Project Bulk Load - System Admin
 	And I have clicked 'Import FieldTasks' link and entered details as follows
 		| Field    | Value                         |
 		| WorkType | IGS - Deployments             |
-		| File     | IGS Deployment WC GSQA-14.csv |
+		| File     | IGS Deployment WC GSQA-14.csv |  
+
 	And I click the 'Upload' button
 	#Do you wish to continue to upload the file
 	When I click the 'Yes' button

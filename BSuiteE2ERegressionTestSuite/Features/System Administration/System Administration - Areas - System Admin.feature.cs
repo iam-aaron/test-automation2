@@ -88,18 +88,15 @@ namespace BSuiteE2ERegressionTestSuite.Features.SystemAdministration
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SystemAdministration_Areas_SystemAdmin(string role, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Areas - System Admin", new string[] {
+                "GSQA-115",
+                "PositiveTests"}, SourceLine=5)]
+        public virtual void SystemAdministration_Areas_SystemAdmin()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-115",
                     "PositiveTests"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("System Administration - Areas - System Admin", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -121,41 +118,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.And(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 9
- testRunner.And("I have navigated to \'Region\' page from the top menu Lookup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
+ testRunner.And("I have navigated to \'Region\' page from the top menu Lookup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
  testRunner.When("I select the \'Please Select\' drop down value as \'Regions\' for the country \'Name\' " +
                         "\'Australia\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 12
  testRunner.Then("The \'List of Regions\' within the country \'Australia\' is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 12
+#line 13
  testRunner.When("I click the \'Areas\' button for the \'Region\' \'QLD\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 14
  testRunner.Then("The \'List of Areas\' under the region \'QLD\' within the country \'Australia\' is disp" +
                         "layed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Areas - System Admin, System Admin", new string[] {
-                "GSQA-115",
-                "PositiveTests"}, SourceLine=17)]
-        public virtual void SystemAdministration_Areas_SystemAdmin_SystemAdmin()
-        {
-#line 6
-this.SystemAdministration_Areas_SystemAdmin("System Admin", ((string[])(null)));
-#line hidden
         }
     }
 }

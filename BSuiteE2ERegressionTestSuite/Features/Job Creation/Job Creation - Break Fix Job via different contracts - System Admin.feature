@@ -6,9 +6,10 @@ So that Customer issue can be taken up for resolution
 
 @GSQA-3 @PositiveTests 
 Scenario Outline: Job Creation - Break Fix Job via different contracts - System Admin
-	Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
-		| Role         | Username         | Password |
-		| System Admin | TestSystemAdmin3 | bsuite   |  
+	#Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
+	#	| Role         | Username         | Password |
+	#	| System Admin | TestSystemAdmin3 | bsuite   |  
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I have navigated to 'Call Centre' page from the top menu
 	And I have navigated to 'Add Task' page and entered details as follows
 		| Field             | Value      |

@@ -88,18 +88,15 @@ namespace BSuiteE2ERegressionTestSuite.Features.SystemAdministration
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SystemAdministration_ActionTypes_SystemAdmin(string role, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Action Types - System Admin", new string[] {
+                "GSQA-113",
+                "PositiveTests"}, SourceLine=5)]
+        public virtual void SystemAdministration_ActionTypes_SystemAdmin()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-113",
                     "PositiveTests"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("System Administration - Action Types - System Admin", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -122,77 +119,64 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
  testRunner.And("I can navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 9
  testRunner.And("I click the \'Action Types\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 10
  testRunner.And("\'Action Type\' page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 11
  testRunner.And("I click the \'Add New Action Type\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table130.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "Action Type Name",
                             "RegressionTest"});
-                table130.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "Part Required",
                             "Not Checked"});
-                table130.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "Part Insurance Required",
                             "Not Checked"});
-                table130.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "Part Movement Direction",
                             "NONE"});
-                table130.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "Work Type",
                             "ALH Group - IT Support - Break Fix"});
-                table130.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "Part Type Groups",
                             "ATS"});
-#line 13
- testRunner.And("I enter the following details in the \'Cause Categories\' page", ((string)(null)), table130, "And ");
+#line 12
+ testRunner.And("I enter the following details in the \'Cause Categories\' page", ((string)(null)), table153, "And ");
 #line hidden
-#line 21
+#line 20
  testRunner.And("I click the \'Save\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table131.AddRow(new string[] {
+                table154.AddRow(new string[] {
                             "Search Action Types",
                             "RegressionTest"});
-#line 22
- testRunner.When("I enter the following details in the \'Action Type\' page", ((string)(null)), table131, "When ");
+#line 21
+ testRunner.When("I enter the following details in the \'Action Type\' page", ((string)(null)), table154, "When ");
 #line hidden
-#line 25
+#line 24
  testRunner.And("I click the \'Search\' button to search the details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 25
  testRunner.Then("I verify the Action Type newly added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Action Types - System Admin, System Admin", new string[] {
-                "GSQA-113",
-                "PositiveTests"}, SourceLine=33)]
-        public virtual void SystemAdministration_ActionTypes_SystemAdmin_SystemAdmin()
-        {
-#line 6
-this.SystemAdministration_ActionTypes_SystemAdmin("System Admin", ((string[])(null)));
-#line hidden
         }
     }
 }

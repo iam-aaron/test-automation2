@@ -1,4 +1,4 @@
-﻿@AllTests @BSuite @HealthAndSafety @Pre-Start-Form 
+﻿@AllTests @BSuite @HealthAndSafety @Pre-Start-Form @ignore
 Feature: Health and Safety - Mobile Daily PreStart Form - Field Technicians Daily PreStart Form will be available on mobile devices only
 	As a BSuite Desktop User
 	I can login to BSuite Desktop portal
@@ -44,7 +44,7 @@ Scenario Outline: Health and Safety - Mobile Daily PreStart Form - Field Technic
 	
 	
 	Examples: 
-	| Role             | Username            | Password |
-	| Field Technician | TestField164Tech7 | bsuite   |  
+	| Role             | Username          | Password |
+	| Field Technician | TestField164Tech1 | bsuite   |  
 
  

@@ -4,8 +4,9 @@ Feature: System Administration - User Records - System Admin
 
 @GSQA-110 @PositiveTests
 Scenario: System Administration - User Records - System Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with role '<Role>'	
+	#Given I have opened the BSuite Desktop Portal
+	#And I login as a User with role '<Role>'	
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I have navigated to 'Personnel' page from the top menu Lookup
 	And I click the 'Add Person' button 
 	And I enter the following details in the 'Personnel' page
@@ -30,12 +31,12 @@ Scenario: System Administration - User Records - System Admin
 	And I click the 'Search User' button to load details
 	Then I verify the user name newly added
 
-
-
-	
-
-Examples: 
-	| Role         | 
-	| System Admin | 
+#
+#
+#	
+#
+#Examples: 
+#	| Role         | 
+#	| System Admin | 
 
 

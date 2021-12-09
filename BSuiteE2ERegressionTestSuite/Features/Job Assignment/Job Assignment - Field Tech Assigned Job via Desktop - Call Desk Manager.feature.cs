@@ -125,71 +125,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("I have navigated to \'Call Centre\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table75.AddRow(new string[] {
+                table71.AddRow(new string[] {
                             "Contract/WorkType",
                             "ALH Group - IT Support - Break Fix"});
 #line 12
- testRunner.And("I have navigated to \'Add Task\' page and entered details as follows", ((string)(null)), table75, "And ");
+ testRunner.And("I have navigated to \'Add Task\' page and entered details as follows", ((string)(null)), table71, "And ");
 #line hidden
 #line 15
  testRunner.When("I click the \'Add Task\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value/Action"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Site",
                             "688"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Contact",
                             "Sam1234"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "App. Start Time",
                             "2021-11-02"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "App. Start Hour",
                             "00"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "App. Start Minute",
                             "55"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "App. End Time",
                             "2021-11-18"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "App. End Hour",
                             "00"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "App. End Minute",
                             "00"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Serial Number",
                             "1"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Position",
                             "1"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Part",
                             "1000041"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Part Status",
                             "Usable"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Priority",
                             "1"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Problem Category",
                             "Unknown"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Problem Code",
                             "Unknown"});
-                table76.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             "Problem Desc",
                             "GSQA-25"});
 #line 16
- testRunner.Then("I enter the following details in the \'Add Task - FieldTask\' page", ((string)(null)), table76, "Then ");
+ testRunner.Then("I enter the following details in the \'Add Task - FieldTask\' page", ((string)(null)), table72, "Then ");
 #line hidden
 #line 34
  testRunner.When("I click the \'Save\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -233,21 +233,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 49
  testRunner.When("I have opened the BSuite Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table77.AddRow(new string[] {
+                table73.AddRow(new string[] {
                             "Field Technician",
                             "TestFieldTech27",
                             "bsuite"});
 #line 50
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table77, "And ");
-#line hidden
-#line 53
- testRunner.Then("I click the \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table73, "And ");
 #line hidden
 #line 54
+ testRunner.Then("I click the \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 55
+ testRunner.And("I click the \'Task #\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 56
  testRunner.And("I verify the task in My Tasks page on mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

@@ -117,17 +117,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.And("I have navigated to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table86.AddRow(new string[] {
+                table82.AddRow(new string[] {
                             "WorkType",
                             "IGS - Deployments"});
-                table86.AddRow(new string[] {
+                table82.AddRow(new string[] {
                             "File",
                             "IGS Deployment WC GSQA-23.csv"});
 #line 9
- testRunner.And("I have clicked \'Import FieldTasks\' link and entered details as follows", ((string)(null)), table86, "And ");
+ testRunner.And("I have clicked \'Import FieldTasks\' link and entered details as follows", ((string)(null)), table82, "And ");
 #line hidden
 #line 13
  testRunner.And("I click the \'Upload\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -141,54 +141,43 @@ this.ScenarioInitialize(scenarioInfo);
 #line 17
  testRunner.And("I log off from Bsuite \'Desktop\' portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
- testRunner.When("I have opened the BSuite Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Role",
-                            "Username",
-                            "Password"});
-                table87.AddRow(new string[] {
-                            "Field Technician",
-                            "TestFieldTechnician100",
-                            "bsuite"});
-#line 20
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table87, "And ");
-#line hidden
 #line 23
- testRunner.And("I have clicked \'Task #\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have logged into BSuite \'Mobile\' portal as a User with role \'Field Technician\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 24
- testRunner.And("I search for the task number and click on the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I have clicked \'Task #\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
- testRunner.And("I have clicked \'Take Task\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for the task number and click on the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
- testRunner.And("I have clicked \'« Back to Task List\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have clicked \'Take Task\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
- testRunner.And("I have clicked \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have clicked \'« Back to Task List\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
- testRunner.And("Status of the task is updated as TAKEN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 29
- testRunner.And("I have clicked \'All\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 30
- testRunner.And("I search for the multiple task numbers and click on the corresponding check box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 31
- testRunner.And("I have clicked \'ETA box\' button on Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 32
- testRunner.And("I have clicked \'Take Task\' button on Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 33
  testRunner.And("I have clicked \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 29
+ testRunner.And("Status of the task is updated as TAKEN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+ testRunner.And("I have clicked \'All\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+ testRunner.And("I search for the multiple task numbers and click on the corresponding check box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+ testRunner.And("I have clicked \'ETA box\' button on Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 33
+ testRunner.And("I have clicked \'Take Task\' button on Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 34
+ testRunner.And("I have clicked \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 35
  testRunner.Then("Status of the tasks is updated as TAKEN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

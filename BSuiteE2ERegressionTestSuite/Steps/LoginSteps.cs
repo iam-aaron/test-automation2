@@ -85,8 +85,8 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var loginPage = gblOjectContainer.Resolve<LoginPage>();
-            var username = gblConfig.Users[role].UserName;
-            var password = gblConfig.Users[role].UserPassword;
+            var username = (string)gblUsers[role].FirstOrDefault().Keys.FirstOrDefault(); 
+            var password = (string)gblUsers[role].FirstOrDefault()[gblUsers[role].FirstOrDefault().Keys.FirstOrDefault()];
             gblCurrentUser.UserName = username;
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;
@@ -165,8 +165,10 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var loginPage = gblOjectContainer.Resolve<LoginPage>();
-            var username = gblConfig.Users[role].UserName;
-            var password = gblConfig.Users[role].UserPassword;
+            //var username = gblConfig.Users[role].UserName;
+            //var password = gblConfig.Users[role].UserPassword;
+            var username = (string)gblUsers[role].FirstOrDefault()["firstName"]; // gblConfig.Users[role].UserName;
+            var password = "bsuite";
             gblCurrentUser.UserName = username;
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;
@@ -179,8 +181,6 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             //var loginPage = gblOjectContainer.Resolve<LoginPage>();
-            //var username = gblConfig.Users[role].UserName;
-            //var password = gblConfig.Users[role].UserPassword;
             if (webDriver.Title.Contains("BSuite on WAP"))
             {
                 var loginPageMobile = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
@@ -207,8 +207,10 @@ namespace BSuiteE2ERegressionTest
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
-            var username = gblConfig.Users[role].UserName;
-            var password = gblConfig.Users[role].UserPassword;
+            //var username = gblConfig.Users[role].UserName;
+            //var password = gblConfig.Users[role].UserPassword;
+            var username = (string)gblUsers[role].FirstOrDefault()["firstName"]; // gblConfig.Users[role].UserName;
+            var password = "bsuite";
             gblCurrentUser.UserName = username;
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;
@@ -303,6 +305,12 @@ namespace BSuiteE2ERegressionTest
             }
         }
 
+        /// <summary>
+        /// Login to BSuite Mobile portal for the first time 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="role"></param>
         public void LoginForTheFirstTImeInMobile(string username, string password, string role)
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
@@ -339,8 +347,8 @@ namespace BSuiteE2ERegressionTest
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.DesktopPortal.LoginPage>();
 
-            var username = gblConfig.Users[role].UserName;
-            var password = gblConfig.Users[role].UserPassword;
+            var username = (string)gblUsers[role].FirstOrDefault()["firstName"]; // gblConfig.Users[role].UserName;
+            var password = "bsuite";
             gblCurrentUser.UserName = username;
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;
@@ -383,8 +391,10 @@ namespace BSuiteE2ERegressionTest
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var loginPage = gblOjectContainer.Resolve<BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.LoginPage>();
 
-            var username = gblConfig.Users[role].UserName;
-            var password = gblConfig.Users[role].UserPassword;
+            //var username = gblConfig.Users[role].UserName;
+            //var password = gblConfig.Users[role].UserPassword;
+            var username = (string)gblUsers[role].FirstOrDefault()["firstName"]; 
+            var password = "bsuite";
             gblCurrentUser.UserName = username;
             gblCurrentUser.Password = password;
             gblCurrentUser.Role = role;

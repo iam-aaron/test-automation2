@@ -112,22 +112,22 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
-testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
  testRunner.And("I have navigated to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table74.AddRow(new string[] {
+                table70.AddRow(new string[] {
                             "WorkType",
                             "IGS - Deployments"});
-                table74.AddRow(new string[] {
+                table70.AddRow(new string[] {
                             "File",
                             "IGS Deployment WC GSQA-31.csv"});
 #line 9
- testRunner.And("I have clicked \'Import FieldTasks\' link and entered details as follows", ((string)(null)), table74, "And ");
+ testRunner.And("I have clicked \'Import FieldTasks\' link and entered details as follows", ((string)(null)), table70, "And ");
 #line hidden
 #line 13
  testRunner.And("I click the \'Upload\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

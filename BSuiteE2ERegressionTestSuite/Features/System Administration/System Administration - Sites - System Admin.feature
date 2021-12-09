@@ -4,8 +4,9 @@ Feature: System Administration - Sites - System Admin
 
 @GSQA-118 @PositiveTests
 Scenario: System Administration - Sites - System Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with role '<Role>'	
+	#Given I have opened the BSuite Desktop Portal
+	#And I login as a User with role '<Role>'	
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'
 	And I have navigated to 'Region' page from the top menu Lookup
 	When I select the 'Please Select' drop down value as 'Regions' for the country 'Name' 'Australia'	
 	Then The 'List of Regions' within the country 'Australia' is displayed
@@ -17,10 +18,10 @@ Scenario: System Administration - Sites - System Admin
 	Then The 'List of Zones' under the zone set 'QLD Metro N 1' within the area 'QLD Metro' is displayed
 	When I click the 'Sites' button for the 'Zone' 'QLD ALBION'
 	Then The 'List of Sites' under the zone 'QLD ALBION' within the zone set 'QLD Metro N 1' is displayed
-
-
-Examples: 
-	| Role         | 
-	| System Admin | 
+#
+#
+#Examples: 
+#	| Role         | 
+#	| System Admin | 
 
 

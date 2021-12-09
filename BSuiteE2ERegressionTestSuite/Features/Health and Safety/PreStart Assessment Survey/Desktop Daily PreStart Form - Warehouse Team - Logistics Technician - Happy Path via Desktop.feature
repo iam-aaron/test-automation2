@@ -1,11 +1,11 @@
-﻿@AllTests @BSuite @BSuiteDesktop @Login
+﻿@AllTests @BSuite @BSuiteDesktop @Login @ignore
 Feature: Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Logistics Technician - Happy Path via Desktop
 	As a BSuite Desktop User
 	I can login to BSuite Desktop portal Health and Safety
 	So that I can carry out my tasks
 
 @GSQA-166 @PositiveTests 
-Scenario Outline: Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Workshop Technician - Happy Path via Desktop
+Scenario Outline: Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Logistics Technician - Happy Path via Desktop
    Given I have opened the BSuite Desktop Portal
 	And I login as a User for the first time in a day with user details as follows
 	| Role   | Username   | Password   |

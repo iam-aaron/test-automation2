@@ -51,6 +51,7 @@ Scenario: Job Assignment - Field Tech Removed from Job - Call Desk Manager
 		| Role             | Username        | Password |
 		| Field Technician | TestFieldTech27 | bsuite   |  
 	Then I click the 'Mine' link
+	And I click the 'Task #' link
 	And I verify the task in My Tasks page on mobile portal
 	And I log off from Bsuite 'Mobile' portal
 	Given I have logged into BSuite 'Desktop' portal as a User with role 'Call Desk Manager' 
@@ -64,6 +65,7 @@ Scenario: Job Assignment - Field Tech Removed from Job - Call Desk Manager
 		| Role             | Username        | Password |
 		| Field Technician | TestFieldTech27 | bsuite   |  
 	Then I click the 'Mine' link
+	And I click the 'Task #' link
 	And I am NOT able to view the Task number in My Tasks page on mobile portal
 	And I log off from Bsuite 'Mobile' portal
 

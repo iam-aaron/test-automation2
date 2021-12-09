@@ -31,7 +31,7 @@ namespace BSuiteE2ERegressionTest
             gblConfig.LoadConfig();
 
             //Load test data for the regression test run
-            //LoadTestData();
+            LoadTestData();
         }
 
         [BeforeScenario]

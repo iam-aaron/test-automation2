@@ -126,71 +126,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("I have navigated to \'Call Centre\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table82.AddRow(new string[] {
+                table78.AddRow(new string[] {
                             "Contract/WorkType",
                             "ALH Group - IT Support - Break Fix"});
 #line 12
- testRunner.And("I have navigated to \'Add Task\' page and entered details as follows", ((string)(null)), table82, "And ");
+ testRunner.And("I have navigated to \'Add Task\' page and entered details as follows", ((string)(null)), table78, "And ");
 #line hidden
 #line 15
  testRunner.When("I click the \'Add Task\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value/Action"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Site",
                             "688"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Contact",
                             "Sam1234"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "App. Start Time",
                             "2021-11-02"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "App. Start Hour",
                             "00"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "App. Start Minute",
                             "55"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "App. End Time",
                             "2021-11-18"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "App. End Hour",
                             "00"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "App. End Minute",
                             "00"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Serial Number",
                             "1"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Position",
                             "1"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Part",
                             "1000041"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Part Status",
                             "Usable"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Priority",
                             "1"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Problem Category",
                             "Unknown"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Problem Code",
                             "Unknown"});
-                table83.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "Problem Desc",
                             "GSQA-28"});
 #line 16
- testRunner.Then("I enter the following details in the \'Add Task - FieldTask\' page", ((string)(null)), table83, "Then ");
+ testRunner.Then("I enter the following details in the \'Add Task - FieldTask\' page", ((string)(null)), table79, "Then ");
 #line hidden
 #line 34
  testRunner.When("I click the \'Save\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -234,62 +234,68 @@ this.ScenarioInitialize(scenarioInfo);
 #line 49
  testRunner.When("I have opened the BSuite Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table84.AddRow(new string[] {
+                table80.AddRow(new string[] {
                             "Field Technician",
                             "TestFieldTech28",
                             "bsuite"});
 #line 50
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table84, "And ");
+ testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table80, "And ");
 #line hidden
 #line 53
  testRunner.Then("I click the \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 54
- testRunner.And("I verify the task in My Tasks page on mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click the \'Task #\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 55
- testRunner.And("I log off from Bsuite \'Mobile\' portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I verify the task in My Tasks page on mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 56
- testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I log off from Bsuite \'Mobile\' portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 57
- testRunner.And("I have navigated to \'Task Status Screen\' page from \'Call Centre\' top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 58
- testRunner.And("I search the task number in \'Task Status Screen\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to \'Task Status Screen\' page from \'Call Centre\' top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 59
- testRunner.And("I select \'RELEASED\' from the \'Task Status\' drop down box for \'Field Technician\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search the task number in \'Task Status Screen\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 60
+ testRunner.And("I select \'RELEASED\' from the \'Task Status\' drop down box for \'Field Technician\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 61
  testRunner.And("I log off from Bsuite \'Desktop\' portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 62
+#line 63
  testRunner.When("I have opened the BSuite Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table85.AddRow(new string[] {
+                table81.AddRow(new string[] {
                             "Field Technician",
                             "TestFieldTech28",
                             "bsuite"});
-#line 63
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table85, "And ");
-#line hidden
-#line 66
- testRunner.Then("I click the \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 64
+ testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table81, "And ");
 #line hidden
 #line 67
- testRunner.And("I am NOT able to view the Task number in My Tasks page on mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I click the \'Mine\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 68
+ testRunner.And("I click the \'Task #\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+ testRunner.And("I am NOT able to view the Task number in My Tasks page on mobile portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
  testRunner.And("I log off from Bsuite \'Mobile\' portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

@@ -50,7 +50,9 @@ Scenario: Job Assignment - Field Tech Assigned Job via Desktop - Call Desk Manag
 	And I login as a User with User Profile as follows
 		| Role             | Username        | Password |
 		| Field Technician | TestFieldTech27 | bsuite   |  
+	#Given I have logged into BSuite 'Mobile' portal as a User with role 'Field Technician'
 	Then I click the 'Mine' link
+	And I click the 'Task #' link
 	And I verify the task in My Tasks page on mobile portal
 
 

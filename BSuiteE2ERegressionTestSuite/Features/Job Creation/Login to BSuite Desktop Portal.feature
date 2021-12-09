@@ -5,16 +5,6 @@ As a BSuite Desktop User
 	So that I can carry out my tasks
 
 
-@GSQA-10090 @PositiveTests @NegativeTests @ignore
+@GSQA-10090 @PositiveTests @NegativeTests
 Scenario Outline: Login to BSuite Desktop Portal
-	Given I have opened the BSuite Desktop Portal
-	When I login as a User with User Profile as follows	
-		| Role   | Username   | Password   |
-		| <Role> | <Username> | <Password> |
-	Then login is successful
-
-Examples: 
-	| Role         | Username | Password |
-	| System Admin | akshatha | akshatha |
-	| System Admin | sanjanam | sanjanam |
-
+    Given I have logged into BSuite 'Desktop' portal as a User with role 'Logistics Admin'	

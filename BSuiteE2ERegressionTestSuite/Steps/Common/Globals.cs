@@ -21,9 +21,12 @@ namespace BSuiteE2ERegressionTest
         public string yestTo = "";
         public int gblCount = 0;
         public string gblCommonVariable = "";
+        public string gblTaskNumber= "";
+        public string gblNumberWithDate = "";
         public String[] gblTaskNumberForBulkUpload = new String[3];
         public string gblWareHouseId = "";
-        public string gblTaskNumber = "";
+        public string gblClientRef = "";
+        public string gblSerialNumber = "";
         public string gbluserFullName = "";
         public static List<string> gblRoleTypes = new List<string>()
         {

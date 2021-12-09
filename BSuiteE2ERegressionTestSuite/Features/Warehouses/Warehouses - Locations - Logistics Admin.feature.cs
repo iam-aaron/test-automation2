@@ -115,146 +115,135 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table140 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Role",
-                            "Username",
-                            "Password"});
-                table140.AddRow(new string[] {
-                            "Logistics Admin",
-                            "TestLogisticsAdmin2",
-                            "bsuite"});
-#line 9
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table140, "And ");
-#line hidden
 #line 12
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'Logistics Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 13
  testRunner.And("I have navigated to \'Admin Warehouse\' page from \'Administration\' in \'Logistics\' t" +
                         "op menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 14
  testRunner.And("I enter \'Warehouse Name\' as \'VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
- testRunner.And("I click the \'Search\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 15
- testRunner.And("I fetch the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click the \'Search\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
- testRunner.And("I click the \'Show Details\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 17
- testRunner.When("I select the \'Show Details\' drop down value as \'View Record\' in \'Admin Warehouse\'" +
-                        " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 18
- testRunner.Then("I verify the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 19
- testRunner.When("I select the \'Show Details\' drop down value as \'To Alias\' in \'Admin Warehouse\' pa" +
-                        "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 20
- testRunner.Then("A new window is displayed  for \'List Of Location Alias(es) For VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 21
- testRunner.When("I select the \'Show Details\' drop down value as \'To MSL\' in \'Admin Warehouse\' page" +
-                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 22
- testRunner.Then("A new window is displayed  for \'Setting Warehouse MSL for: VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 23
- testRunner.When("I select the \'Show Details\' drop down value as \'To Group MSL\' in \'Admin Warehouse" +
-                        "\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 24
- testRunner.Then("A new window is displayed  for \'Set Group MSL for VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 25
- testRunner.Given("I enter \'Alias\' as \'Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 26
- testRunner.And("I click the \'Search\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 27
  testRunner.And("I fetch the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 17
  testRunner.And("I click the \'Show Details\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 18
  testRunner.When("I select the \'Show Details\' drop down value as \'View Record\' in \'Admin Warehouse\'" +
                         " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 19
  testRunner.Then("I verify the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
+#line 20
  testRunner.When("I select the \'Show Details\' drop down value as \'To Alias\' in \'Admin Warehouse\' pa" +
                         "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 21
  testRunner.Then("A new window is displayed  for \'List Of Location Alias(es) For VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 22
  testRunner.When("I select the \'Show Details\' drop down value as \'To MSL\' in \'Admin Warehouse\' page" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 23
  testRunner.Then("A new window is displayed  for \'Setting Warehouse MSL for: VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 35
+#line 24
  testRunner.When("I select the \'Show Details\' drop down value as \'To Group MSL\' in \'Admin Warehouse" +
                         "\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 36
+#line 25
  testRunner.Then("A new window is displayed  for \'Set Group MSL for VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 26
+ testRunner.Given("I enter \'Alias\' as \'Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 27
+ testRunner.And("I click the \'Search\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+ testRunner.And("I fetch the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
+ testRunner.And("I click the \'Show Details\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+ testRunner.When("I select the \'Show Details\' drop down value as \'View Record\' in \'Admin Warehouse\'" +
+                        " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 31
+ testRunner.Then("I verify the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 32
+ testRunner.When("I select the \'Show Details\' drop down value as \'To Alias\' in \'Admin Warehouse\' pa" +
+                        "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+ testRunner.Then("A new window is displayed  for \'List Of Location Alias(es) For VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 34
+ testRunner.When("I select the \'Show Details\' drop down value as \'To MSL\' in \'Admin Warehouse\' page" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 35
+ testRunner.Then("A new window is displayed  for \'Setting Warehouse MSL for: VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 36
+ testRunner.When("I select the \'Show Details\' drop down value as \'To Group MSL\' in \'Admin Warehouse" +
+                        "\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 37
- testRunner.Given("I click the \'Reset\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Then("A new window is displayed  for \'Set Group MSL for VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 38
+ testRunner.Given("I click the \'Reset\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 39
  testRunner.And("I select the \'Bytecraft/External/VIC/Client Warehouses VIC\' location in the Selec" +
                         "t a Warehouse Location tree", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 40
     testRunner.And("I click the \'Show Warehouses Under\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 41
  testRunner.And("I fetch the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 42
  testRunner.And("I click the \'Show Details\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 43
  testRunner.When("I select the \'Show Details\' drop down value as \'View Record\' in \'Admin Warehouse\'" +
                         " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
+#line 44
  testRunner.Then("I verify the warehouse details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 44
+#line 45
  testRunner.When("I select the \'Show Details\' drop down value as \'To Alias\' in \'Admin Warehouse\' pa" +
                         "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 46
  testRunner.Then("A new window is displayed  for \'List Of Location Alias(es) For VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 46
+#line 47
  testRunner.When("I select the \'Show Details\' drop down value as \'To MSL\' in \'Admin Warehouse\' page" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 48
  testRunner.Then("A new window is displayed  for \'Setting Warehouse MSL for: VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 48
+#line 49
  testRunner.When("I select the \'Show Details\' drop down value as \'To Group MSL\' in \'Admin Warehouse" +
                         "\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
+#line 50
  testRunner.Then("A new window is displayed  for \'Set Group MSL for VIC CW Activ8me\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

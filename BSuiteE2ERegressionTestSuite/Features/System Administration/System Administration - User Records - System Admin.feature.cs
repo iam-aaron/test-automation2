@@ -86,18 +86,15 @@ namespace BSuiteE2ERegressionTestSuite.Features.SystemAdministration
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SystemAdministration_UserRecords_SystemAdmin(string role, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("System Administration - User Records - System Admin", new string[] {
+                "GSQA-110",
+                "PositiveTests"}, SourceLine=5)]
+        public virtual void SystemAdministration_UserRecords_SystemAdmin()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-110",
                     "PositiveTests"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("System Administration - User Records - System Admin", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -119,93 +116,80 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.And(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 9
- testRunner.And("I have navigated to \'Personnel\' page from the top menu Lookup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.And("I click the \'Add Person\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table138.AddRow(new string[] {
-                            "First Name",
-                            "TestFieldTech"});
-                table138.AddRow(new string[] {
-                            "Last Name",
-                            "Regression"});
-                table138.AddRow(new string[] {
-                            "Email",
-                            "testfieldtech"});
-                table138.AddRow(new string[] {
-                            "Company",
-                            "Bytecraft Systems P/L"});
-                table138.AddRow(new string[] {
-                            "AddressName",
-                            "TestFieldTech"});
-                table138.AddRow(new string[] {
-                            "Address_Line 1",
-                            "180 Ann St"});
-                table138.AddRow(new string[] {
-                            "Address_Suburb",
-                            "Brisbane"});
-                table138.AddRow(new string[] {
-                            "Address_Postcode",
-                            "4000"});
-                table138.AddRow(new string[] {
-                            "Address_Country",
-                            "Australia"});
-                table138.AddRow(new string[] {
-                            "Address_State",
-                            "QLD"});
-                table138.AddRow(new string[] {
-                            "Address_Timezone",
-                            "Australia/Brisbane"});
-#line 11
- testRunner.And("I enter the following details in the \'Personnel\' page", ((string)(null)), table138, "And ");
-#line hidden
-#line 24
- testRunner.And("I click the \'Save\' button to save the user details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 25
  testRunner.And("I have navigated to \'Personnel\' page from the top menu Lookup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
+#line 11
+ testRunner.And("I click the \'Add Person\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table139.AddRow(new string[] {
+                table161.AddRow(new string[] {
+                            "First Name",
+                            "TestFieldTech"});
+                table161.AddRow(new string[] {
+                            "Last Name",
+                            "Regression"});
+                table161.AddRow(new string[] {
+                            "Email",
+                            "testfieldtech"});
+                table161.AddRow(new string[] {
+                            "Company",
+                            "Bytecraft Systems P/L"});
+                table161.AddRow(new string[] {
+                            "AddressName",
+                            "TestFieldTech"});
+                table161.AddRow(new string[] {
+                            "Address_Line 1",
+                            "180 Ann St"});
+                table161.AddRow(new string[] {
+                            "Address_Suburb",
+                            "Brisbane"});
+                table161.AddRow(new string[] {
+                            "Address_Postcode",
+                            "4000"});
+                table161.AddRow(new string[] {
+                            "Address_Country",
+                            "Australia"});
+                table161.AddRow(new string[] {
+                            "Address_State",
+                            "QLD"});
+                table161.AddRow(new string[] {
+                            "Address_Timezone",
+                            "Australia/Brisbane"});
+#line 12
+ testRunner.And("I enter the following details in the \'Personnel\' page", ((string)(null)), table161, "And ");
+#line hidden
+#line 25
+ testRunner.And("I click the \'Save\' button to save the user details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
+ testRunner.And("I have navigated to \'Personnel\' page from the top menu Lookup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table162 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table162.AddRow(new string[] {
                             "Search People",
                             "TestFieldTech"});
-                table139.AddRow(new string[] {
+                table162.AddRow(new string[] {
                             "searchActiveFlag",
                             "ALL"});
-#line 26
- testRunner.When("I enter the following details in the \'Personnel\' page", ((string)(null)), table139, "When ");
-#line hidden
-#line 30
- testRunner.And("I click the \'Search User\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.When("I enter the following details in the \'Personnel\' page", ((string)(null)), table162, "When ");
 #line hidden
 #line 31
+ testRunner.And("I click the \'Search User\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
  testRunner.Then("I verify the user name newly added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("System Administration - User Records - System Admin, System Admin", new string[] {
-                "GSQA-110",
-                "PositiveTests"}, SourceLine=38)]
-        public virtual void SystemAdministration_UserRecords_SystemAdmin_SystemAdmin()
-        {
-#line 6
-this.SystemAdministration_UserRecords_SystemAdmin("System Admin", ((string[])(null)));
-#line hidden
         }
     }
 }

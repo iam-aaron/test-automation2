@@ -124,25 +124,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("I have navigated to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table126.AddRow(new string[] {
+                table132.AddRow(new string[] {
                             "WorkType",
                             "IGS - Deployments"});
-                table126.AddRow(new string[] {
+                table132.AddRow(new string[] {
                             "File",
                             "IGS Deployment WC GSQA-14.csv"});
 #line 8
- testRunner.And("I have clicked \'Import FieldTasks\' link and entered details as follows", ((string)(null)), table126, "And ");
+ testRunner.And("I have clicked \'Import FieldTasks\' link and entered details as follows", ((string)(null)), table132, "And ");
 #line hidden
-#line 12
+#line 13
  testRunner.And("I click the \'Upload\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
  testRunner.When("I click the \'Yes\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 16
  testRunner.Then("New Tasks should be created and verify the task numbers in \'Task Status Screen\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

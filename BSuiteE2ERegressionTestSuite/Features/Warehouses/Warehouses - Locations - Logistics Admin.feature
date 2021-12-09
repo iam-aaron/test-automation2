@@ -5,10 +5,11 @@ I am able to browse for locations and details about Warehouses.
 
 @GSQA-98    
 Scenario: Warehouses - Locations - Logistics Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with User Profile as follows
-		| Role            | Username            | Password |
-		| Logistics Admin | TestLogisticsAdmin2 | bsuite   |  
+	#Given I have opened the BSuite Desktop Portal
+	#And I login as a User with User Profile as follows
+	#	| Role            | Username            | Password |
+	#	| Logistics Admin | TestLogisticsAdmin2 | bsuite   |  
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'Logistics Admin'
 	And   I have navigated to 'Admin Warehouse' page from 'Administration' in 'Logistics' top menu
 	And   I enter 'Warehouse Name' as 'VIC CW Activ8me'
 	And   I click the 'Search' button to load details

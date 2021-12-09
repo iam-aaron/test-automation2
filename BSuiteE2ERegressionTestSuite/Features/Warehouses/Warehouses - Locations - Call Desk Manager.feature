@@ -4,8 +4,8 @@ As a valid BSuite User with role "Call Desk Manager",
 I am able to browse for locations and details about Warehouses.
 
 @GSQA-98    
-Scenario Outline: Warehouses - Locations - Call Desk Manager
-	Given I have logged into BSuite 'Desktop' portal as a User with role '<Role>' 
+Scenario: Warehouses - Locations - Call Desk Manager
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'Call Desk Manager'
 	And   I have navigated to 'Admin Warehouse' page from 'Administration' in 'Logistics' top menu
 	And   I enter 'Warehouse Name' as 'VIC CW Activ8me'
 	And   I click the 'Search' button to load details
@@ -45,6 +45,6 @@ Scenario Outline: Warehouses - Locations - Call Desk Manager
 	When  I select the 'Show Details' drop down value as 'To Group MSL' in 'Admin Warehouse' page
 	Then  A new window is displayed  for 'Set Group MSL for VIC CW Activ8me'
 	
-Examples: 
-| Role              |
-| Call Desk Manager |  
+#Examples: 
+#| Role              |
+#| Call Desk Manager |  

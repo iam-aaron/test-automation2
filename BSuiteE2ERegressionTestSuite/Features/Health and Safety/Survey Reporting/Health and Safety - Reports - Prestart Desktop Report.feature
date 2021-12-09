@@ -1,4 +1,4 @@
-﻿@AllTests @BSuite @Bsuite-Website @HealthAndSafety @Survey-Reporting @Logistics-Team-Member @PreStart-Desktop-Report
+﻿@AllTests @BSuite @Bsuite-Website @HealthAndSafety @Survey-Reporting @Logistics-Team-Member @PreStart-Desktop-Report @ignore
 Feature: Health and Safety - Reports - Prestart Desktop Report
 
 	As a BSuite Desktop User
@@ -36,9 +36,6 @@ All run on a single day(No Day 1 and Day 2)
 	And I select DateTime range for current day
 	And I click 'Output To CSV' button to download the Prestart Report
 	Then Open the downloaded Prestart Report to verify structure and Prestart Checklist responses of '<Role>' are recorded accurately
-
-
-
 
 Examples: 
 	| Role                 |

@@ -4,7 +4,7 @@ Feature: Job Assignment - Agent Tech Takes Job via Mobile - Agent Technician
 
 @GSQA-31 
 Scenario: Job Assignment - Agent Tech Takes Job via Mobile - Agent Technician
-Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'	  
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'	  
 	And I have navigated to 'Admin' page from the top menu
 	And I have clicked 'Import FieldTasks' link and entered details as follows
 		| Field    | Value                         |

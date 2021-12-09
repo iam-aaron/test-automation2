@@ -6,9 +6,10 @@ Feature: Job Creation - Break Fix Job via different contracts - Call Desk Manage
 
 @GSQA-4 @PositiveTests 
 Scenario Outline: Job Creation - Break Fix Job via different contracts - Call Desk Manager
-	Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
-		| Role              | Username         | Password |
-		| Call Desk Manager | TestCallDeskMgr2 | bsuite   |
+	#Given I have logged into 'BSuite Desktop' portal as a User with following User Profile
+	#	| Role              | Username         | Password |
+	#	| Call Desk Manager | TestCallDeskMgr2 | bsuite   |
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'Call Desk Manager'
 	And I have navigated to 'Call Centre' page from the top menu
 	And I have navigated to 'Add Task' page and entered details as follows
 		| Field             | Value      |

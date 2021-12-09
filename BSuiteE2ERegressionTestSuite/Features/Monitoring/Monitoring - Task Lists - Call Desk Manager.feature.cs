@@ -163,29 +163,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 20
  testRunner.When("I have navigated to \'Tasks by Watch List\' page from \'Call Centre\' top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
                             "Tabs"});
-                table128.AddRow(new string[] {
+                table141.AddRow(new string[] {
                             "Assigned to Techs"});
-                table128.AddRow(new string[] {
+                table141.AddRow(new string[] {
                             "Assigned to Agents"});
-                table128.AddRow(new string[] {
+                table141.AddRow(new string[] {
                             "Unassigned"});
-                table128.AddRow(new string[] {
+                table141.AddRow(new string[] {
                             "Pending"});
 #line 21
- testRunner.Then("I verify the \'Tasks by Watch List\' page has the following tabs", ((string)(null)), table128, "Then ");
+ testRunner.Then("I verify the \'Tasks by Watch List\' page has the following tabs", ((string)(null)), table141, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
                             "Buttons"});
-                table129.AddRow(new string[] {
+                table142.AddRow(new string[] {
                             "Full Screen Mode"});
-                table129.AddRow(new string[] {
+                table142.AddRow(new string[] {
                             "Edit Preferences"});
-                table129.AddRow(new string[] {
+                table142.AddRow(new string[] {
                             "Show Legend"});
 #line 27
- testRunner.And("I verify the \'Tasks by Watch List\' page has the following buttons", ((string)(null)), table129, "And ");
+ testRunner.And("I verify the \'Tasks by Watch List\' page has the following buttons", ((string)(null)), table142, "And ");
 #line hidden
 #line 32
  testRunner.And("I verify \'TestFieldTechnician3\' is displayed under \'Technicians\' on \'Assigned to " +

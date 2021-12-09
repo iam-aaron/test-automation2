@@ -96,14 +96,12 @@ namespace BSuiteE2ERegressionTest
         public void ThenIFetchTheTaskNumber()
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(50));
             var taskNumber = UIMap.UIElementMap.Find(z => (z.elementName.Equals("TaskNumber"))).elementId;
             //wait.Until(ExpectedConditions.ElementExists(By.XPath(taskNumber)));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(taskNumber)));
             gblTaskNumber = webDriver.FindElement(By.XPath(taskNumber)).Text;
             Console.WriteLine(gblTaskNumber);
-
-
 
         }
 
@@ -150,6 +148,8 @@ namespace BSuiteE2ERegressionTest
         }
 
         [When(@"I have clicked '([^']*)' button on Mobile Portal")]
+        [Then(@"I have clicked '([^']*)' button on Mobile Portal")]
+        [Given(@"I have clicked '([^']*)' button on Mobile Portal")]
         public void WhenIHaveClickedButton(string button)
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
@@ -270,6 +270,8 @@ namespace BSuiteE2ERegressionTest
         }
 
         [Given(@"I have navigated to '([^']*)' page from '([^']*)' in '([^']*)' top menu")]
+        [When(@"I have navigated to '([^']*)' page from '([^']*)' in '([^']*)' top menu")]
+        [Then(@"I have navigated to '([^']*)' page from '([^']*)' in '([^']*)' top menu")]
         public void GivenIHaveNavigatedToPageFromInTopMenu(string actualPage, string subMenuItem, string topMenuItem)
         {
             GivenIHaveNavigatedToPageFromTheTopMenu(actualPage);
@@ -680,12 +682,14 @@ namespace BSuiteE2ERegressionTest
 
         [Given(@"I search the task number in '([^']*)'")]
         [When(@"I search the task number in '([^']*)'")]
+        [Then(@"I search the task number in '([^']*)'")]
         public void GivenISearchTheTaskNumberIn(string pageName)
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
             webDriver.Url = $"{gblConfig.BSuiteURL}/{UIMap.UIPageMap[pageName].resourceName}";
             var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            //System.Threading.Thread.Sleep(2000);
             Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
             gblMenuItemSelected = UIMap.UIPageMap[pageName].resourceName;
             IWebElement webElementTaskNumber = null;
@@ -694,12 +698,13 @@ namespace BSuiteE2ERegressionTest
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Tasks Result"))).elementId;
             webElementTaskNumber = webDriver.FindElement(By.XPath(id));
             string actualTaskNum = webElementTaskNumber.Text;
-            Assert.IsTrue(actualTaskNum.Contains(gblTaskNumber));
+            Assert.IsTrue(actualTaskNum.Contains(gblTaskNumber));   
             System.Threading.Thread.Sleep(2000);
             webElementTaskNumber.Click();
         }
 
         [Given(@"I click '([^']*)' button")]
+        [Then(@"I click '([^']*)' button")]
         [When(@"I click '([^']*)' button")]
         public void GivenIClickButton(string buttonName)
         {
@@ -714,7 +719,125 @@ namespace BSuiteE2ERegressionTest
             {
                 Console.WriteLine(e);
             }
+        }
 
+
+        [When(@"I fetch the successfully created Task Number")]
+            public void WhenIFetchTheSuccessfullyCreatedTaskNumber()
+            {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            System.Threading.Thread.Sleep(2000);
+            var taskNumber = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals("TaskNumber"))).elementId;
+            gblTaskNumber = webDriver.FindElement(By.XPath(taskNumber)).Text;
+            Console.WriteLine(gblTaskNumber);
+            }
+
+        [Then(@"I verify that the Task details of '([^']*)','([^']*)'")]
+        public void ThenIVerifyThatTheTaskDetailsOf(string workType, string site)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var workTypePath = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals("verifyWorktype"))).elementId;
+            var workTypePathText = webDriver.FindElement(By.XPath(workTypePath)).Text;
+            var sitePath = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals("verifySite"))).elementId;
+            var sitePathText = webDriver.FindElement(By.XPath(sitePath)).Text.ToString().Split(",").ToList().FirstOrDefault().Trim();
+            Console.WriteLine(workTypePathText);
+            Assert.AreEqual(workType, workTypePathText);
+            Console.WriteLine(sitePathText);
+            Assert.AreEqual(site, sitePathText);
+        }
+
+        [Then(@"I select the '([^']*)' drop down value as '([^']*)' in '([^']*)' page on Mobile portal")]
+        [When(@"I select the '([^']*)' drop down value as '([^']*)' in '([^']*)' page on Mobile portal")]
+        [Given(@"I select the '([^']*)' drop down value as '([^']*)' in '([^']*)' page on Mobile portal")]
+            public void ThenISelectTheDropDownValueAsInPageOnMobilePortal(string elementName, string elementValue, string pageName)
+            {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            int previousCount = webDriver.WindowHandles.Count();
+            gblMenuItemSelected = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIPageMap[pageName].resourceName;
+            var id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(elementName))).elementId;
+            System.Threading.Thread.Sleep(3000);
+            var webElement = webDriver.FindElement(By.XPath(id));
+            var selectElement = new OpenQA.Selenium.Support.UI.SelectElement(webElement);
+            foreach (IWebElement element in selectElement.Options)
+            {
+                if (element.Text == elementValue)
+                {
+                    element.Click();
+                    System.Threading.Thread.Sleep(3000);
+                    break;
+                }
+            }
+            }
+        [Then(@"I have entered Part Number '([^']*)' under '([^']*)' and clicked on '([^']*)'")]
+        public void ThenIHaveEnteredPartNumberUnderAndClickedOn(string partNumber,string partNumberId, string search)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var partNoId = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals(partNumberId))).elementId;
+            var searchId = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals(search))).elementId;
+            webDriver.FindElement(By.XPath(partNoId)).SendKeys(partNumber);
+            System.Threading.Thread.Sleep(1000);
+            webDriver.FindElement(By.XPath(searchId)).Click();
+            System.Threading.Thread.Sleep(1000);
+        }
+
+        [Then(@"I select the Part Number '([^']*)' in Search Part page")]
+        public void ThenISelectThePartNumberInSearchPartPage(string partNumber)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            ICollection<IWebElement> links = webDriver.FindElements(By.XPath("//table[@class='borderless']/tbody/tr[2]/td[2]/a"));
+            foreach (var link in links)
+            {
+                if (link.Text.Contains(partNumber))
+                {
+                    link.Click();
+                    System.Threading.Thread.Sleep(1000);
+                    break;
+                }
+            }
+        }
+
+        [Then(@"I enter Part Fault Description '([^']*)'")]
+        public void ThenIEnterPartFaultDescription(string partFaultDesc)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var partFaultId = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals("Part Fault Desc"))).elementId;
+            webDriver.FindElement(By.XPath(partFaultId)).SendKeys(partFaultDesc);
+        }
+
+
+        [Then(@"I click Close Work Log button and Cancel on '([^']*)' pop up")]
+        public void ThenIClickCloseWorkLogButtonAndCancelOnPopUp(string popUpText)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = BSuiteE2ERegressionTest.Models.BSuite.MobilePortal.UIMap.UIElementMap.Find(z => (z.elementName.Equals("Close Work Log"))).elementId;
+            webDriver.FindElement(By.XPath(id)).Click();
+            IAlert simpleAlert = webDriver.SwitchTo().Alert();
+            String alertText = simpleAlert.Text;
+            Assert.AreEqual(popUpText, alertText);
+            Console.WriteLine("Alert Text is :" + alertText);
+            simpleAlert.Dismiss();
+        }
+
+        [Then(@"Status of task updated as '([^']*)'")]
+        public void ThenStatusOfTaskUpdatedAs(string taskStatus)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            string gblvalue = gblTaskNumber.ToString();
+            ICollection<IWebElement> links = webDriver.FindElements(By.XPath("//table[@class='datalist']/tbody/tr/td[2]/a"));
+            foreach (var link in links)
+            {
+                if (link.Text.Contains(gblvalue))
+                {
+                    var taskStatusText = link.FindElement(By.XPath("//ancestor::td/following-sibling::td[2]")).Text.Trim();
+                    Assert.AreEqual(taskStatusText, taskStatus);
+                    break;
+                }
+            }
         }
 
         [Given(@"I select the task number with status as '([^']*)'")]
@@ -727,7 +850,6 @@ namespace BSuiteE2ERegressionTest
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Tasks Result Table"))).elementId;
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
             IWebElement resultTable = webDriver.FindElement(By.XPath(id));
-            // var flag = 0;
             var tableRows = resultTable.FindElements(By.TagName("tr")).ToList();
             foreach (var eachRow in tableRows)
             {
@@ -737,21 +859,6 @@ namespace BSuiteE2ERegressionTest
                     eachRowData[0].Click();
                     break;
                 }
-                /*foreach(var eachData in eachRowData)
-                {
-                    var eachDataText=eachData.Text;
-                    if(eachDataText.Equals(taskStatus))
-                    {
-                        eachRowData[0].Click();
-                        flag = 1;
-                        break;
-                    }
-                }
-                if(flag==1)
-                {
-                    flag = 0;
-                    break;
-                }*/
             }
         }
 
@@ -998,9 +1105,9 @@ namespace BSuiteE2ERegressionTest
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
             IWebElement resultTable = webDriver.FindElement(By.XPath(id));
             var tableRows = resultTable.FindElements(By.TagName("tr")).ToList();
-            var eachRowData = tableRows[1].FindElements(By.TagName("td")).ToList();
-            var dataLink = eachRowData[0].FindElement(By.TagName("a"));
-            if (dataLink.GetAttribute("href").Contains("fieldtaskstatus/edit"))
+            var eachRowData = tableRows[1].FindElements(By.TagName("td")).ToList();            
+            var dataLink=eachRowData[0].FindElement(By.TagName("a"));
+            if ((dataLink.GetAttribute("href").Contains("fieldtaskstatus/edit"))||(dataLink.GetAttribute("href").Contains("task/edit/logistics/")))
             {
                 gblTaskNumber = dataLink.Text;
                 Assert.IsTrue(true);
@@ -1142,6 +1249,76 @@ namespace BSuiteE2ERegressionTest
             }
             throw new FormatException("Not rgb, rgba or hexa color string");
 
+        }
+
+        [Then(@"I search the ClientRef number in '([^']*)'")]
+        public void ThenISearchTheClientRefNumberIn(string pageName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            webDriver.Url = $"{gblConfig.BSuiteURL}/{UIMap.UIPageMap[pageName].resourceName}";
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(30));
+            wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            //System.Threading.Thread.Sleep(2000);
+            Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            gblMenuItemSelected = UIMap.UIPageMap[pageName].resourceName;
+            IWebElement webElementTaskNumber = null;
+            var clientRefid = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Client Ref"))).elementId;
+            //wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(clientRefid)));
+            System.Threading.Thread.Sleep(2000);
+            webDriver.FindElement(By.Id(clientRefid)).SendKeys(gblClientRef);
+            Console.WriteLine(gblClientRef);
+            PerformAction(new Dictionary<string, string>() { { "Search Field Tasks", "Click" } });
+            System.Threading.Thread.Sleep(3000);
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Client Ref"))).elementId;
+            webElementTaskNumber = webDriver.FindElement(By.XPath(id));
+            string actualClientRef = webElementTaskNumber.Text;
+            Assert.IsTrue(actualClientRef.Contains(gblClientRef));
+            //System.Threading.Thread.Sleep(2000);
+            
+        }
+        
+        [Then(@"I search the Serial number in '([^']*)'")]
+        public void ThenISearchTheSerialNumberIn(string pageName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            webDriver.Url = $"{gblConfig.BSuiteURL}/{UIMap.UIPageMap[pageName].resourceName}";
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[pageName].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            gblMenuItemSelected = UIMap.UIPageMap[pageName].resourceName;
+            IWebElement webElementTaskNumber = null;
+            var serialNumberid = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Serial Number"))).elementId;
+            //wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(serialNumberid)));
+            System.Threading.Thread.Sleep(2000);
+            webDriver.FindElement(By.Id(serialNumberid)).SendKeys(gblSerialNumber);
+            Console.WriteLine(gblSerialNumber);
+            PerformAction(new Dictionary<string, string>() { { "Search Field Tasks", "Click" } });
+            System.Threading.Thread.Sleep(3000);
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Search Tasks Result"))).elementId;
+            webElementTaskNumber = webDriver.FindElement(By.XPath(id));
+            string actualTaskNum = webElementTaskNumber.Text;
+            Assert.IsTrue(actualTaskNum.Contains(gblTaskNumber));
+            
+        }
+
+        [Then(@"I verify the total no of task is displayed as '([^']*)'")]
+        public void ThenIVerifyTheTotalNoOfTaskIsDisplayedAs(string TaskNumber)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var pageName = "Task Status";
+            gblMenuItemSelected = UIMap.UIPageMap[pageName].resourceName;
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Total Tasks"))).elementId;
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            var actualText = webDriver.FindElement(By.XPath(id)).Text;
+            if (actualText.Contains(TaskNumber))
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.IsTrue(false);
+            }
         }
 
 
@@ -1303,7 +1480,90 @@ namespace BSuiteE2ERegressionTest
                         break;
                     }
                 }
+
             }
+        }
+        [Given(@"I enter the successfully created Purchase Order No")]
+        public void GivenIEnterTheSuccessfullyCreatedPurchaseOrderNo()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("PoNumber"))).elementId;
+            var purchaseNoId = webDriver.FindElement(By.Id(id));
+            purchaseNoId.SendKeys(gblNumberWithDate);
+        }
+        [Given(@"I verify the Purchase Order created")]
+        public void GivenIVerifyThePurchaseOrderCreated()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("VerifyPoNumber"))).elementId;
+            var purchaseNoId = webDriver.FindElement(By.XPath(id)).Text.Trim();
+            Assert.AreEqual(purchaseNoId,gblNumberWithDate);
+        }
+
+        [Given(@"I have clicked '([^']*)' button on Desktop Portal")]
+        [When(@"I have clicked '([^']*)' button on Desktop Portal")]
+        [Then(@"I have clicked '([^']*)' button on Desktop Portal")]
+        public void GivenIHaveClickedButtonOnDesktopPortal(string button)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = BSuiteE2ERegressionTest.Models.BSuite.DesktopPortal.UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(button))).elementId;
+            webDriver.FindElement(By.XPath(id)).Click();
+            System.Threading.Thread.Sleep(2000);
+        }
+
+        [Given(@"I enter the Purchase  Order  number on '([^']*)' page")]
+        public void GivenIEnterThePurchaseOrderNumberOnPage(string pageLink)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            webDriver.Url = $"{gblConfig.BSuiteURL}/{UIMap.UIPageMap[pageLink].resourceName}";
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[pageLink].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[pageLink].windowTitle} - BSuite", StringComparison.InvariantCultureIgnoreCase));
+            gblMenuItemSelected = UIMap.UIPageMap[pageLink].resourceName;
+            PerformAction(new Dictionary<string, string>() { { "ReconcilePoNumber", gblNumberWithDate } });
+        }
+
+        [Given(@"I verify '([^']*)' message once the reconciliation is successful")]
+        public void GivenIVerifyMessageOnceTheReconciliationIsSuccessful(string message)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("PoMessage"))).elementId;
+            var poMessageText = webDriver.FindElement(By.XPath(id)).Text.Trim();
+            Assert.AreEqual(poMessageText, message);
+        }
+
+        [Then(@"I verify Purchase Order history at the bottom of the page")]
+        public void ThenIVerifyPurchaseOrderHistoryAtTheBottomOfThePage()
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("HistoryPartCode"))).elementId;
+            var historyPartCodeText = webDriver.FindElement(By.XPath(id)).Text.Trim();
+            Assert.AreEqual(historyPartCodeText, "1000000");
+        }
+        [Given(@"I check if '([^']*)' check box is unchecked")]
+        public void GivenICheckIfCheckBoxIsUnchecked(string checkBoxName)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals(checkBoxName))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            IWebElement chkBox = webDriver.FindElement(By.XPath(id));
+            if (chkBox.Selected)
+            {
+                webDriver.FindElement(By.XPath(id)).Click();
+                System.Threading.Thread.Sleep(1000);
+            }
+            else 
+            {
+                Console.WriteLine("Checkbox is unchecked");
+                System.Threading.Thread.Sleep(1000);
+            }
+            
         }
 
 
@@ -1319,7 +1579,7 @@ namespace BSuiteE2ERegressionTest
         public void GivenIClickTheButtonToSaveTheUserDetails(string save)
         {
             var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
-            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));           
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("Save"))).elementId;
             webDriver.FindElement(By.Id(id)).Click();
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.AlertIsPresent());
@@ -1327,6 +1587,34 @@ namespace BSuiteE2ERegressionTest
             String alertText = simpleAlert.Text;
             Console.WriteLine("Alert Text is :" + alertText);
             simpleAlert.Accept();
+        }
+
+
+        [Given(@"I verify the '([^']*)' is displayed")]
+        public void GivenIVerifyTheIsDisplayed(string wormGraph)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(localDriver => localDriver.Title.Contains($"{UIMap.UIPageMap[wormGraph].windowTitle}", StringComparison.InvariantCultureIgnoreCase));
+            Assert.IsTrue(webDriver.Title.Contains($"{UIMap.UIPageMap[wormGraph].windowTitle}", StringComparison.InvariantCultureIgnoreCase));
+            gblMenuItemSelected = UIMap.UIPageMap[wormGraph].resourceName;
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Contains(gblMenuItemSelected) && z.elementName.Equals("WormGraphImage"))).elementId;
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(id)));
+            Console.WriteLine("Worm Graph is displayed");
+        }
+        [Given(@"I verify the '([^']*)' message displayed")]
+        public void GivenIVerifyTheMessageDisplayed(string messageDisplayed)
+        {
+            var webDriver = gblOjectContainer.Resolve<OpenQA.Selenium.IWebDriver>();
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            var id = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("BadDateMessageId"))).elementId;
+            var BadDateMessage = webDriver.FindElement(By.XPath(id)).Text.Trim();
+            var subMessageid = UIMap.UIElementMap.Find(z => (z.screen.Equals(gblMenuItemSelected) && z.elementName.Equals("BadDateSubMessageId"))).elementId;
+            var BadDateSubMessage = webDriver.FindElement(By.XPath(subMessageid)).Text.Trim();
+            Assert.AreEqual(BadDateMessage, messageDisplayed);
+            Assert.AreEqual(BadDateSubMessage, "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hydra.baddates_action' doesn't exist");
+            Console.WriteLine(BadDateMessage);
+            Console.WriteLine(BadDateSubMessage);
         }
 
         [Then(@"I verify the user name newly added")]
@@ -1388,7 +1676,7 @@ namespace BSuiteE2ERegressionTest
             var webElement = webDriver.FindElement(By.ClassName(id));
             webElement.SendKeys(textValue);
             webDriver.SwitchTo().DefaultContent();
-     }
+        }
 
         [Given(@"'([^']*)' page is displayed")]
         [Then(@"'([^']*)' page is displayed")]
@@ -1815,14 +2103,6 @@ namespace BSuiteE2ERegressionTest
             }
             
         }
-
-
-
-
-
-
-
-
-
     }
 }
+

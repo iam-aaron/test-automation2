@@ -4,8 +4,7 @@ Feature: System Administration - Action Types - System Admin
 
 @GSQA-113 @PositiveTests
 Scenario: System Administration - Action Types - System Admin
-	Given I have opened the BSuite Desktop Portal
-	And I login as a User with role '<Role>'	
+	Given I have logged into BSuite 'Desktop' portal as a User with role 'System Admin'	
 	And I can navigate to 'Admin' page from the top menu
 	And I click the 'Action Types' link
 	And 'Action Type' page is displayed
@@ -24,13 +23,4 @@ Scenario: System Administration - Action Types - System Admin
 	| Search Action Types | RegressionTest |  
 	And I click the 'Search' button to search the details
 	Then I verify the Action Type newly added
-
-
-
-	
-
-Examples: 
-	| Role         | 
-	| System Admin | 
-
 

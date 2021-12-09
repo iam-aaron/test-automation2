@@ -1,4 +1,4 @@
-﻿@AllTests @BSuite @HealthAndSafety @PreStartAssessment 
+﻿@AllTests @BSuite @HealthAndSafety @PreStartAssessment @ignore
 Feature: Health and Safety - Daily PreStart Form - Workshop (Bench) Technician "No" Scenario
 
 @GSQA-168 @NegativeTests @BSuite @BSuite-Mobile @BSuite-Website @Health&Safety @Workshop-Technician @Pre-Start-Form
@@ -44,9 +44,8 @@ Once the Checklist is reactivated by the People Leader then Workshop Technician 
 	When data is enterered for the 'fourth' question in that prompt after he has contacted the Supervisor
 	When I click the 'Submit' button
 
-
 Examples: 
-	| Role                      | Username             | Password |
+	| Role                      | Username           | Password |
 	| Workshop Technician (New) | TestWrkshp168Tech3 | bsuite   |  
 
 

@@ -88,18 +88,15 @@ namespace BSuiteE2ERegressionTestSuite.Features.SystemAdministration
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SystemAdministration_CloningRecords_SystemAdmin(string role, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Cloning Records - System Admin", new string[] {
+                "GSQA-109",
+                "PositiveTests"}, SourceLine=5)]
+        public virtual void SystemAdministration_CloningRecords_SystemAdmin()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-109",
                     "PositiveTests"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("System Administration - Cloning Records - System Admin", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -121,84 +118,71 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.And(string.Format("I login as a User with role \'{0}\'", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 9
- testRunner.And("I can navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
+ testRunner.And("I can navigate to \'Admin\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
  testRunner.And("I click the \'Clone User Account\' link to clone the user account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "Company",
                             "TABCORP"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "Clone from",
                             "testfieldtechnician100 BSuiteRegression - testfieldtechnician100"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "First Name",
                             "TestFT"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "Last Name",
                             "Regression"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "Email",
                             "TestFTRegression@tabcorp.com.au"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "User Name",
                             "TestFT"});
-                table134.AddRow(new string[] {
+                table157.AddRow(new string[] {
                             "Password",
                             "bsuite"});
-#line 11
- testRunner.And("I enter the following details in the \'Clone User Account\' page", ((string)(null)), table134, "And ");
-#line hidden
-#line 20
- testRunner.When("I click the \'Create\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.And("I enter the following details in the \'Clone User Account\' page", ((string)(null)), table157, "And ");
 #line hidden
 #line 21
- testRunner.Then("I fetch the user full name created successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click the \'Create\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
+ testRunner.Then("I fetch the user full name created successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 23
  testRunner.And("I have navigated to \'Personnel\' page from the top menu Lookup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table135.AddRow(new string[] {
+                table158.AddRow(new string[] {
                             "Search People",
                             "TestFT"});
-                table135.AddRow(new string[] {
+                table158.AddRow(new string[] {
                             "searchActiveFlag",
                             "ALL"});
-#line 23
- testRunner.When("I enter the following details in the \'Personnel\' page", ((string)(null)), table135, "When ");
-#line hidden
-#line 27
- testRunner.And("I click the \'Search User\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.When("I enter the following details in the \'Personnel\' page", ((string)(null)), table158, "When ");
 #line hidden
 #line 28
+ testRunner.And("I click the \'Search User\' button to load details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
  testRunner.Then("I verify the user name newly added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("System Administration - Cloning Records - System Admin, System Admin", new string[] {
-                "GSQA-109",
-                "PositiveTests"}, SourceLine=37)]
-        public virtual void SystemAdministration_CloningRecords_SystemAdmin_SystemAdmin()
-        {
-#line 6
-this.SystemAdministration_CloningRecords_SystemAdmin("System Admin", ((string[])(null)));
-#line hidden
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@AllTests @BSuite @HealthAndSafety @PreStartAssessment 
+﻿@AllTests @BSuite @HealthAndSafety @PreStartAssessment @ignore
 Feature: Health and Safety - Daily PreStart Form - Logistics-Admin "No" Scenario
 
 @GSQA-169 @NegativeTests @BSuite @BSuite-Mobile @BSuite-Website @Health&Safety @logistics-Admin @Pre-Start-Form
@@ -45,7 +45,7 @@ Once the Checklist is reactivated by the People Leader then Logistics-Admin can 
 	When I click the 'Submit' button
 
 Examples: 
-	| Role            | Username          | Password |
+	| Role            | Username         | Password |
 	| Logistics Admin | TestLog169Admin3 | bsuite   |  
 	
 

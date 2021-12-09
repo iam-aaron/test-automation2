@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BSuiteE2ERegressionTestSuite", "BSuiteE2ERegressionTestSuite\BSuiteE2ERegressionTestSuite.csproj", "{0137AB25-4221-468C-967B-263633B3B011}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BSuiteE2ERegressionTestSuite", "BSuiteE2ERegressionTestSuite\BSuiteE2ERegressionTestSuite.csproj", "{3CFFE4CF-5F1D-4BCF-8509-8DF1A050E4BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0137AB25-4221-468C-967B-263633B3B011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0137AB25-4221-468C-967B-263633B3B011}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0137AB25-4221-468C-967B-263633B3B011}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0137AB25-4221-468C-967B-263633B3B011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFFE4CF-5F1D-4BCF-8509-8DF1A050E4BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFFE4CF-5F1D-4BCF-8509-8DF1A050E4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFFE4CF-5F1D-4BCF-8509-8DF1A050E4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFFE4CF-5F1D-4BCF-8509-8DF1A050E4BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

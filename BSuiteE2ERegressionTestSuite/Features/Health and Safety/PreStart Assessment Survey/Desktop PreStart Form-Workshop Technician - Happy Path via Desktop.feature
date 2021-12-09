@@ -1,4 +1,4 @@
-﻿@AllTests @BSuite @HealthAndSafety @PreStartAssessment
+﻿@AllTests @BSuite @HealthAndSafety @PreStartAssessment @ignore
 Feature: Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Workshop Technician - Happy Path via Desktop
 As a BSuite Desktop User with the following Roles:
 		Logistics + Call Desk Technician
@@ -45,5 +45,5 @@ Scenario Outline: Health and Safety - Desktop Daily PreStart Form - Warehouse Te
 	
 
 	Examples:
-		| Role                      | Username          | Password |
-		| Workshop Technician (NEW) | TestWrkshp165Tech3 | bsuite   |
+		| Role                      | Username           | Password |
+		| Workshop Technician (NEW) | TestWrkshp165Tech3 | bsuite   |  

@@ -136,120 +136,112 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Role",
-                            "Username",
-                            "Password"});
-                table122.AddRow(new string[] {
-                            "System Admin",
-                            "TestSystemAdmin3",
-                            "bsuite"});
-#line 9
- testRunner.Given("I have logged into \'BSuite Desktop\' portal as a User with following User Profile", ((string)(null)), table122, "Given ");
-#line hidden
 #line 12
+ testRunner.Given("I have logged into BSuite \'Desktop\' portal as a User with role \'System Admin\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 13
  testRunner.And("I have navigated to \'Call Centre\' page from the top menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table123.AddRow(new string[] {
+                table128.AddRow(new string[] {
                             "Contract/WorkType",
                             string.Format("{0}", contract)});
-#line 13
- testRunner.And("I have navigated to \'Add Task\' page and entered details as follows", ((string)(null)), table123, "And ");
+#line 14
+ testRunner.And("I have navigated to \'Add Task\' page and entered details as follows", ((string)(null)), table128, "And ");
 #line hidden
-#line 16
+#line 17
  testRunner.And("I click the \'Add Task\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value/Action"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Site",
                             string.Format("{0}", site)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Contact",
                             "Abhy"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "App. Start Time",
                             string.Format("{0}", app_StartTime)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "App. Start Hour",
                             string.Format("{0}", app_StartHour)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "App. Start Minute",
                             string.Format("{0}", app_StartMinute)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "App. End Time",
                             string.Format("{0}", app_EndTime)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "App. End Hour",
                             string.Format("{0}", app_EndHour)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "App. End Minute",
                             string.Format("{0}", app_EndMinute)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Serial Number",
                             "BSUITE800"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Position",
                             "1"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Part",
                             string.Format("{0}", part)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Part Status",
                             string.Format("{0}", partStatus)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Task Status",
                             "<Task Status>"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Priority",
                             string.Format("{0}", priority)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Client Ref #",
                             "BSUITE800"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Problem Category",
                             string.Format("{0}", problemCategory)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Problem Code",
                             string.Format("{0}", problemCode)});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Problem Desc",
                             "GSQA3 Regression Test"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Client Notes",
                             "GSQA3 Regression Test"});
-                table124.AddRow(new string[] {
+                table129.AddRow(new string[] {
                             "Call Centre Notes",
                             "GSQA3 Regression Test"});
-#line 17
- testRunner.When("I enter the following details in the \'Add Task - FieldTask\' page", ((string)(null)), table124, "When ");
+#line 18
+ testRunner.When("I enter the following details in the \'Add Task - FieldTask\' page", ((string)(null)), table129, "When ");
 #line hidden
-#line 39
+#line 40
  testRunner.And("I click the \'Save\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
                             "Target",
                             "End Time"});
-                table125.AddRow(new string[] {
+                table130.AddRow(new string[] {
                             "Creation Time",
                             "Current Time"});
-                table125.AddRow(new string[] {
+                table130.AddRow(new string[] {
                             "TAKEN",
                             "Current Time + 0.5 hours"});
-                table125.AddRow(new string[] {
+                table130.AddRow(new string[] {
                             "ONSITE",
                             "Current Time + 2 hours"});
-                table125.AddRow(new string[] {
+                table130.AddRow(new string[] {
                             "CLOSED",
                             "Current Time + 14 hours"});
-#line 40
- testRunner.Then("a new Field Task is saved with the following Client Targets", ((string)(null)), table125, "Then ");
+#line 41
+ testRunner.Then("a new Field Task is saved with the following Client Targets", ((string)(null)), table130, "Then ");
 #line hidden
-#line 46
+#line 47
  testRunner.Then("I click the \'Finish\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -259,7 +251,7 @@ this.ScenarioInitialize(scenarioInfo);
         [TechTalk.SpecRun.ScenarioAttribute("Job Creation - Break Fix Job via different contracts - System Admin, ALH Group - " +
             "IT Support - Break Fix", new string[] {
                 "GSQA-3",
-                "PositiveTests"}, SourceLine=49)]
+                "PositiveTests"}, SourceLine=50)]
         public virtual void JobCreation_BreakFixJobViaDifferentContracts_SystemAdmin_ALHGroup_ITSupport_BreakFix()
         {
 #line 8

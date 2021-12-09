@@ -27,6 +27,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             "Login"}, Description="\tAs a BSuite Desktop User\r\n\tI can login to BSuite Desktop portal Health and Safet" +
         "y\r\n\tSo that I can carry out my tasks", SourceFile="Features\\Health and Safety\\PreStart Assessment Survey\\Desktop Daily PreStart Form" +
         " - Warehouse Team - Logistics Technician - Happy Path via Desktop.feature", SourceLine=1)]
+    [TechTalk.SpecRun.IgnoreAttribute()]
     public partial class HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_LogisticsTechnician_HappyPathViaDesktopFeature
     {
         
@@ -36,7 +37,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                 "AllTests",
                 "BSuite",
                 "BSuiteDesktop",
-                "Login"};
+                "Login",
+                "ignore"};
         
 #line 1 "Desktop Daily PreStart Form - Warehouse Team - Logistics Technician - Happy Path via Desktop.feature"
 #line hidden
@@ -51,7 +53,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                         "AllTests",
                         "BSuite",
                         "BSuiteDesktop",
-                        "Login"});
+                        "Login",
+                        "ignore"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -87,7 +90,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_WorkshopTechnician_HappyPathViaDesktop(string role, string username, string password, string[] exampleTags)
+        public virtual void HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_LogisticsTechnician_HappyPathViaDesktop(string role, string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "GSQA-166",
@@ -101,8 +104,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             argumentsOfScenario.Add("Role", role);
             argumentsOfScenario.Add("Username", username);
             argumentsOfScenario.Add("Password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Workshop Techn" +
-                    "ician - Happy Path via Desktop", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Logistics Tech" +
+                    "nician - Happy Path via Desktop", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -126,69 +129,69 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
    testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table30.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             string.Format("{0}", role),
                             string.Format("{0}", username),
                             string.Format("{0}", password)});
 #line 10
- testRunner.And("I login as a User for the first time in a day with user details as follows", ((string)(null)), table30, "And ");
+ testRunner.And("I login as a User for the first time in a day with user details as follows", ((string)(null)), table28, "And ");
 #line hidden
 #line 13
  testRunner.Then("I am required to complete the Pre Start Checklist for the day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Question Number",
+                            "Question"});
+                table29.AddRow(new string[] {
+                            "1",
+                            "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
+                                "ers licence, gaming licence/forklift licence?"});
+#line 14
+ testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table29, "Then ");
+#line hidden
+#line 17
+ testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Question Number",
+                            "Question"});
+                table30.AddRow(new string[] {
+                            "2",
+                            "Are your tools and equipment in good condition and do you have sufficient/enough " +
+                                "PPE?"});
+#line 18
+ testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table30, "Then ");
+#line hidden
+#line 21
+ testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
                 table31.AddRow(new string[] {
-                            "1",
-                            "Are all licenses that you require for your duties/role currently valid? E.G. driv" +
-                                "ers licence, gaming licence/forklift licence?"});
-#line 14
- testRunner.Then("the \'first\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table31, "Then ");
-#line hidden
-#line 17
- testRunner.When("I respond \'Yes\' to the \'first\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Question Number",
-                            "Question"});
-                table32.AddRow(new string[] {
-                            "2",
-                            "Are your tools and equipment in good condition and do you have sufficient/enough " +
-                                "PPE?"});
-#line 18
- testRunner.Then("the \'second\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table32, "Then ");
-#line hidden
-#line 21
- testRunner.When("I respond \'Yes\' to the \'second\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Question Number",
-                            "Question"});
-                table33.AddRow(new string[] {
                             "3",
                             "Have you completed all mandatory training relevant to your Field Technicians Role" +
                                 " - (e.g. Electrical safety/lifting/ladders etc.) OR are you familiar with all of" +
                                 " the SWP (Safe Work Practice) documents relevant to your role?"});
 #line 22
- testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table33, "Then ");
+ testRunner.Then("the \'third\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table31, "Then ");
 #line hidden
 #line 25
  testRunner.When("I respond \'Yes\' to the \'third\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                             "Question Number",
                             "Question"});
-                table34.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "4",
                             "I am fit for work and can perform my work without compromising the safety or heal" +
                                 "th of myself or others."});
 #line 26
- testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table34, "Then ");
+ testRunner.Then("the \'fourth\' question of the Pre Start Checklist is displayed as follows", ((string)(null)), table32, "Then ");
 #line hidden
 #line 29
  testRunner.When("I respond \'Yes\' to the \'fourth\' Pre Start Checklist question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -203,14 +206,14 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Workshop Techn" +
-            "ician - Happy Path via Desktop, Logistics Technician", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Health and Safety - Desktop Daily PreStart Form - Warehouse Team - Logistics Tech" +
+            "nician - Happy Path via Desktop, Logistics Technician", new string[] {
                 "GSQA-166",
                 "PositiveTests"}, SourceLine=35)]
-        public virtual void HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_WorkshopTechnician_HappyPathViaDesktop_LogisticsTechnician()
+        public virtual void HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_LogisticsTechnician_HappyPathViaDesktop_LogisticsTechnician()
         {
 #line 8
-this.HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_WorkshopTechnician_HappyPathViaDesktop("Logistics Technician", "TestLog166Tech3", "bsuite", ((string[])(null)));
+this.HealthAndSafety_DesktopDailyPreStartForm_WarehouseTeam_LogisticsTechnician_HappyPathViaDesktop("Logistics Technician", "TestLog166Tech3", "bsuite", ((string[])(null)));
 #line hidden
         }
     }

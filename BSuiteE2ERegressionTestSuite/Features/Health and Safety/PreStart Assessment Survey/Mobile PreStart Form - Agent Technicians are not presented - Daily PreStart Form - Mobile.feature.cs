@@ -87,20 +87,16 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void MobilePreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaMobile(string role, string username, string password, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Mobile PreStart Form - Agent Technicians are not presented with Daily PreStart Fo" +
+            "rm when they attempt to login via Mobile", new string[] {
+                "GSQA-162",
+                "PositiveTests"}, SourceLine=7)]
+        public virtual void MobilePreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaMobile()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "GSQA-162",
                     "PositiveTests"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Role", role);
-            argumentsOfScenario.Add("Username", username);
-            argumentsOfScenario.Add("Password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mobile PreStart Form - Agent Technicians are not presented with Daily PreStart Fo" +
                     "rm when they attempt to login via Mobile", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
@@ -123,39 +119,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
- testRunner.Given("I have opened the BSuite Mobile Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Role",
-                            "Username",
-                            "Password"});
-                table49.AddRow(new string[] {
-                            string.Format("{0}", role),
-                            string.Format("{0}", username),
-                            string.Format("{0}", password)});
-#line 10
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table49, "And ");
-#line hidden
 #line 13
- testRunner.When("login is successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have logged into BSuite \'Mobile\' portal as a User with role \'Agent Technician\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
+ testRunner.When("login is successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
  testRunner.Then("The Agent Technician is NOT presented with the Daily PreStart Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Mobile PreStart Form - Agent Technicians are not presented with Daily PreStart Fo" +
-            "rm when they attempt to login via Mobile, Agent Technician", new string[] {
-                "GSQA-162",
-                "PositiveTests"}, SourceLine=18)]
-        public virtual void MobilePreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaMobile_AgentTechnician()
-        {
-#line 8
-this.MobilePreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaMobile("Agent Technician", "TestAgentTech154", "bsuite", ((string[])(null)));
-#line hidden
         }
     }
 }

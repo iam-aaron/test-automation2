@@ -27,6 +27,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             "Login"}, Description="\tAs a BSuite Desktop User\r\n\tI can login to BSuite Desktop portal Health and Safet" +
         "y\r\n\tSo that I can carry out my tasks", SourceFile="Features\\Health and Safety\\PreStart Assessment Survey\\Desktop PreStart Form -Agen" +
         "t Technicians daily PreStart Form  login via Desktop.feature", SourceLine=1)]
+    [TechTalk.SpecRun.IgnoreAttribute()]
     public partial class HealthAndSafety_DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktopFeature
     {
         
@@ -36,7 +37,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                 "AllTests",
                 "BSuite",
                 "BSuiteDesktop",
-                "Login"};
+                "Login",
+                "ignore"};
         
 #line 1 "Desktop PreStart Form -Agent Technicians daily PreStart Form  login via Desktop.feature"
 #line hidden
@@ -51,7 +53,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
                         "AllTests",
                         "BSuite",
                         "BSuiteDesktop",
-                        "Login"});
+                        "Login",
+                        "ignore"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -87,7 +90,7 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktop(string role, string username, string password, string[] exampleTags)
+        public virtual void HealthAndSafety_DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktop(string role, string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "GSQA-161",
@@ -101,8 +104,8 @@ namespace BSuiteE2ERegressionTestSuite.Features.HealthAndSafety.PreStartAssessme
             argumentsOfScenario.Add("Role", role);
             argumentsOfScenario.Add("Username", username);
             argumentsOfScenario.Add("Password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Desktop PreStart Form - Agent Technicians are not presented with Daily PreStart F" +
-                    "orm when they attempt to login via Desktop", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Health and Safety - Desktop PreStart Form - Agent Technicians are not presented w" +
+                    "ith Daily PreStart Form when they attempt to login via Desktop", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -126,16 +129,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.Given("I have opened the BSuite Desktop Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                             "Role",
                             "Username",
                             "Password"});
-                table35.AddRow(new string[] {
+                table33.AddRow(new string[] {
                             string.Format("{0}", role),
                             string.Format("{0}", username),
                             string.Format("{0}", password)});
 #line 10
- testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table35, "And ");
+ testRunner.And("I login as a User with User Profile as follows", ((string)(null)), table33, "And ");
 #line hidden
 #line 13
  testRunner.When("login is successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -147,14 +150,15 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Desktop PreStart Form - Agent Technicians are not presented with Daily PreStart F" +
-            "orm when they attempt to login via Desktop, Agent Technician", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Health and Safety - Desktop PreStart Form - Agent Technicians are not presented w" +
+            "ith Daily PreStart Form when they attempt to login via Desktop, Agent Technician" +
+            "", new string[] {
                 "GSQA-161",
                 "PositiveTests"}, SourceLine=17)]
-        public virtual void DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktop_AgentTechnician()
+        public virtual void HealthAndSafety_DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktop_AgentTechnician()
         {
 #line 8
-this.DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktop("Agent Technician", "TestAgentTech150", "bsuite", ((string[])(null)));
+this.HealthAndSafety_DesktopPreStartForm_AgentTechniciansAreNotPresentedWithDailyPreStartFormWhenTheyAttemptToLoginViaDesktop("Agent Technician", "TestAgentTech150", "bsuite", ((string[])(null)));
 #line hidden
         }
     }
