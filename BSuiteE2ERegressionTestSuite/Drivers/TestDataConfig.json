@@ -3,9 +3,7 @@
     {
       "TestEnvName": "TTN",
       "IsSelected": "Yes",
-      //"BSuiteURL": "https://ttn.tstingbsuite.net",
-      "BSuiteURL": "https://10.174.49.213",
-      //"BSuiteHydraDbServer": "bsuite-ttn-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteURL": "https://3.104.140.233",
       "BSuiteHydraDbServer": "10.174.49.252",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -17,8 +15,7 @@
     {
       "TestEnvName": "TST",
       "IsSelected": "No",
-      //"BSuiteURL": "https://tstingbsuite.net",
-      "BSuiteURL": "https://10.174.50.113",
+      "BSuiteURL": "https://3.104.140.233",
       "BSuiteHydraDbServer": "bsuite-ttn-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -30,9 +27,7 @@
     {
       "TestEnvName": "SIT",
       "IsSelected": "No",
-      //"BSuiteURL": "https://sit.tstingbsuite.net",
-      "BSuiteURL": "https://10.174.50.113",
-      //"BSuiteHydraDbServer": "bsuite-sit-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteURL": "https://3.104.140.233",
       "BSuiteHydraDbServer": "10.174.51.224",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
@@ -44,9 +39,7 @@
     {
       "TestEnvName": "UAT",
       "IsSelected": "No",
-      //"BSuiteURL": "https://uat.tstingbsuite.net"
-      "BSuiteURL": "https://10.174.51.193",
-      //"BSuiteHydraDbServer": "bsuite-sit-hydra.cluster-c0ceioc5obue.ap-southeast-2.rds.amazonaws.com",
+      "BSuiteURL": "https://3.104.140.233",
       "BSuiteHydraDbServer": "10.174.51.224",
       "BSuiteHydraDbName": "hydra",
       "BSuiteHydraDbPort": "3306",
